@@ -1,0 +1,128 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "功能 » GoGo Loco » NSFW Loco By Lastation » Edit of",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "Maintained By ...",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 4510606297556593636
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": -5447310811597008255
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": ""
+            },
+            {
+              "name": ""
+            },
+            {
+              "name": ""
+            },
+            {
+              "name": ""
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Sponsored by ...",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -215383970139022580
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 2570795958055294116
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": ""
+            },
+            {
+              "name": ""
+            },
+            {
+              "name": ""
+            },
+            {
+              "name": ""
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Created By ...",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -7914724317831973714
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 6052063357817181913
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": ""
+            },
+            {
+              "name": ""
+            },
+            {
+              "name": ""
+            },
+            {
+              "name": ""
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

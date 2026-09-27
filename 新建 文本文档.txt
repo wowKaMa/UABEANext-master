@@ -1,0 +1,205 @@
+    public static class VrcaChunkedLzma
+    {
+        private const int CHUNK_SIZE = 33554432; // 32MB (0x2000000)
+
+        public struct ManualHeader
+        {
+            public uint Version;
+            public string UnityVersion;
+            public string UnityRevision;
+        }
+
+        public struct ManualBlockInfo
+        {
+            public uint UncompressedSize;
+            public uint CompressedSize;
+            public ushort Flags;
+        }
+
+        public struct ManualDirectoryInfo
+        {
+            public long Offset;
+            public long Size;
+            public uint Flags;
+            public string Name;
+        }
+
+        public static void SaveAsChunkedLzma(AssetBundleFile bundle, Stream outputStream)
+        {
+            if (bundle == null) throw new ArgumentNullException(nameof(bundle));
+            if (outputStream == null) throw new ArgumentNullException(nameof(outputStream));
+
+            // 1. 获取 Header 信息
+            ManualHeader header = new ManualHeader
+            {
+                Version = GetPropertyValue<uint>(bundle.Header, "version") != 0 ? GetPropertyValue<uint>(bundle.Header, "version") : GetPropertyValue<uint>(bundle.Header, "Version"),
+                UnityVersion = bundle.Header.EngineVersion,
+                UnityRevision = GetPropertyValue<string>(bundle.Header, "EngineRevision") ?? GetPropertyValue<string>(bundle.Header, "unityRevision") ?? "r1"
+            };
+
+            if (header.Version == 0) header.Version = 6; // Default to 6 if failed
+
+            // 2. 提取所有数据（包含内存中的修改）并更新节点偏移
+            List<ManualDirectoryInfo> updatedNodes;
+            byte[] fullUncompressedData = GetFullDecompressedDataWithReplacers(bundle, out updatedNodes);
+
+            // 3. 32MB 分块压缩
+            List<byte[]> compressedChunks = new List<byte[]>();
+            List<ManualBlockInfo> newBlockInfos = new List<ManualBlockInfo>();
+
+            for (int i = 0; i < fullUncompressedData.Length; i += CHUNK_SIZE)
+            {
+                int currentSize = Math.Min(CHUNK_SIZE, fullUncompressedData.Length - i);
+                byte[] chunk = new byte[currentSize];
+                Buffer.BlockCopy(fullUncompressedData, i, chunk, 0, currentSize);
+
+                using (MemoryStream msu = new MemoryStream(chunk))
+                using (MemoryStream msc = new MemoryStream())
+                {
+                    SevenZip.Compression.LZMA.Encoder encoder = new SevenZip.Compression.LZMA.Encoder();
+                    CoderPropID[] propIDs = {
+                        CoderPropID.DictionarySize, CoderPropID.PosStateBits, CoderPropID.LitContextBits,
+                        CoderPropID.LitPosBits, CoderPropID.Algorithm, CoderPropID.NumFastBytes,
+                        CoderPropID.MatchFinder, CoderPropID.EndMarker
+                    };
+                    object[] properties = { (int)(1 << 23), (int)2, (int)3, (int)0, (int)2, (int)32, "bt4", false };
+                    encoder.SetCoderProperties(propIDs, properties);
+                    encoder.WriteCoderProperties(msc);
+                    encoder.Code(msu, msc, currentSize, -1, null);
+
+                    byte[] compressedData = msc.ToArray();
+                    compressedChunks.Add(compressedData);
+
+                    newBlockInfos.Add(new ManualBlockInfo()
+                    {
+                        UncompressedSize = (uint)currentSize,
+                        CompressedSize = (uint)compressedData.Length,
+                        Flags = 0x41 // LZMA + Streamed
+                    });
+                }
+            }
+
+            // 4. 重构并回写 UnityFS
+            using (AssetsFileWriter writer = new AssetsFileWriter(outputStream))
+            {
+                writer.BigEndian = true;
+                WriteNullTerminatedString(writer, "UnityFS");
+                writer.Write(header.Version);
+                WriteNullTerminatedString(writer, header.UnityVersion);
+                WriteNullTerminatedString(writer, header.UnityRevision);
+
+                long archiveSizePos = writer.Position;
+                writer.Write((long)0); // archiveSize (placeholder)
+
+                long blocksInfoCompressedSizePos = writer.Position;
+                writer.Write((uint)0); // compressedSize (placeholder)
+                writer.Write((uint)0); // uncompressedSize (placeholder)
+                writer.Write((uint)0x43); // flags (LZ4 + BlockInfoAtEnd)
+
+                if (header.Version >= 7)
+                {
+                    long curPos = writer.Position;
+                    int padding = (int)((16 - (curPos % 16)) % 16);
+                    writer.Write(new byte[padding]);
+                }
+
+                // 构建 BlocksInfo
+                byte[] uncompressedBlocksInfo;
+                using (MemoryStream ms = new MemoryStream())
+                using (AssetsFileWriter biWriter = new AssetsFileWriter(ms))
+                {
+                    biWriter.BigEndian = true;
+                    biWriter.Write(new byte[16]); // Hash
+                    biWriter.Write((uint)newBlockInfos.Count);
+                    foreach (var block in newBlockInfos)
+                    {
+                        biWriter.Write(block.UncompressedSize);
+                        biWriter.Write(block.CompressedSize);
+                        biWriter.Write(block.Flags);
+                    }
+
+                    biWriter.Write((uint)updatedNodes.Count);
+                    foreach (var node in updatedNodes)
+                    {
+                        biWriter.Write(node.Offset);
+                        biWriter.Write(node.Size);
+                        biWriter.Write(node.Flags);
+                        WriteNullTerminatedString(biWriter, node.Name);
+                    }
+                    uncompressedBlocksInfo = ms.ToArray();
+                }
+
+                byte[] compressedBlocksInfo = LZ4Encode(uncompressedBlocksInfo);
+                writer.Write(compressedBlocksInfo);
+
+                foreach (var chunkData in compressedChunks)
+                {
+                    writer.Write(chunkData);
+                }
+
+                long finalFileSize = writer.Position;
+                writer.Position = archiveSizePos;
+                writer.Write(finalFileSize);
+                writer.Position = blocksInfoCompressedSizePos;
+                writer.Write((uint)compressedBlocksInfo.Length);
+                writer.Write((uint)uncompressedBlocksInfo.Length);
+                writer.Position = finalFileSize;
+            }
+        }
+
+        private static byte[] GetFullDecompressedDataWithReplacers(AssetBundleFile bundle, out List<ManualDirectoryInfo> updatedNodes)
+        {
+            updatedNodes = new List<ManualDirectoryInfo>();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                var dirInfos = bundle.BlockAndDirInfo.DirectoryInfos;
+                long currentOffset = 0;
+                foreach (var dir in dirInfos)
+                {
+                    // BundleHelper.LoadAssetDataFromBundle 能够自动处理 Replacer 中的新数据
+                    byte[] data = BundleHelper.LoadAssetDataFromBundle(bundle, dir.Name);
+                    if (data == null) continue;
+
+                    updatedNodes.Add(new ManualDirectoryInfo
+                    {
+                        Name = dir.Name,
+                        Offset = currentOffset,
+                        Size = data.Length,
+                        Flags = dir.Flags
+                    });
+
+                    ms.Write(data, 0, data.Length);
+                    currentOffset += data.Length;
+                }
+                return ms.ToArray();
+            }
+        }
+
+        private static T GetPropertyValue<T>(object obj, string name)
+        {
+            if (obj == null) return default!;
+            var prop = obj.GetType().GetProperty(name, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+            if (prop != null) return (T)prop.GetValue(obj)!;
+            var field = obj.GetType().GetField(name, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+            if (field != null) return (T)field.GetValue(obj)!;
+            return default!;
+        }
+
+        private static byte[] LZ4Encode(byte[] input)
+        {
+            int maxOutputSize = input.Length + (input.Length / 255) + 16;
+            byte[] output = new byte[maxOutputSize];
+            int encodedSize = LZ4ps.LZ4Codec.Encode32(input, 0, input.Length, output, 0, output.Length);
+            byte[] finalOutput = new byte[encodedSize];
+            Buffer.BlockCopy(output, 0, finalOutput, 0, encodedSize);
+            return finalOutput;
+        }
+
+        private static void WriteNullTerminatedString(AssetsFileWriter writer, string str)
+        {
+            if (str == null) str = "";
+            byte[] bytes = Encoding.UTF8.GetBytes(str + "\0");
+            writer.Write(bytes);
+        }
+    }
+}

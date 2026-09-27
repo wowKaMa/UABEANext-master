@@ -1,0 +1,65 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:UABEANext4.ViewModels.Tools"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="350"
+        x:Class="UABEANext4.Views.Tools.BatchTextureCompressionWindow"
+        x:DataType="vm:BatchTextureCompressionViewModel"
+        Icon="/Assets/logo-new.ico"
+        Title="批量 GPU 处理配置 (Batch GPU Processing Config)"
+        Width="600" Height="350"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False">
+
+  <Design.DataContext>
+    <vm:BatchTextureCompressionViewModel />
+  </Design.DataContext>
+
+  <Grid RowDefinitions="Auto,*,Auto" Margin="15">
+    
+    <!-- Header -->
+    <TextBlock Grid.Row="0" Text="批量处理配置 (Batch Processing Configuration)" FontSize="18" FontWeight="Bold" Margin="0,0,0,15" />
+
+    <!-- Form -->
+    <StackPanel Grid.Row="1" Spacing="15">
+      
+      <!-- Input Folder -->
+      <StackPanel Spacing="5">
+        <TextBlock Text="输入文件夹 (包含 VRCA 文件): (Input Folder)" />
+        <Grid ColumnDefinitions="*,Auto">
+          <TextBox Text="{Binding InputFolder}" Margin="0,0,10,0" />
+          <Button Content="..." Command="{Binding BrowseInputCommand}" Grid.Column="1" Width="40"/>
+        </Grid>
+      </StackPanel>
+
+      <!-- Output Folder -->
+      <StackPanel Spacing="5">
+        <TextBlock Text="输出文件夹 (Output Folder):" />
+        <Grid ColumnDefinitions="*,Auto">
+          <TextBox Text="{Binding OutputFolder}" Margin="0,0,10,0" />
+          <Button Content="..." Command="{Binding BrowseOutputCommand}" Grid.Column="1" Width="40"/>
+        </Grid>
+      </StackPanel>
+
+      <!-- Max Texture Size -->
+      <StackPanel Spacing="5">
+        <TextBlock Text="最大贴图尺寸 (Max Texture Size):" />
+        <NumericUpDown Value="{Binding MaxSize}" Minimum="32" Maximum="8192" Increment="32" FormatString="0" />
+      </StackPanel>
+
+      <!-- Concurrency -->
+      <StackPanel Spacing="5">
+        <TextBlock Text="线程数 (并发控制): (Thread Count)" />
+        <NumericUpDown Value="{Binding Concurrency}" Minimum="1" Maximum="32" FormatString="0" />
+        <TextBlock Text="{Binding SystemInfo}" FontSize="11" Foreground="#AAAAAA" />
+      </StackPanel>
+      
+    </StackPanel>
+
+    <!-- Footer -->
+    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="0,15,0,0">
+      <Button Content="开始 (Start)" Command="{Binding StartBatchCommand}" Background="#8A2BE2" Foreground="White" Width="100"/>
+    </StackPanel>
+  </Grid>
+</Window>

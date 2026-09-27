@@ -1,0 +1,112 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "R18 » PCS v1.9.1 » 声音和位置",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "嘴巴",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 92796134214288403
+        },
+        "type": 102,
+        "parameter": {
+          "name": "pcs/select/mouth"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "胸部",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -2838458804718179404
+        },
+        "type": 102,
+        "parameter": {
+          "name": "pcs/select/boobs"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "小穴",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 2760544881250281978
+        },
+        "type": 102,
+        "parameter": {
+          "name": "pcs/select/pussy"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "臀部",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -198562039642673301
+        },
+        "type": 102,
+        "parameter": {
+          "name": "pcs/select/ass"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

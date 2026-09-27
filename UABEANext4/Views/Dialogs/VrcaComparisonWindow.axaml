@@ -1,0 +1,68 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:UABEANext4.ViewModels.Dialogs"
+        xmlns:avedit="using:AvaloniaEdit"
+        x:Class="UABEANext4.Views.Dialogs.VrcaComparisonWindow"
+        x:DataType="vm:VrcaComparisonViewModel"
+        Title="Serialized Dump Comparison (资产转储对比)"
+        Width="1200" Height="800"
+        Background="{DynamicResource DockThemeBackgroundBrush}">
+
+    <Grid RowDefinitions="Auto, *, Auto" Margin="10">
+        <!-- Path Info & Navigation -->
+        <Grid Grid.Row="0" ColumnDefinitions="*, *, *" Margin="0,0,0,10">
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="5">
+                <TextBlock Text="Source Path ID:" Foreground="{DynamicResource TypeTextPrimitive}" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding SourcePathId}" FontWeight="Bold" VerticalAlignment="Center"/>
+                <Button Content="跳转 (Jump)" Command="{Binding JumpToSourceCommand}" Padding="5,2" FontSize="11"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
+                <TextBlock Text="Target Path ID:" Foreground="{DynamicResource TypeTextType}" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding TargetPathId}" FontWeight="Bold" VerticalAlignment="Center"/>
+                <Button Content="跳转 (Jump)" Command="{Binding JumpToTargetCommand}" Padding="5,2" FontSize="11"/>
+            </StackPanel>
+            
+            <TextBlock Grid.Column="2" Text="Patch Result" Foreground="#DCDCAA" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        </Grid>
+
+        <!-- Dumps Comparison -->
+        <Grid Grid.Row="1" ColumnDefinitions="*, 4, *, 4, *">
+            <!-- Source (Modified/New) -->
+            <avedit:TextEditor Grid.Column="0" Name="sourceEditor"
+                               FontFamily="Cascadia Code,Consolas,Monospace"
+                               Document="{Binding SourceDump}"
+                               IsReadOnly="True"
+                               Background="{DynamicResource DockThemeListBackgroundBrush}"
+                               Foreground="{DynamicResource DockThemeForegroundBrush}"
+                               ShowLineNumbers="True"/>
+            
+            <GridSplitter Grid.Column="1" Background="{DynamicResource DockThemeBorderLowBrush}"/>
+
+            <!-- Target (Original) -->
+            <avedit:TextEditor Grid.Column="2" Name="targetEditor"
+                               FontFamily="Cascadia Code,Consolas,Monospace"
+                               Document="{Binding TargetDump}"
+                               IsReadOnly="True"
+                               Background="{DynamicResource DockThemeListBackgroundBrush}"
+                               Foreground="{DynamicResource DockThemeForegroundBrush}"
+                               ShowLineNumbers="True"/>
+
+            <GridSplitter Grid.Column="3" Background="{DynamicResource DockThemeBorderLowBrush}"/>
+
+            <!-- Applied Patch (Simulated Result) -->
+            <avedit:TextEditor Grid.Column="4" Name="resultEditor"
+                               FontFamily="Cascadia Code,Consolas,Monospace"
+                               Document="{Binding ResultDump}"
+                               IsReadOnly="True"
+                               Background="{DynamicResource DockThemeListBackgroundBrush}"
+                               Foreground="{DynamicResource DockThemeForegroundBrush}"
+                               ShowLineNumbers="True"/>
+        </Grid>
+
+        <!-- Footer -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="关闭 (Close)" Click="Close_Click" Width="100"/>
+        </StackPanel>
+    </Grid>
+</Window>

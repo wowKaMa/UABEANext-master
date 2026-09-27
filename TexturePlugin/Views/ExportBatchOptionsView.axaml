@@ -1,0 +1,95 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:tex="using:TexturePlugin.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="100"
+             x:Class="TexturePlugin.Views.ExportBatchOptionsView"
+             x:DataType="tex:ExportBatchOptionsViewModel">
+  <Grid Margin="10,10,10,10" RowDefinitions="Auto,Auto,*,Auto">
+    <ComboBox Height="26"
+              SelectedIndex="{Binding SelectedExportType}"
+              ItemsSource="{Binding DropdownItems}" Grid.Row="0" />
+    <Grid ColumnDefinitions="*,Auto" Grid.Row="1">
+      <Slider Minimum="0" Maximum="100" Orientation="Horizontal"
+              TickFrequency="10" IsSnapToTickEnabled="True"
+              Value="{Binding Quality}" Grid.Column="0" />
+      <Label Content="{Binding Quality, StringFormat={}{0}%}" Grid.Column="1" />
+    </Grid>
+    <Grid ColumnDefinitions="*,*" VerticalAlignment="Bottom" Grid.Row="3">
+      <Button Grid.Column="0" Command="{Binding BtnOk_Click}">确定 (Ok)</Button>
+      <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">取消 (Cancel)</Button>
+    </Grid>
+  </Grid>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 UserControl 根节点并指定 Avalonia 的 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name、x:DataType 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- xmlns:tex="using:TexturePlugin.ViewModels" -->
+<!-- 在 XAML 中引用 TexturePlugin.ViewModels 命名空间，以便在 x:DataType 中使用 ExportBatchOptionsViewModel。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="100" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（300x100）。 -->
+
+<!-- x:Class="TexturePlugin.Views.ExportBatchOptionsView" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- x:DataType="tex:ExportBatchOptionsViewModel"> -->
+<!-- 指定此视图的数据上下文类型为 ExportBatchOptionsViewModel，以便编译时绑定检查和 IntelliSense。 -->
+
+<!-- <Grid Margin="10,10,10,10" RowDefinitions="Auto,Auto,*,Auto"> -->
+<!-- 根布局：一个 Grid，外边距为 10 像素（四边）；行定义为：自动、高度自动、填充、自动。 -->
+
+<!-- <ComboBox Height="26" -->
+<!-- 第一行：下拉框，固定高度 26。 -->
+
+<!-- SelectedIndex="{Binding SelectedExportType}" -->
+<!-- SelectedIndex 绑定到 ViewModel 的 SelectedExportType（所选索引）。 -->
+
+<!-- ItemsSource="{Binding DropdownItems}" Grid.Row="0" /> -->
+<!-- ItemsSource 绑定到 ViewModel 的 DropdownItems（下拉项集合）；放在网格第 0 行。 -->
+
+<!-- <Grid ColumnDefinitions="*,Auto" Grid.Row="1"> -->
+<!-- 第二行：内部 Grid，列定义为一列自适应和一列自动宽度；放在网格第 1 行。 -->
+
+<!-- <Slider Minimum="0" Maximum="100" Orientation="Horizontal" -->
+<!-- 滑块控件：最小值 0，最大值 100，水平布局。 -->
+
+<!-- TickFrequency="10" IsSnapToTickEnabled="True" -->
+<!-- 刻度间隔为 10，启用贴合刻度。 -->
+
+<!-- Value="{Binding Quality}" Grid.Column="0" /> -->
+<!-- Value 绑定到 ViewModel 的 Quality（质量值）；放在内部 Grid 的第 0 列。 -->
+
+<!-- <Label Content="{Binding Quality, StringFormat={}{0}%}" Grid.Column="1" /> -->
+<!-- 显示当前质量百分比的标签，Content 绑定到 Quality 并格式化为百分比；放在第 1 列。 -->
+
+<!-- </Grid> -->
+<!-- 结束第二行的内部 Grid。 -->
+
+<!-- <Grid ColumnDefinitions="*,*" VerticalAlignment="Bottom" Grid.Row="3"> -->
+<!-- 第四行（Grid.Row=3）：底部按钮行，列均等分，垂直对齐到底部。 -->
+
+<!-- <Button Grid.Column="0" Command="{Binding BtnOk_Click}">确定 (Ok)</Button> -->
+<!-- 左侧按钮：绑定 BtnOk_Click 命令，显示“确定 (Ok)”（中文并保留英文原名）。 -->
+
+<!-- <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">取消 (Cancel)</Button> -->
+<!-- 右侧按钮：绑定 BtnCancel_Click 命令，显示“取消 (Cancel)”（中文并保留英文原名）。 -->
+
+<!-- </Grid> -->
+<!-- 结束底部按钮行 Grid。 -->
+
+<!-- </Grid> -->
+<!-- 结束根 Grid 布局容器。 -->
+
+<!-- </UserControl> -->
+<!-- 结束 UserControl 根节点。 -->

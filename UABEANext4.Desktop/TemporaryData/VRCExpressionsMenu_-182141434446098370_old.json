@@ -1,0 +1,217 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "功能 » GoGo Loco » NSFW Loco By Lastation » ",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7820606835662739357
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 255.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -3536136550093760173
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 0.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 1479472986798943162
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -7950663952743400328
+        },
+        "type": 201,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 116.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": "Go/PuppetX"
+            },
+            {
+              "name": "Go/PuppetY"
+            }
+          ]
+        },
+        "labels": {
+          "Array": [
+            {
+              "name": "",
+              "icon": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            },
+            {
+              "name": "",
+              "icon": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            },
+            {
+              "name": "",
+              "icon": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            },
+            {
+              "name": "",
+              "icon": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -5731491795561091433
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 254.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -7492074324122861513
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 115.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -3657708747699048579
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": -1407965254446502124
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 1407950644678256035
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/Stationary"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

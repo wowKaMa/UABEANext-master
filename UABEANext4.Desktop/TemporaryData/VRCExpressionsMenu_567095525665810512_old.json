@@ -1,0 +1,112 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "功能 » GoGo Loco » NSFW Loco By Lastation »  »  » ",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -1958977988026357291
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/StandIdle"
+        },
+        "value": 3.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "<b>Widest",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -5430954790427956545
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/StandIdle"
+        },
+        "value": 2.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "<b>Wide",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -5430954790427956545
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/StandIdle"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "<b>Default",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -5430954790427956545
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/StandIdle"
+        },
+        "value": 0.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

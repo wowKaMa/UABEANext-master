@@ -1,0 +1,162 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "R18 » 寄吧 » 吸附还需要在",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "开启吸附！！",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -7408395881638820518
+        },
+        "type": 102,
+        "parameter": {
+          "name": "VF94_Cock_SPS"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "穿上袜子",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 379447156461533109
+        },
+        "type": 102,
+        "parameter": {
+          "name": "VF94_Sock_Toggle"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "带套",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -7196189504311939952
+        },
+        "type": 102,
+        "parameter": {
+          "name": "VF94_Condom_Toggle"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "射套里",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 883829080022539766
+        },
+        "type": 102,
+        "parameter": {
+          "name": "VF94_Condom_Cum"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "精液量",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 5773327279714400663
+        },
+        "type": 203,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": "VF94_Condom_Fill"
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Fill Animation",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7400123669848329587
+        },
+        "type": 102,
+        "parameter": {
+          "name": "VF94_Condom_Fill_Toggle"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

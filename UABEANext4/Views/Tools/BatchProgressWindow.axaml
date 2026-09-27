@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:UABEANext4.ViewModels.Tools"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
+        x:Class="UABEANext4.Views.Tools.BatchProgressWindow"
+        x:DataType="vm:BatchProgressViewModel"
+        Icon="/Assets/logo-new.ico"
+        Title="批量处理进度 (Batch Processing Progress)"
+        Width="900" Height="600"
+        WindowStartupLocation="CenterOwner">
+
+  <Design.DataContext>
+    <vm:BatchProgressViewModel />
+  </Design.DataContext>
+
+  <Grid RowDefinitions="Auto,Auto,*,Auto" Margin="10">
+    
+    <!-- Header Summary -->
+    <StackPanel Grid.Row="0" Spacing="5" Margin="0,0,0,10">
+      <TextBlock Text="批量处理 (Batch Processing)" FontSize="18" FontWeight="Bold" />
+      <TextBlock Text="{Binding StatusText}" FontSize="14" Foreground="#CCCCCC" TextWrapping="Wrap"/>
+    </StackPanel>
+
+    <!-- Total Progress -->
+    <StackPanel Grid.Row="1" Spacing="5" Margin="0,0,0,10">
+        <Grid ColumnDefinitions="*,Auto">
+            <TextBlock Text="总进度 (Total Progress)" FontWeight="SemiBold"/>
+            <TextBlock Grid.Column="1" Text="{Binding TotalProgressText}" />
+        </Grid>
+        <ProgressBar Value="{Binding TotalProgress}" Maximum="100" Height="20" />
+    </StackPanel>
+
+    <!-- File Grid -->
+    <DataGrid Grid.Row="2" ItemsSource="{Binding Items}" AutoGenerateColumns="False" CanUserResizeColumns="True" CanUserSortColumns="True" IsReadOnly="True" GridLinesVisibility="All" BorderThickness="1" BorderBrush="Gray">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="文件 (File)" Binding="{Binding FileName}" Width="200" />
+        
+        <DataGridTemplateColumn Header="进度 (Progress)" Width="150">
+            <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                    <ProgressBar Value="{Binding Progress}" Maximum="100" Height="15" Margin="5" VerticalAlignment="Center"/>
+                </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        
+        <DataGridTextColumn Header="状态 (Status)" Binding="{Binding Status}" Width="250" />
+        <DataGridTextColumn Header="信息 (Message)" Binding="{Binding Message}" Width="*" />
+        <DataGridTextColumn Header="内存释放 (Mem Released)" Binding="{Binding MemoryInfo}" Width="120" />
+      </DataGrid.Columns>
+    </DataGrid>
+  </Grid>
+</Window>

@@ -1,0 +1,143 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=netstandard">
+
+    <SolidColorBrush x:Key="DockApplicationAccentBrushLow">#007ACC</SolidColorBrush>
+    <SolidColorBrush x:Key="DockApplicationAccentBrushMed">#0E97DD</SolidColorBrush>
+    <SolidColorBrush x:Key="DockApplicationAccentBrushHigh">#1C97EA</SolidColorBrush>
+    <SolidColorBrush x:Key="DockApplicationAccentForegroundBrush">#F0F0F0</SolidColorBrush>
+    <SolidColorBrush x:Key="DockApplicationAccentBrushIndicator">#123456</SolidColorBrush>
+
+    <SolidColorBrush x:Key="DockThemeBorderLowBrush" Color="#3F3F46" />
+    <SolidColorBrush x:Key="DockThemeBackgroundBrush" Color="#2D2D30" />
+    <SolidColorBrush x:Key="DockThemeAccentBrush" Color="#007ACC" />
+    <SolidColorBrush x:Key="DockThemeForegroundBrush" Color="#F0F0F0" />
+    <SolidColorBrush x:Key="DockThemeControlBackgroundBrush" Color="#123456" />
+    <sys:Double x:Key="DockFontSizeNormal">12</sys:Double>
+    
+    <SolidColorBrush x:Key="ThemeAccentBrush" Color="#007ACC" />
+    <SolidColorBrush x:Key="TabViewSelectedBackgroundBrush"  Color="#007ACC" />
+
+    <SolidColorBrush x:Key="DockThemeListBackgroundBrush" Color="#252526" />
+
+    <SolidColorBrush x:Key="WorkspaceItemBundleBrush" Color="#F0CA93" />
+    <SolidColorBrush x:Key="WorkspaceItemAssetsBrush" Color="#B17FD7" />
+    <SolidColorBrush x:Key="WorkspaceItemResourceBrush" Color="#569CD6" />
+    <SolidColorBrush x:Key="WorkspaceItemOtherBrush" Color="#777777" />
+    <SolidColorBrush x:Key="WorkspaceItemEtcBrush" Color="#FF4444" />
+
+    <SolidColorBrush x:Key="TypeTextPrimitive" Color="#569CD6" />
+    <SolidColorBrush x:Key="TypeTextType" Color="#4EC9B0" />
+    <SolidColorBrush x:Key="TypeTextString" Color="#D69D85" />
+    <SolidColorBrush x:Key="TypeTextValue" Color="#B5CEA8" />
+    <SolidColorBrush x:Key="TypeTextPlain" Color="#DEDEDE" />
+    <SolidColorBrush x:Key="TypeTextTheme" Color="#000000" />
+
+</ResourceDictionary>
+<!-- <ResourceDictionary xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 ResourceDictionary 根节点并指定 Avalonia 的 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Key、x:Type 等 XAML 语言功能。 -->
+
+<!-- xmlns:sys="clr-namespace:System;assembly=netstandard"> -->
+<!-- 引入 CLR System 命名空间以便使用系统类型（例如 sys:Double）。 -->
+
+<!--  -->
+<!-- 空行（与源文件对应，便于逐行对照）。 -->
+
+<!-- <SolidColorBrush x:Key="DockApplicationAccentBrushLow">#007ACC</SolidColorBrush> -->
+<!-- 定义名为 DockApplicationAccentBrushLow 的 SolidColorBrush 资源，颜色值为 #007ACC。 -->
+
+<!-- <SolidColorBrush x:Key="DockApplicationAccentBrushMed">#0E97DD</SolidColorBrush> -->
+<!-- 定义名为 DockApplicationAccentBrushMed 的 SolidColorBrush 资源，颜色值为 #0E97DD。 -->
+
+<!-- <SolidColorBrush x:Key="DockApplicationAccentBrushHigh">#1C97EA</SolidColorBrush> -->
+<!-- 定义名为 DockApplicationAccentBrushHigh 的 SolidColorBrush 资源，颜色值为 #1C97EA。 -->
+
+<!-- <SolidColorBrush x:Key="DockApplicationAccentForegroundBrush">#F0F0F0</SolidColorBrush> -->
+<!-- 定义名为 DockApplicationAccentForegroundBrush 的 SolidColorBrush 资源，颜色值为 #F0F0F0（强调色前景）。 -->
+
+<!-- <SolidColorBrush x:Key="DockApplicationAccentBrushIndicator">#123456</SolidColorBrush> -->
+<!-- 定义名为 DockApplicationAccentBrushIndicator 的 SolidColorBrush 资源，颜色值为 #123456（指示器用）。 -->
+
+<!--  -->
+<!-- 空行（与源文件对应，便于逐行对照）。 -->
+
+<!-- <SolidColorBrush x:Key="DockThemeBorderLowBrush" Color="#3F3F46" /> -->
+<!-- 定义 DockThemeBorderLowBrush，作为主题边框的低对比色画刷，颜色 #3F3F46。 -->
+
+<!-- <SolidColorBrush x:Key="DockThemeBackgroundBrush" Color="#2D2D30" /> -->
+<!-- 定义 DockThemeBackgroundBrush，作为主题背景画刷，颜色 #2D2D30。 -->
+
+<!-- <SolidColorBrush x:Key="DockThemeAccentBrush" Color="#007ACC" /> -->
+<!-- 定义 DockThemeAccentBrush，作为主题强调色画刷，颜色 #007ACC。 -->
+
+<!-- <SolidColorBrush x:Key="DockThemeForegroundBrush" Color="#F0F0F0" /> -->
+<!-- 定义 DockThemeForegroundBrush，作为主题前景色画刷，颜色 #F0F0F0。 -->
+
+<!-- <SolidColorBrush x:Key="DockThemeControlBackgroundBrush" Color="#123456" /> -->
+<!-- 定义 DockThemeControlBackgroundBrush，作为控件背景画刷，颜色 #123456。 -->
+
+<!-- <sys:Double x:Key="DockFontSizeNormal">12</sys:Double> -->
+<!-- 定义一个名为 DockFontSizeNormal 的系统 Double 资源，值为 12（常规字体大小）。 -->
+
+<!--     -->
+<!-- 空行（与源文件对应，便于逐行对照）。 -->
+
+<!-- <SolidColorBrush x:Key="ThemeAccentBrush" Color="#007ACC" /> -->
+<!-- 定义 ThemeAccentBrush，通用主题强调色画刷，颜色 #007ACC。 -->
+
+<!-- <SolidColorBrush x:Key="TabViewSelectedBackgroundBrush"  Color="#007ACC" /> -->
+<!-- 定义 TabViewSelectedBackgroundBrush，选中选项卡的背景画刷，颜色 #007ACC。 -->
+
+<!--  -->
+<!-- 空行（与源文件对应，便于逐行对照）。 -->
+
+<!-- <SolidColorBrush x:Key="DockThemeListBackgroundBrush" Color="#252526" /> -->
+<!-- 定义 DockThemeListBackgroundBrush，列表背景画刷，颜色 #252526。 -->
+
+<!--  -->
+<!-- 空行（与源文件对应，便于逐行对照）。 -->
+
+<!-- <SolidColorBrush x:Key="WorkspaceItemBundleBrush" Color="#F0CA93" /> -->
+<!-- 定义 WorkspaceItemBundleBrush，用于表示“Bundle”项的画刷，颜色 #F0CA93。 -->
+
+<!-- <SolidColorBrush x:Key="WorkspaceItemAssetsBrush" Color="#B17FD7" /> -->
+<!-- 定义 WorkspaceItemAssetsBrush，用于表示“Assets”项的画刷，颜色 #B17FD7。 -->
+
+<!-- <SolidColorBrush x:Key="WorkspaceItemResourceBrush" Color="#569CD6" /> -->
+<!-- 定义 WorkspaceItemResourceBrush，用于表示“Resource”项的画刷，颜色 #569CD6。 -->
+
+<!-- <SolidColorBrush x:Key="WorkspaceItemOtherBrush" Color="#777777" /> -->
+<!-- 定义 WorkspaceItemOtherBrush，用于表示“Other”项的画刷，颜色 #777777。 -->
+
+<!-- <SolidColorBrush x:Key="WorkspaceItemEtcBrush" Color="#FF4444" /> -->
+<!-- 定义 WorkspaceItemEtcBrush，用于表示“Etc”或警告类项的画刷，颜色 #FF4444。 -->
+
+<!--  -->
+<!-- 空行（与源文件对应，便于逐行对照）。 -->
+
+<!-- <SolidColorBrush x:Key="TypeTextPrimitive" Color="#569CD6" /> -->
+<!-- 定义 TypeTextPrimitive，用于原始类型文本的颜色，#569CD6。 -->
+
+<!-- <SolidColorBrush x:Key="TypeTextType" Color="#4EC9B0" /> -->
+<!-- 定义 TypeTextType，用于类型名称文本的颜色，#4EC9B0。 -->
+
+<!-- <SolidColorBrush x:Key="TypeTextString" Color="#D69D85" /> -->
+<!-- 定义 TypeTextString，用于字符串文本的颜色，#D69D85。 -->
+
+<!-- <SolidColorBrush x:Key="TypeTextValue" Color="#B5CEA8" /> -->
+<!-- 定义 TypeTextValue，用于值文本的颜色，#B5CEA8。 -->
+
+<!-- <SolidColorBrush x:Key="TypeTextPlain" Color="#DEDEDE" /> -->
+<!-- 定义 TypeTextPlain，用于普通文本的颜色，#DEDEDE。 -->
+
+<!-- <SolidColorBrush x:Key="TypeTextTheme" Color="#000000" /> -->
+<!-- 定义 TypeTextTheme，用于主题相关文本的颜色，#000000。 -->
+
+<!--  -->
+<!-- 空行（与源文件对应，便于逐行对照）。 -->
+
+<!-- </ResourceDictionary> -->
+<!-- 结束 ResourceDictionary 根节点。 -->

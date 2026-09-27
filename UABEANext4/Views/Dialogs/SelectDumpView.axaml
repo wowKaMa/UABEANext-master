@@ -1,0 +1,83 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dlg="using:UABEANext4.ViewModels.Dialogs"
+             mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="80"
+             x:Class="UABEANext4.Views.Dialogs.SelectDumpView"
+             x:DataType="dlg:SelectDumpViewModel">
+  <Grid Margin="10,10,10,10">
+    <ComboBox VerticalAlignment="Top" Height="26"
+              SelectedIndex="{Binding SelectedItem}" ItemsSource="{Binding DropdownItems}" />
+    <Grid VerticalAlignment="Bottom">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Button Grid.Column="0" Command="{Binding BtnOk_Click}">确定 (Ok)</Button>
+      <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">取消 (Cancel)</Button>
+    </Grid>
+  </Grid>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 UserControl 根节点并指定 Avalonia 的默认 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name、x:DataType 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- xmlns:dlg="using:UABEANext4.ViewModels.Dialogs" -->
+<!-- 在 XAML 中引用 ViewModels.Dialogs 命名空间，以便使用 SelectDumpViewModel 等类型。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="80" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（300x80）。 -->
+
+<!-- x:Class="UABEANext4.Views.Dialogs.SelectDumpView" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- x:DataType="dlg:SelectDumpViewModel"> -->
+<!-- 指定此视图的数据上下文类型为 SelectDumpViewModel，以便编译时绑定检查和 IntelliSense。 -->
+
+<!-- <Grid Margin="10,10,10,10"> -->
+<!-- 根布局：一个 Grid，外边距为 10 像素（四边）。 -->
+
+<!-- <ComboBox VerticalAlignment="Top" Height="26" -->
+<!-- 顶部下拉框：垂直对齐到顶部，高度 26。 -->
+
+<!-- SelectedIndex="{Binding SelectedItem}" ItemsSource="{Binding DropdownItems}" /> -->
+<!-- SelectedIndex 绑定到 ViewModel 的 SelectedItem（所选索引）；ItemsSource 绑定到 DropdownItems（下拉项集合）。 -->
+
+<!-- <Grid VerticalAlignment="Bottom"> -->
+<!-- 底部按钮行的 Grid，垂直对齐到底部。 -->
+
+<!-- <Grid.ColumnDefinitions> -->
+<!-- 开始定义底部 Grid 的列。 -->
+
+<!-- <ColumnDefinition Width="*"></ColumnDefinition> -->
+<!-- 第一列占剩余空间（用于左侧按钮）。 -->
+
+<!-- <ColumnDefinition Width="*"></ColumnDefinition> -->
+<!-- 第二列占剩余空间（用于右侧按钮）。 -->
+
+<!-- </Grid.ColumnDefinitions> -->
+<!-- 结束列定义。 -->
+
+<!-- <Button Grid.Column="0" Command="{Binding BtnOk_Click}">确定 (Ok)</Button> -->
+<!-- 左侧按钮：绑定 BtnOk_Click 命令，显示“确定 (Ok)”（中文并保留英文原名）。 -->
+
+<!-- <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">取消 (Cancel)</Button> -->
+<!-- 右侧按钮：绑定 BtnCancel_Click 命令，显示“取消 (Cancel)”（中文并保留英文原名）。 -->
+
+<!-- </Grid> -->
+<!-- 结束底部按钮行 Grid。 -->
+
+<!-- </Grid> -->
+<!-- 结束根 Grid 布局容器。 -->
+
+<!-- </UserControl> -->
+<!-- 结束 UserControl 根节点。 -->

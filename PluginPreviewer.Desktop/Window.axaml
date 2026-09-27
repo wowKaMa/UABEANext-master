@@ -1,0 +1,43 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="800"
+        d:DesignHeight="450"
+        x:Class="PluginPreviewer.Desktop.Window1"
+        Title="窗口 (Window)">
+  欢迎使用 Avalonia! (Welcome to Avalonia!)
+</Window>
+<!-- <Window xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 Window 根节点并指定 Avalonia 的 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理不同 XAML 版本或设计时属性的兼容性。 -->
+
+<!-- mc:Ignorable="d" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性）。 -->
+
+<!-- d:DesignWidth="800" -->
+<!-- 设计器中窗口的默认宽度（800 像素，仅设计时使用）。 -->
+
+<!-- d:DesignHeight="450" -->
+<!-- 设计器中窗口的默认高度（450 像素，仅设计时使用）。 -->
+
+<!-- x:Class="PluginPreviewer.Desktop.Window1" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- Title="窗口 (Window)"> -->
+<!-- 窗口标题：已翻译为中文并在括号内保留英文原名。 -->
+
+<!--   欢迎使用 Avalonia! (Welcome to Avalonia!) -->
+<!-- 窗口内容文本：已翻译为中文并在括号内保留英文原名。 -->
+
+<!-- </Window> -->
+<!-- 结束 Window 根节点。 -->

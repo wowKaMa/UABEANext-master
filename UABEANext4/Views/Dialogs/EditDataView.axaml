@@ -1,0 +1,107 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:avedit="using:AvaloniaEdit"
+             xmlns:dlg="using:UABEANext4.ViewModels.Dialogs"
+             mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="550"
+             x:Class="UABEANext4.Views.Dialogs.EditDataView"
+             x:DataType="dlg:EditDataViewModel">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="30" />
+    </Grid.RowDefinitions>
+    <avedit:TextEditor
+      FontFamily="Cascadia Code,Consolas,Monospace,Courier,DejaVu Sans Mono,Roboto Mono,Menlo"
+      Grid.Row="0" Name="textEditor" Document="{Binding Document}" />
+    <Grid Grid.Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Button Grid.Column="0" Command="{Binding BtnOk_Click}">确定 (Ok)</Button>
+      <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">取消 (Cancel)</Button>
+    </Grid>
+  </Grid>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 UserControl 根节点并指定 Avalonia 的默认 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name、x:DataType 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- xmlns:avedit="using:AvaloniaEdit" -->
+<!-- 引入 AvaloniaEdit 命名空间，以便在 XAML 中使用 TextEditor 控件。 -->
+
+<!-- xmlns:dlg="using:UABEANext4.ViewModels.Dialogs" -->
+<!-- 引用 ViewModels.Dialogs 命名空间，以便在 x:DataType 中使用 EditDataViewModel。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="550" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（350x550）。 -->
+
+<!-- x:Class="UABEANext4.Views.Dialogs.EditDataView" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- x:DataType="dlg:EditDataViewModel"> -->
+<!-- 指定此视图的数据上下文类型为 EditDataViewModel，以便编译时绑定检查和 IntelliSense。 -->
+
+<!-- <Grid> -->
+<!-- 根布局容器：一个 Grid。 -->
+
+<!-- <Grid.RowDefinitions> -->
+<!-- 开始定义网格的行。 -->
+
+<!-- <RowDefinition Height="*" /> -->
+<!-- 第一行占据剩余空间（用于文本编辑器）。 -->
+
+<!-- <RowDefinition Height="30" /> -->
+<!-- 第二行固定高度 30（用于按钮行）。 -->
+
+<!-- </Grid.RowDefinitions> -->
+<!-- 结束行定义。 -->
+
+<!-- <avedit:TextEditor -->
+<!-- 使用 AvaloniaEdit 的 TextEditor 作为主要文本编辑器控件。 -->
+
+<!-- FontFamily="Cascadia Code,Consolas,Monospace,Courier,DejaVu Sans Mono,Roboto Mono,Menlo" -->
+<!-- 指定字体优先列表，优先使用等宽字体以便代码/数据对齐。 -->
+
+<!-- Grid.Row="0" Name="textEditor" Document="{Binding Document}" /> -->
+<!-- 放在网格第一行，控件命名为 textEditor，Document 绑定到 ViewModel 的 Document 属性（编辑内容）。 -->
+
+<!-- <Grid Grid.Row="1"> -->
+<!-- 第二行的 Grid，包含操作按钮。 -->
+
+<!-- <Grid.ColumnDefinitions> -->
+<!-- 开始定义按钮行的列。 -->
+
+<!-- <ColumnDefinition Width="*" /> -->
+<!-- 左侧按钮列占剩余空间。 -->
+
+<!-- <ColumnDefinition Width="*" /> -->
+<!-- 右侧按钮列占剩余空间。 -->
+
+<!-- </Grid.ColumnDefinitions> -->
+<!-- 结束列定义。 -->
+
+<!-- <Button Grid.Column="0" Command="{Binding BtnOk_Click}">确定 (Ok)</Button> -->
+<!-- 左侧按钮：绑定 BtnOk_Click 命令，显示“确定 (Ok)”（中文并保留英文原名）。 -->
+
+<!-- <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">取消 (Cancel)</Button> -->
+<!-- 右侧按钮：绑定 BtnCancel_Click 命令，显示“取消 (Cancel)”（中文并保留英文原名）。 -->
+
+<!-- </Grid> -->
+<!-- 结束按钮行 Grid。 -->
+
+<!-- </Grid> -->
+<!-- 结束根 Grid 布局容器。 -->
+
+<!-- </UserControl> -->
+<!-- 结束 UserControl 根节点。 -->

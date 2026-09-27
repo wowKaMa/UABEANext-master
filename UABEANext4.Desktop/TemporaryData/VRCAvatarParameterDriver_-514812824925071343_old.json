@@ -1,0 +1,32 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -1446941559672284741
+  },
+  "m_Name": "(Clone)",
+  "parameters": {
+    "Array": [
+      {
+        "type": 0,
+        "name": "VF69_TC_current_trackingRightFoot",
+        "source": "",
+        "value": 1.0,
+        "valueMin": 0.0,
+        "valueMax": 1.0,
+        "chance": 1.0,
+        "convertRange": 0,
+        "sourceMin": 0.0,
+        "sourceMax": 0.0,
+        "destMin": 0.0,
+        "destMax": 0.0
+      }
+    ]
+  },
+  "localOnly": 0,
+  "debugString": ""
+}

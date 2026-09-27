@@ -1,0 +1,73 @@
+﻿<UserControl 
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:um="using:UABEANext4.Controls"
+    xmlns:tools="using:UABEANext4.ViewModels.Tools"
+    mc:Ignorable="d"
+    d:DesignWidth="800"
+    d:DesignHeight="450"
+    x:Class="UABEANext4.Views.Tools.InspectorToolView"
+    x:DataType="tools:InspectorToolViewModel">
+
+    <um:AssetDataTreeView
+        Workspace="{Binding Workspace}"
+        ActiveAssets="{Binding ActiveAssets}"
+        Margin="0,0,0,0">
+    </um:AssetDataTreeView>
+
+</UserControl>
+<!-- <UserControl -->
+<!-- 根节点：定义一个 Avalonia 用户控件 -->
+
+<!-- xmlns="https://github.com/avaloniaui" -->
+<!-- Avalonia 的默认命名空间 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 提供 x: 前缀功能，比如 x:Class -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 设计时命名空间，只在设计器里用 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 兼容性命名空间 -->
+
+<!-- xmlns:um="using:UABEANext4.Controls" -->
+<!-- 引用项目里的控件命名空间 -->
+
+<!-- xmlns:tools="using:UABEANext4.ViewModels.Tools" -->
+<!-- 引用项目里的 ViewModel 命名空间 -->
+
+<!-- mc:Ignorable="d" -->
+<!-- 忽略设计时命名空间 -->
+
+<!-- d:DesignWidth="800" -->
+<!-- 设计器里显示的宽度（800） -->
+
+<!-- d:DesignHeight="450" -->
+<!-- 设计器里显示的高度（450） -->
+
+<!-- x:Class="UABEANext4.Views.Tools.InspectorToolView" -->
+<!-- 指定这个控件对应的 C# 类 -->
+
+<!-- x:DataType="tools:InspectorToolViewModel" -->
+<!-- 指定绑定的数据类型（ViewModel） -->
+
+<!-- <um:AssetDataTreeView -->
+<!-- 自定义控件：资产数据树视图 -->
+
+<!-- Workspace="{Binding Workspace}" -->
+<!-- 绑定到 ViewModel 的 Workspace 属性（工作区） -->
+
+<!-- ActiveAssets="{Binding ActiveAssets}" -->
+<!-- 绑定到 ViewModel 的 ActiveAssets 属性（激活的资产集合） -->
+
+<!-- Margin="0,0,0,0"> -->
+<!-- 设置外边距为 0 -->
+
+<!-- </um:AssetDataTreeView> -->
+<!-- 结束控件定义 -->
+
+<!-- </UserControl> -->
+<!-- 结束根节点 -->

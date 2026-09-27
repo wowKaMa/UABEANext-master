@@ -1,0 +1,70 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:UABEANext4.ViewModels.Tools"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="550"
+        x:Class="UABEANext4.Views.Tools.BatchTextureReplacementWindow"
+        x:DataType="vm:BatchTextureReplacementViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="批量贴图替换 (Batch Texture Replacement)"
+        Width="900" Height="600"
+        Background="{DynamicResource DockThemeBackgroundBrush}"
+        WindowStartupLocation="CenterOwner">
+
+  <Design.DataContext>
+    <vm:BatchTextureReplacementViewModel />
+  </Design.DataContext>
+
+  <Grid RowDefinitions="Auto,*,Auto" Margin="10">
+    
+    <!-- Top: Selection Area -->
+    <Grid Grid.Row="0" RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,*,Auto" Margin="0,0,0,10">
+      
+      <!-- Replacement Folder -->
+      <TextBlock Grid.Row="0" Grid.Column="0" Text="替换文件夹 (Replacement Folder):" VerticalAlignment="Center" Margin="0,0,10,0" />
+      <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ReplacementFolderPath}" IsReadOnly="True" Margin="0,0,10,0" />
+      <Button Grid.Row="0" Grid.Column="2" Content="..." Command="{Binding BrowseReplacementFolderCommand}" />
+      
+      <TextBlock Grid.Row="1" Grid.Column="1" Text="注意：此工具对当前加载的 VRCA 文件进行操作。应用更改后，请通过“文件”->“保存”进行保存。 (Note: This tool operates on the currently loaded VRCA file. Please SAVE via File -> Save after applying changes.)" 
+                 FontSize="11" Foreground="Gray" Margin="0,5,0,0" TextWrapping="Wrap"/>
+    </Grid>
+
+    <!-- Middle: DataGrid -->
+    <DataGrid Grid.Row="1" ItemsSource="{Binding TextureItems}" AutoGenerateColumns="False" 
+              CanUserResizeColumns="True" CanUserSortColumns="True" 
+              BorderThickness="1" BorderBrush="{DynamicResource DockThemeBorderLowBrush}">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="状态 (Status)" Binding="{Binding Status}" Width="150" />
+        <DataGridTextColumn Header="名称 (Name)" Binding="{Binding Name}" Width="200" />
+        <DataGridTextColumn Header="PathID" Binding="{Binding PathId}" Width="100" />
+        <DataGridTextColumn Header="格式 (Format)" Binding="{Binding OriginalFormat}" Width="120" />
+        <DataGridTextColumn Header="Original Size" Binding="{Binding OriginalSize}" Width="100" />
+        <DataGridCheckBoxColumn Header="有替换文件? (Has Replacement?)" Binding="{Binding HasReplacement}" Width="120" />
+        <DataGridTextColumn Header="Res File" Binding="{Binding ResFileName}" Width="150" />
+      </DataGrid.Columns>
+    </DataGrid>
+
+    <!-- Bottom: Actions & Status -->
+    <StackPanel Grid.Row="2" Orientation="Vertical" Margin="0,10,0,0" Spacing="5">
+      
+      <Grid ColumnDefinitions="*,Auto">
+        <StackPanel Orientation="Horizontal" Spacing="10">
+           <TextBlock Text="{Binding StatusText}" VerticalAlignment="Center" FontWeight="Bold" />
+           <TextBlock Text="{Binding ProcessedCount, StringFormat='Processed: {0}'}" VerticalAlignment="Center" IsVisible="{Binding IsProcessing}" />
+           <TextBlock Text="/" VerticalAlignment="Center" IsVisible="{Binding IsProcessing}" />
+           <TextBlock Text="{Binding TotalCount}" VerticalAlignment="Center" IsVisible="{Binding IsProcessing}"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="10">
+          <Button Content="Start Replacement (开始替换)" Command="{Binding ProcessReplacementsCommand}" 
+                  IsEnabled="{Binding !IsProcessing}" Classes="accent" />
+        </StackPanel>
+      </Grid>
+      
+      <ProgressBar Minimum="0" Maximum="1" Value="{Binding ProgressValue}" Height="20" 
+                   IsVisible="{Binding IsProcessing}" ShowProgressText="True"/>
+    </StackPanel>
+    
+  </Grid>
+</Window>

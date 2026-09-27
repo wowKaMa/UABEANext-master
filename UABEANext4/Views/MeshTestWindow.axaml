@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:UABEANext4.ViewModels"
+        xmlns:controls="using:UABEANext4.Controls.MeshPreviewer"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="UABEANext4.Views.MeshTestWindow"
+        x:DataType="vm:MeshTestWindowViewModel"
+        Title="Mesh Test Window"
+        Width="800" Height="600">
+  
+  <Grid RowDefinitions="Auto, *">
+    <Border Grid.Row="0" Background="#333" Padding="10">
+      <TextBlock Text="{Binding Status}" Foreground="Yellow" FontSize="16" FontWeight="Bold"/>
+    </Border>
+    
+    <controls:MeshPreviewerControl Grid.Row="1" ActiveScene="{Binding RootNode}"/>
+  </Grid>
+  
+</Window>

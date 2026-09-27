@@ -1,0 +1,208 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "功能 » GoGo Loco » .dup.2 » Poses » Poses 2",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7820606835662739357
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 255.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -5308227729603589408
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 0.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": -7020607300484118778
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Present Butt",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7400533316606605751
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 217.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Ride",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7400533316606605751
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 216.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Spit Roast",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7400533316606605751
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 215.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Spooning",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7400533316606605751
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 213.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -7102473952621725759
+        },
+        "type": 203,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 125.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": "Go/Float"
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 1407950644678256035
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/Stationary"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

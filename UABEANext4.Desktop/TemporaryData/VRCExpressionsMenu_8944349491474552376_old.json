@@ -1,0 +1,181 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "R18 » 下一页",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "全身抓取",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "抓取"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "BBC纹身\n（慎开）",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "纹身"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "RealKissSystem",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 6868406281050208322
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "榨汁",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -6200170822744518216
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": -1709870406697953086
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "KissSFX",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 2450605671991474108
+        },
+        "type": 102,
+        "parameter": {
+          "name": "KissToggle"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "寄吧座椅",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": -6313765830645831275
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "断面图",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 1362878446545550662
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

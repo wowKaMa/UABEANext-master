@@ -1,0 +1,309 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 2723760969234300450
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -5108232526284950629
+  },
+  "m_Name": "",
+  "foldout_transforms": 1,
+  "foldout_forces": 1,
+  "foldout_collision": 1,
+  "foldout_stretchsquish": 1,
+  "foldout_limits": 1,
+  "foldout_grabpose": 1,
+  "foldout_options": 1,
+  "foldout_gizmos": 0,
+  "version": 0,
+  "integrationType": 0,
+  "rootTransform": {
+    "m_FileID": 0,
+    "m_PathID": 546268503033706136
+  },
+  "ignoreTransforms": {
+    "Array": []
+  },
+  "endpointPosition": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "multiChildType": 0,
+  "pull": 0.4,
+  "pullCurve": {
+    "m_Curve": {
+      "Array": []
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "spring": 0.2,
+  "springCurve": {
+    "m_Curve": {
+      "Array": [
+        {
+          "time": 0.0,
+          "value": 1.0,
+          "inSlope": -0.2088188,
+          "outSlope": -0.2088188,
+          "weightedMode": 0,
+          "inWeight": 0.0,
+          "outWeight": 0.11312217
+        },
+        {
+          "time": 1.0,
+          "value": 0.48425293,
+          "inSlope": 0.0,
+          "outSlope": 0.0,
+          "weightedMode": 0,
+          "inWeight": 0.0,
+          "outWeight": 0.0
+        }
+      ]
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "stiffness": 0.2,
+  "stiffnessCurve": {
+    "m_Curve": {
+      "Array": []
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "gravity": 0.1,
+  "gravityCurve": {
+    "m_Curve": {
+      "Array": []
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "gravityFalloff": 0.8,
+  "gravityFalloffCurve": {
+    "m_Curve": {
+      "Array": []
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "immobileType": 1,
+  "immobile": 0.7,
+  "immobileCurve": {
+    "m_Curve": {
+      "Array": []
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "allowCollision": 0,
+  "collisionFilter": {
+    "allowSelf": 1,
+    "allowOthers": 1
+  },
+  "radius": 0.05,
+  "radiusCurve": {
+    "m_Curve": {
+      "Array": [
+        {
+          "time": 0.0,
+          "value": 0.5393657,
+          "inSlope": 0.0,
+          "outSlope": 0.0,
+          "weightedMode": 0,
+          "inWeight": 0.0,
+          "outWeight": 0.0
+        },
+        {
+          "time": 0.7760805,
+          "value": 0.33959696,
+          "inSlope": 0.022448063,
+          "outSlope": 0.022448063,
+          "weightedMode": 0,
+          "inWeight": 0.33333334,
+          "outWeight": 0.33333334
+        }
+      ]
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "colliders": {
+    "Array": [
+      {
+        "m_FileID": 0,
+        "m_PathID": -2513881855647826544
+      }
+    ]
+  },
+  "limitType": 2,
+  "maxAngleX": 90.0,
+  "maxAngleXCurve": {
+    "m_Curve": {
+      "Array": [
+        {
+          "time": 0.0,
+          "value": 0.49999785,
+          "inSlope": 0.017411051,
+          "outSlope": 0.017411051,
+          "weightedMode": 0,
+          "inWeight": 0.0,
+          "outWeight": 0.4545556
+        },
+        {
+          "time": 0.5544503,
+          "value": 0.6918335,
+          "inSlope": 1.1595726,
+          "outSlope": 1.1595726,
+          "weightedMode": 0,
+          "inWeight": 0.19205774,
+          "outWeight": 0.23831959
+        },
+        {
+          "time": 1.0,
+          "value": 1.0,
+          "inSlope": -0.039549015,
+          "outSlope": -0.039549015,
+          "weightedMode": 0,
+          "inWeight": 0.4468525,
+          "outWeight": 0.0
+        }
+      ]
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "maxAngleZ": 5.0,
+  "maxAngleZCurve": {
+    "m_Curve": {
+      "Array": [
+        {
+          "time": 0.0,
+          "value": 0.48031616,
+          "inSlope": 0.8700683,
+          "outSlope": 0.8700683,
+          "weightedMode": 0,
+          "inWeight": 0.0,
+          "outWeight": 0.11312217
+        },
+        {
+          "time": 1.0,
+          "value": 1.0,
+          "inSlope": 0.0,
+          "outSlope": 0.0,
+          "weightedMode": 0,
+          "inWeight": 0.0,
+          "outWeight": 0.0
+        }
+      ]
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "limitRotation": {
+    "x": -90.0,
+    "y": 85.0,
+    "z": 0.0
+  },
+  "limitRotationXCurve": {
+    "m_Curve": {
+      "Array": [
+        {
+          "time": 0.364254,
+          "value": 0.5118065,
+          "inSlope": 0.0,
+          "outSlope": 0.0,
+          "weightedMode": 0,
+          "inWeight": 0.0,
+          "outWeight": 0.0
+        },
+        {
+          "time": 1.0,
+          "value": 0.16535187,
+          "inSlope": 0.0,
+          "outSlope": 0.0,
+          "weightedMode": 0,
+          "inWeight": 0.0,
+          "outWeight": 0.0
+        }
+      ]
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "limitRotationYCurve": {
+    "m_Curve": {
+      "Array": []
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "limitRotationZCurve": {
+    "m_Curve": {
+      "Array": []
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "allowGrabbing": 1,
+  "grabFilter": {
+    "allowSelf": 1,
+    "allowOthers": 1
+  },
+  "allowPosing": 0,
+  "poseFilter": {
+    "allowSelf": 1,
+    "allowOthers": 1
+  },
+  "snapToHand": 0,
+  "grabMovement": 0.5,
+  "maxStretch": 0.0,
+  "maxStretchCurve": {
+    "m_Curve": {
+      "Array": []
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "maxSquish": 0.0,
+  "maxSquishCurve": {
+    "m_Curve": {
+      "Array": []
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "stretchMotion": 0.0,
+  "stretchMotionCurve": {
+    "m_Curve": {
+      "Array": []
+    },
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "isAnimated": 0,
+  "resetWhenDisabled": 0,
+  "parameter": "",
+  "showGizmos": 1,
+  "boneOpacity": 0.5,
+  "limitOpacity": 0.5
+}

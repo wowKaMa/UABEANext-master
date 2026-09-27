@@ -1,0 +1,208 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "功能 » GoGo Loco » .dup.2 » Poses » Poses 1 » ",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7820606835662739357
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 255.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Jack O Pose",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7400533316606605751
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 222.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Blowjob",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7400533316606605751
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 221.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Masturbation",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7400533316606605751
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 220.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Mating Press",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7400533316606605751
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 219.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Missionary",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7400533316606605751
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 218.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -7102473952621725759
+        },
+        "type": 203,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 125.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": "Go/Float"
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 1407950644678256035
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/Stationary"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

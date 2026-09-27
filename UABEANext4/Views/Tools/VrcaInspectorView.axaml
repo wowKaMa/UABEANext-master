@@ -1,0 +1,150 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:UABEANext4.ViewModels.Tools"
+             xmlns:conv="clr-namespace:UABEANext4.Converters"
+             xmlns:fs="clr-namespace:UABEANext4.Logic.UnityFS"
+             mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="700"
+             x:Class="UABEANext4.Views.Tools.VrcaInspectorView"
+             x:DataType="vm:VrcaInspectorViewModel">
+    <UserControl.Resources>
+        <conv:ErrorColorConverter x:Key="ErrorColorConverter" />
+        <conv:ErrorIconConverter x:Key="ErrorIconConverter" />
+    </UserControl.Resources>
+
+    <Grid RowDefinitions="Auto,*">
+        <!-- Header / Toolbar -->
+        <Border Grid.Row="0" Background="{DynamicResource SystemAccentColorDark1}" Padding="15" CornerRadius="0,0,10,10">
+            <StackPanel Orientation="Horizontal" Spacing="15">
+                <Button Command="{Binding SelectFileCommand}" Background="White" Foreground="Black">
+                    <StackPanel Orientation="Horizontal" Spacing="5">
+                        <TextBlock Text="📂" />
+                        <TextBlock Text="加载文件 (Load File)" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <TextBox Text="{Binding FilePath}" Width="500" Watermark="请选择 .vrca 或 .vrcw 文件..." IsReadOnly="True" VerticalContentAlignment="Center" />
+                <Button Command="{Binding AnalyzeCommand}" IsEnabled="{Binding !IsBusy}" Background="#2ECC71" Foreground="White">
+                    <StackPanel Orientation="Horizontal" Spacing="5">
+                        <TextBlock Text="🔍" />
+                        <TextBlock Text="立即分析 (Analyze)" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsBusy}" Width="100" VerticalAlignment="Center" />
+            </StackPanel>
+        </Border>
+
+        <!-- Content -->
+        <ScrollViewer Grid.Row="1" Padding="20">
+            <StackPanel Spacing="25">
+                <TextBlock Text="VRCA 深度结构审查报告 (Analysis Report)" FontSize="20" FontWeight="Bold" />
+                
+                <ContentControl Content="{Binding Report}">
+                    <ContentControl.ContentTemplate>
+                        <DataTemplate x:DataType="fs:UnityFSParser+AnalysisReport">
+                            <StackPanel Spacing="20">
+                                <!-- Section: Header -->
+                                <Border Classes="SectionBorder">
+                                    <StackPanel Spacing="10">
+                                        <TextBlock Text="Phase 1: Header 极限校验" FontWeight="SemiBold" Foreground="#3498DB" />
+                                        <ItemsControl ItemsSource="{Binding HeaderItems}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate x:DataType="fs:UnityFSParser+ValidationItem">
+                                                    <Grid ColumnDefinitions="200, 1*, 1*, 2*" Margin="0,5">
+                                                        <TextBlock Grid.Column="0" Text="{Binding Label}" Foreground="Gray" />
+                                                        <TextBlock Grid.Column="1" Text="{Binding Expected, StringFormat='期望: {0}'}" IsVisible="{Binding Expected, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+                                                        <TextBlock Grid.Column="2" Text="{Binding Actual, StringFormat='实际: {0}'}" FontWeight="Bold" Foreground="{Binding IsError, Converter={StaticResource ErrorColorConverter}}" />
+                                                        <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="5">
+                                                            <TextBlock Text="{Binding IsError, Converter={StaticResource ErrorIconConverter}}" />
+                                                            <TextBlock Text="{Binding Description}" Foreground="{Binding IsError, Converter={StaticResource ErrorColorConverter}}" />
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- Section: Blocks -->
+                                <Border Classes="SectionBorder">
+                                    <StackPanel Spacing="10">
+                                        <TextBlock Text="Phase 2: BlocksInfo 与压缩块完整性" FontWeight="SemiBold" Foreground="#9B59B6" />
+                                        <ItemsControl ItemsSource="{Binding BlockItems}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate x:DataType="fs:UnityFSParser+ValidationItem">
+                                                    <Grid ColumnDefinitions="200, 1*, 1*, 2*" Margin="0,5">
+                                                        <TextBlock Grid.Column="0" Text="{Binding Label}" Foreground="Gray" />
+                                                        <TextBlock Grid.Column="1" Text="{Binding Expected, StringFormat='期望: {0}'}" IsVisible="{Binding Expected, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+                                                        <TextBlock Grid.Column="2" Text="{Binding Actual, StringFormat='实际: {0}'}" FontWeight="Bold" Foreground="{Binding IsError, Converter={StaticResource ErrorColorConverter}}" />
+                                                        <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="5">
+                                                            <TextBlock Text="{Binding IsError, Converter={StaticResource ErrorIconConverter}}" />
+                                                            <TextBlock Text="{Binding Description}" Foreground="{Binding IsError, Converter={StaticResource ErrorColorConverter}}" />
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- Section: Nodes -->
+                                <Border Classes="SectionBorder">
+                                    <StackPanel Spacing="10">
+                                        <TextBlock Text="Phase 3: Nodes (文件节点) 连续性审查" FontWeight="SemiBold" Foreground="#E67E22" />
+                                        <ItemsControl ItemsSource="{Binding NodeItems}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate x:DataType="fs:UnityFSParser+ValidationItem">
+                                                    <Grid ColumnDefinitions="200, 1*, 1*, 2*" Margin="0,5">
+                                                        <TextBlock Grid.Column="0" Text="{Binding Label}" Foreground="Gray" />
+                                                        <TextBlock Grid.Column="1" Text="{Binding Expected, StringFormat='偏移/期望: {0}'}" IsVisible="{Binding Expected, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+                                                        <TextBlock Grid.Column="2" Text="{Binding Actual}" FontWeight="Bold" Foreground="{Binding IsError, Converter={StaticResource ErrorColorConverter}}" />
+                                                        <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="5">
+                                                            <TextBlock Text="{Binding IsError, Converter={StaticResource ErrorIconConverter}}" />
+                                                            <TextBlock Text="{Binding Description}" Foreground="{Binding IsError, Converter={StaticResource ErrorColorConverter}}" />
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- Section: Deep Scan -->
+                                <Border Classes="SectionBorder">
+                                    <StackPanel Spacing="10">
+                                        <TextBlock Text="Phase 4: CAB 内部资产深度嗅探" FontWeight="SemiBold" Foreground="#1ABC9C" />
+                                        <ItemsControl ItemsSource="{Binding DeepScanItems}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate x:DataType="fs:UnityFSParser+ValidationItem">
+                                                    <Grid ColumnDefinitions="200, 1*, 1*, 2*" Margin="0,5">
+                                                        <TextBlock Grid.Column="0" Text="{Binding Label}" Foreground="Gray" />
+                                                        <TextBlock Grid.Column="1" Text="{Binding Expected}" IsVisible="{Binding Expected, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+                                                        <TextBlock Grid.Column="2" Text="{Binding Actual}" FontWeight="Bold" Foreground="{Binding IsError, Converter={StaticResource ErrorColorConverter}}" />
+                                                        <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="5">
+                                                            <TextBlock Text="{Binding IsError, Converter={StaticResource ErrorIconConverter}}" />
+                                                            <TextBlock Text="{Binding Description}" Foreground="{Binding IsError, Converter={StaticResource ErrorColorConverter}}" />
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                </ContentControl>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+    <UserControl.Styles>
+        <Style Selector="Border.SectionBorder">
+            <Setter Property="Background" Value="#1E1E1E" />
+            <Setter Property="BorderBrush" Value="#333" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="15" />
+        </Style>
+    </UserControl.Styles>
+</UserControl>

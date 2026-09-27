@@ -1,0 +1,116 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <ListBox Classes="RadioButtonListBox" Width="100">
+        <ListBoxItem>苹果 (Apple)</ListBoxItem>
+        <ListBoxItem>香蕉 (Banana)</ListBoxItem>
+        <ListBoxItem>胡萝卜 (Carrot)</ListBoxItem>
+      </ListBox>
+    </Border>
+  </Design.PreviewWith>
+
+  <Style Selector="ListBox.RadioButtonListBox">
+    <Setter Property="BorderBrush" Value="Transparent"/>
+  </Style>
+  <Style Selector="ListBox.RadioButtonListBox ListBoxItem">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <Border Background="Transparent">
+            <RadioButton Content="{TemplateBinding ContentPresenter.Content}"
+                         VerticalAlignment="Center"
+                         IsChecked="{TemplateBinding IsSelected, Mode=TwoWay}"
+                         ToolTip.Tip="{TemplateBinding Tag}"/>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</Styles>
+<!-- <Styles xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 Styles 根节点并指定 Avalonia 的 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"> -->
+<!-- 引入 x: 命名空间，提供 x:Type 等 XAML 语言功能。 -->
+
+<!-- <Design.PreviewWith> -->
+<!-- 设计器预览容器开始：用于在设计器中预览控件或样式。 -->
+
+<!-- <Border Padding="20"> -->
+<!-- 在预览容器中放置一个 Border，内边距为 20。 -->
+
+<!-- <ListBox Classes="RadioButtonListBox" Width="100"> -->
+<!-- 在预览区域放置一个 ListBox，使用类名 RadioButtonListBox，宽度为 100。 -->
+
+<!-- <ListBoxItem>苹果 (Apple)</ListBoxItem> -->
+<!-- 列表项：显示“苹果 (Apple)”（中文并保留英文原名）。 -->
+
+<!-- <ListBoxItem>香蕉 (Banana)</ListBoxItem> -->
+<!-- 列表项：显示“香蕉 (Banana)”（中文并保留英文原名）。 -->
+
+<!-- <ListBoxItem>胡萝卜 (Carrot)</ListBoxItem> -->
+<!-- 列表项：显示“胡萝卜 (Carrot)”（中文并保留英文原名）。 -->
+
+<!-- </ListBox> -->
+<!-- 结束预览用的 ListBox。 -->
+
+<!-- </Border> -->
+<!-- 结束预览用的 Border。 -->
+
+<!-- </Design.PreviewWith> -->
+<!-- 结束设计器预览容器。 -->
+
+<!-- <Style Selector="ListBox.RadioButtonListBox"> -->
+<!-- 定义样式，选择器为具有类 RadioButtonListBox 的 ListBox。 -->
+
+<!-- <Setter Property="BorderBrush" Value="Transparent"/> -->
+<!-- 将该 ListBox 的 BorderBrush 设置为透明。 -->
+
+<!-- </Style> -->
+<!-- 结束 ListBox.RadioButtonListBox 样式定义。 -->
+
+<!-- <Style Selector="ListBox.RadioButtonListBox ListBoxItem"> -->
+<!-- 定义样式，选择器为位于具有类 RadioButtonListBox 的 ListBox 内的 ListBoxItem。 -->
+
+<!-- <Setter Property="Template"> -->
+<!-- 开始设置 Template 属性以自定义 ListBoxItem 的模板。 -->
+
+<!-- <Setter.Value> -->
+<!-- Setter 的值开始。 -->
+
+<!-- <ControlTemplate> -->
+<!-- 定义 ControlTemplate，用于自定义 ListBoxItem 的视觉结构。 -->
+
+<!-- <Border Background="Transparent"> -->
+<!-- 使用一个背景为透明的 Border 作为模板根。 -->
+
+<!-- <RadioButton Content="{TemplateBinding ContentPresenter.Content}" -->
+<!-- 在 Border 内使用 RadioButton，Content 绑定到模板内容。 -->
+
+<!-- VerticalAlignment="Center" -->
+<!-- 将 RadioButton 垂直对齐到中心。 -->
+
+<!-- IsChecked="{TemplateBinding IsSelected, Mode=TwoWay}" -->
+<!-- 将 RadioButton 的 IsChecked 与 ListBoxItem 的 IsSelected 双向绑定，以同步选择状态。 -->
+
+<!-- ToolTip.Tip="{TemplateBinding Tag}"/> -->
+<!-- 将 RadioButton 的 ToolTip 内容绑定到 ListBoxItem 的 Tag（如果有）。 -->
+
+<!-- </Border> -->
+<!-- 结束模板根 Border。 -->
+
+<!-- </ControlTemplate> -->
+<!-- 结束 ControlTemplate 定义。 -->
+
+<!-- </Setter.Value> -->
+<!-- Setter 值结束。 -->
+
+<!-- </Setter> -->
+<!-- 结束 Template Setter。 -->
+
+<!-- </Style> -->
+<!-- 结束 ListBox.RadioButtonListBox ListBoxItem 样式定义。 -->
+
+<!-- </Styles> -->
+<!-- 结束 Styles 根节点。 -->

@@ -1,0 +1,90 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:UABEANext4.ViewModels.Dialogs"
+        xmlns:conv="using:UABEANext4.ViewModels.Dialogs.Converters"
+        x:Class="UABEANext4.Views.Dialogs.TextureCompressionWindow"
+        x:DataType="vm:TextureCompressionViewModel"
+        Title="贴图压缩与重排 (Texture Compression &amp; Rearrangement)"
+        Width="1060" Height="850"
+        Background="{DynamicResource DockThemeBackgroundBrush}"
+        WindowStartupLocation="CenterOwner">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <conv:TextureCompressionBrushConverter x:Key="IssueBrush" TrueBrush="#FF4545" FalseBrush="#DCDCDC" />
+            <conv:TextureCompressionBrushConverter x:Key="IssueBackgroundBrush" TrueBrush="#451515" FalseBrush="Transparent" />
+            <conv:BoolToFontWeightConverter x:Key="IssueFontWeight" />
+            <conv:CountToBoolConverter x:Key="CountToBool" />
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid RowDefinitions="Auto, *, Auto, Auto, Auto" Margin="15">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
+            <Button Content="扫描资源 (Scan Assets)" Command="{Binding ScanAssetsCommand}" IsEnabled="{Binding !IsScanning}" />
+            <Separator Classes="vertical" />
+            <TextBlock Text="目标最大尺寸 (Max Size):" VerticalAlignment="Center" />
+            <NumericUpDown Value="{Binding MaxTextureSize}" Minimum="32" Maximum="8192" Increment="32" Width="120" />
+            <CheckBox Content="显卡加速 (GPU Acceleration)" IsChecked="{Binding IsGpuAccelerationEnabled}" VerticalAlignment="Center" Margin="10,0" />
+            <Button Content="开始处理 (Start Processing)" Command="{Binding StartCompressionCommand}" IsEnabled="{Binding !IsProcessing}" Background="{DynamicResource ThemeAccentBrush}" Foreground="{DynamicResource DockApplicationAccentForegroundBrush}" />
+            <Button Content="批量处理 (Batch Processing)" Command="{Binding OpenBatchDialogCommand}" Background="#8A2BE2" Foreground="White" Margin="4,0,0,0" />
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Entries}" 
+                  AutoGenerateColumns="False" IsReadOnly="True"
+                  CanUserResizeColumns="True"
+                  GridLinesVisibility="All" BorderThickness="1" BorderBrush="{DynamicResource DockThemeBorderLowBrush}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="名称 (Name)" Binding="{Binding Name}" Width="2*" />
+                <DataGridTextColumn Header="格式 (Format)" Binding="{Binding Format}" Width="100" />
+                <DataGridTextColumn Header="原偏移 (Old Offset)" Binding="{Binding OldOffset}" Width="100" />
+                <DataGridTemplateColumn Header="新偏移 (New Offset)" Width="100" SortMemberPath="NewOffset">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="vm:TextureCompressionEntry">
+                            <TextBlock Text="{Binding NewOffset}" 
+                                       Foreground="{Binding HasIssue, Converter={StaticResource IssueBrush}}"
+                                       FontWeight="{Binding HasIssue, Converter={StaticResource IssueFontWeight}}"
+                                       VerticalAlignment="Center" Margin="12,0" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="大小 (Size)" Binding="{Binding DisplaySize}" Width="100" />
+                <DataGridTextColumn Header="资源文件 (File)" Binding="{Binding ResSFile}" Width="1*" />
+                <DataGridTemplateColumn Header="状态 (Status)" Width="120" SortMemberPath="Status">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="vm:TextureCompressionEntry">
+                            <TextBlock Text="{Binding Status}" 
+                                       Foreground="{Binding IsFailed, Converter={StaticResource IssueBrush}}"
+                                       VerticalAlignment="Center" Margin="12,0" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="调试信息 (Debug Info)" Binding="{Binding ErrorMessage}" Width="2*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <GridSplitter Grid.Row="2" Height="5" Background="{DynamicResource DockThemeBorderLowBrush}" ResizeDirection="Rows" Margin="0,5" />
+
+        <DockPanel Grid.Row="3" Height="150" IsVisible="{Binding IssueEntries.Count, Converter={StaticResource CountToBool}}">
+            <TextBlock DockPanel.Dock="Top" Text="检测到异常资源 (Issues Detected):" Foreground="#FF4545" FontWeight="Bold" Margin="0,5" />
+            <DataGrid ItemsSource="{Binding IssueEntries}" 
+                      AutoGenerateColumns="False" IsReadOnly="True"
+                      GridLinesVisibility="All" BorderThickness="1" BorderBrush="#FF4545" Background="{DynamicResource DockThemeListBackgroundBrush}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="名称 (Name)" Binding="{Binding Name}" Width="1.5*" />
+                    <DataGridTextColumn Header="新偏移 (New Offset)" Binding="{Binding NewOffset}" Width="100" Foreground="#FF4545" />
+                    <DataGridTextColumn Header="资源文件 (File)" Binding="{Binding ResSFile}" Width="1*" />
+                    <DataGridTextColumn Header="状态 (Status)" Binding="{Binding Status}" Width="120" Foreground="#FF4545" />
+                    <DataGridTextColumn Header="异常原因 (Issue)" Binding="{Binding ErrorMessage}" Width="2*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+
+        <Grid Grid.Row="4" ColumnDefinitions="*, Auto" Margin="0,10,0,0">
+            <TextBlock Grid.Column="0" Text="{Binding StatusText}" VerticalAlignment="Center" Opacity="0.7" />
+            <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="10">
+                <Button Content="应用更改 (Apply Changes)" Command="{Binding ApplyChangesCommand}" IsEnabled="{Binding !IsProcessing}" />
+                <Button Content="关闭 (Close)" Click="CloseClick" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

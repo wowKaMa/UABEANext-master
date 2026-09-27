@@ -1,0 +1,130 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:UABEANext4.ViewModels.Dialogs"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="700"
+             x:Class="UABEANext4.Views.Dialogs.SMRReferenceSearchView"
+             x:DataType="vm:SMRReferenceSearchViewModel">
+    <UserControl.Styles>
+        <Style Selector="TextBox.warning">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+        <Style Selector="TextBlock.warning">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+    </UserControl.Styles>
+
+    <Grid RowDefinitions="Auto, *, Auto" Margin="20">
+        <!-- Header -->
+        <TextBlock Grid.Row="0" Text="SkinnedMeshRenderer 引用详情" FontSize="20" FontWeight="Bold" Margin="0,0,0,20"/>
+
+        <!-- Content -->
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Spacing="15">
+                <!-- GameObject Info -->
+                <StackPanel>
+                    <TextBlock Text="GameObject:" FontWeight="Bold" Foreground="Gray"/>
+                    <Grid ColumnDefinitions="*, Auto">
+                        <TextBox Text="{Binding GameObjectName, Mode=OneWay}" IsReadOnly="True" BorderThickness="0,0,0,1"/>
+                        <TextBlock Grid.Column="1" Text="{Binding GameObjectPathId, StringFormat=' (PathID: {0})'}" VerticalAlignment="Center" Foreground="Gray"/>
+                    </Grid>
+                </StackPanel>
+
+                <!-- Hierarchy Path -->
+                <StackPanel>
+                    <TextBlock Text="层级路径 (Hierarchy Path):" FontWeight="Bold" Foreground="Gray"/>
+                    <TextBox Text="{Binding HierarchyPath, Mode=OneWay}" IsReadOnly="True" TextWrapping="Wrap" BorderThickness="0,0,0,1"/>
+                </StackPanel>
+
+                <Separator Margin="0,5"/>
+
+                <!-- Mesh Info -->
+                <StackPanel>
+                    <TextBlock Text="网格 (Mesh):" FontWeight="Bold" Foreground="Gray"/>
+                    <Grid ColumnDefinitions="*, Auto">
+                        <TextBox Text="{Binding MeshName, Mode=OneWay}" IsReadOnly="True" BorderThickness="0,0,0,1"/>
+                        <TextBlock Grid.Column="1" Text="{Binding MeshPathId, StringFormat=' (PathID: {0})'}" VerticalAlignment="Center" Foreground="Gray"/>
+                    </Grid>
+                </StackPanel>
+
+                <!-- Root Bone Info -->
+                <StackPanel>
+                    <TextBlock Text="根骨骼 (Root Bone):" FontWeight="Bold" Foreground="Gray"/>
+                    <Grid ColumnDefinitions="*, Auto">
+                        <TextBox Text="{Binding RootBoneName, Mode=OneWay}" IsReadOnly="True" BorderThickness="0,0,0,1"/>
+                        <TextBlock Grid.Column="1" Text="{Binding RootBonePathId, StringFormat=' (PathID: {0})'}" VerticalAlignment="Center" Foreground="Gray"/>
+                    </Grid>
+                </StackPanel>
+
+                <!-- Probe Anchor -->
+                <StackPanel>
+                    <TextBlock Text="探针锚点 (Probe Anchor):" FontWeight="Bold" Foreground="Gray"/>
+                    <Grid ColumnDefinitions="*, Auto">
+                        <TextBox Text="{Binding ProbeAnchorName, Mode=OneWay}" IsReadOnly="True" BorderThickness="0,0,0,1"/>
+                        <TextBlock Grid.Column="1" Text="{Binding ProbeAnchorPathId, StringFormat=' (PathID: {0})'}" VerticalAlignment="Center" Foreground="Gray"/>
+                    </Grid>
+                </StackPanel>
+
+                <!-- Static Batch Root -->
+                <StackPanel>
+                    <TextBlock Text="静态合批根 (Static Batch Root):" FontWeight="Bold" Foreground="Gray"/>
+                    <Grid ColumnDefinitions="*, Auto">
+                        <TextBox Text="{Binding StaticBatchRootName, Mode=OneWay}" IsReadOnly="True" BorderThickness="0,0,0,1"/>
+                        <TextBlock Grid.Column="1" Text="{Binding StaticBatchRootPathId, StringFormat=' (PathID: {0})'}" VerticalAlignment="Center" Foreground="Gray"/>
+                    </Grid>
+                </StackPanel>
+
+                <!-- Light Probe Volume Override -->
+                <StackPanel>
+                    <TextBlock Text="光探针体积覆盖 (Light Probe Volume Override):" FontWeight="Bold" Foreground="Gray"/>
+                    <Grid ColumnDefinitions="*, Auto">
+                        <TextBox Text="{Binding LightProbeVolumeOverrideName, Mode=OneWay}" IsReadOnly="True" BorderThickness="0,0,0,1"/>
+                        <TextBlock Grid.Column="1" Text="{Binding LightProbeVolumeOverridePathId, StringFormat=' (PathID: {0})'}" VerticalAlignment="Center" Foreground="Gray"/>
+                    </Grid>
+                </StackPanel>
+
+                <!-- Bones List -->
+                <Expander IsExpanded="True">
+                    <Expander.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Bones.Count, StringFormat='骨骼列表 (Bones: {0})'}" VerticalAlignment="Center"/>
+                            <StackPanel Orientation="Horizontal" IsVisible="{Binding BoneWarningCount}" Margin="10,0,0,0">
+                                <TextBlock Text="⚠" Foreground="Red" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding BoneWarningCount, StringFormat=' {0} 警告'}" Foreground="Red" VerticalAlignment="Center" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Expander.Header>
+                    <ItemsControl ItemsSource="{Binding Bones}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="*, Auto" Margin="0,2">
+                                    <TextBox Text="{Binding Name, Mode=OneWay}" IsReadOnly="True" BorderThickness="0,0,0,1" 
+                                             Theme="{StaticResource {x:Type TextBox}}"
+                                             Classes.warning="{Binding IsWarning}"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding PathId, StringFormat=' (PathID: {0})'}" VerticalAlignment="Center" 
+                                               Foreground="Gray" Margin="5,0,0,0"
+                                               Classes.warning="{Binding IsWarning}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Expander>
+
+                <!-- Materials List -->
+                <Expander Header="{Binding Materials.Count, StringFormat='材质列表 (Materials: {0})'}" IsExpanded="True">
+                    <ItemsControl ItemsSource="{Binding Materials}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="*, Auto" Margin="0,2">
+                                    <TextBox Text="{Binding Name, Mode=OneWay}" IsReadOnly="True" BorderThickness="0,0,0,1" Theme="{StaticResource {x:Type TextBox}}"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding PathId, StringFormat=' (PathID: {0})'}" VerticalAlignment="Center" Foreground="Gray" Margin="5,0,0,0"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Expander>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

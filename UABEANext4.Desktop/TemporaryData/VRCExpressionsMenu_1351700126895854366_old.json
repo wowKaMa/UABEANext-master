@@ -1,0 +1,156 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "R18 » 下一页 » 断面图 » 自己视角",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "开启",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "__MA/AutoParam/开启$4"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Position",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 201,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": "DANMEN_HUD_X$$Internal_11"
+            },
+            {
+              "name": "DANMEN_HUD_Y$$Internal_12"
+            }
+          ]
+        },
+        "labels": {
+          "Array": [
+            {
+              "name": "",
+              "icon": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            },
+            {
+              "name": "",
+              "icon": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            },
+            {
+              "name": "",
+              "icon": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            },
+            {
+              "name": "",
+              "icon": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "Scale",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 203,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": "DANMEN_HUD_SCALE$$Internal_13"
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "透明度（需要拉这个才看得见）",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 203,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": "DANMEN_HUD_A$$Internal_14"
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

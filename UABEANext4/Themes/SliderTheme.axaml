@@ -1,0 +1,76 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <!-- 在此处为预览器添加控件 (Add Controls for Previewer Here) -->
+      <Slider Width="100" />
+    </Border>
+  </Design.PreviewWith>
+
+  <Style Selector="Slider:horizontal /template/ Thumb#thumb, Slider:vertical /template/ Thumb#thumb">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid>
+          <Rectangle Width="10" Height="18"
+                     Fill="{DynamicResource ThemeAccentBrush}" />
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>
+<!-- <Styles xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 Styles 根节点并指定 Avalonia 的 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"> -->
+<!-- 引入 x: 命名空间，提供 x:Type 等 XAML 语言功能。 -->
+
+<!-- <Design.PreviewWith> -->
+<!-- 设计器预览容器开始：用于在设计器中预览控件或样式。 -->
+
+<!-- <Border Padding="20"> -->
+<!-- 在预览容器中放置一个 Border，内边距为 20。 -->
+
+<!-- 在此处为预览器添加控件 (Add Controls for Previewer Here) -->
+<!-- 预览提示：在此处添加用于设计器预览的控件（已翻译为中文并保留英文原名）。 -->
+
+<!-- <Slider Width="100" /> -->
+<!-- 在预览区域放置一个 Slider，宽度为 100（用于查看滑块样式）。 -->
+
+<!-- </Border> -->
+<!-- 结束预览用的 Border。 -->
+
+<!-- </Design.PreviewWith> -->
+<!-- 结束设计器预览容器。 -->
+
+<!-- <Style Selector="Slider:horizontal /template/ Thumb#thumb, Slider:vertical /template/ Thumb#thumb"> -->
+<!-- 定义样式，选择器针对水平或垂直 Slider 模板内名为 thumb 的 Thumb 控件。 -->
+
+<!-- <Setter Property="Template"> -->
+<!-- 开始设置 Template 属性以自定义 Thumb 的模板。 -->
+
+<!-- <ControlTemplate> -->
+<!-- 定义 ControlTemplate，用于自定义 Thumb 的视觉结构。 -->
+
+<!-- <Grid> -->
+<!-- 使用 Grid 作为模板根容器。 -->
+
+<!-- <Rectangle Width="10" Height="18" -->
+<!-- 在 Grid 内放置一个 Rectangle 作为滑块拇指的视觉元素，宽 10 高 18。 -->
+
+<!-- Fill="{DynamicResource ThemeAccentBrush}" /> -->
+<!-- 将 Rectangle 的填充绑定到动态资源 ThemeAccentBrush（主题强调色）。 -->
+
+<!-- </Grid> -->
+<!-- 结束模板根 Grid。 -->
+
+<!-- </ControlTemplate> -->
+<!-- 结束 ControlTemplate 定义。 -->
+
+<!-- </Setter> -->
+<!-- 结束 Template Setter。 -->
+
+<!-- </Style> -->
+<!-- 结束 Thumb 样式定义。 -->
+
+<!-- </Styles> -->
+<!-- 结束 Styles 根节点。 -->

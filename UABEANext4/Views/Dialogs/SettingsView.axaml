@@ -1,0 +1,187 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dlg="using:UABEANext4.ViewModels.Dialogs"
+             xmlns:cnf="using:UABEANext4.Logic.Configuration"
+             mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="400"
+             x:Class="UABEANext4.Views.Dialogs.SettingsView"
+             x:DataType="dlg:SettingsViewModel">
+    <UserControl.DataTemplates>
+      <DataTemplate DataType="{x:Type cnf:ConfigurationBooleanItem}">
+        <StackPanel Margin="10" ToolTip.Tip="{Binding Description}">
+          <TextBlock Text="{Binding Title}" FontWeight="Bold" />
+          <CheckBox IsChecked="{Binding Value}" Content="已启用 (Enabled)" />
+        </StackPanel>
+      </DataTemplate>
+      
+      <DataTemplate DataType="{x:Type cnf:ConfigurationIntegerItem}">
+        <StackPanel Margin="10" ToolTip.Tip="{Binding Description}">
+          <TextBlock Text="{Binding Title}" FontWeight="Bold" />
+          <NumericUpDown Value="{Binding Value, UpdateSourceTrigger=PropertyChanged}"
+                         Minimum="{Binding RangeMin}"
+                         Maximum="{Binding RangeMax}"
+                         FormatString="0" />
+        </StackPanel>
+      </DataTemplate>
+
+      <!-- <DataTemplate DataType="{x:Type cnf:ConfigurationStringItem}"> -->
+      <!--   <StackPanel Margin="10" ToolTip.Tip="{Binding Description}"> -->
+      <!--     <TextBlock Text="{Binding Title}" FontWeight="Bold" /> -->
+      <!--     <TextBox Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" /> -->
+      <!--   </StackPanel> -->
+      <!-- </DataTemplate> -->
+
+      <DataTemplate DataType="{x:Type cnf:ConfigurationEnumItem}">
+        <StackPanel Margin="10" ToolTip.Tip="{Binding Description}">
+          <TextBlock Text="{Binding Title}" FontWeight="Bold" />
+          <ComboBox ItemsSource="{Binding EnumValues}"
+                    SelectedValue="{Binding Value, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+      </DataTemplate>
+    </UserControl.DataTemplates>
+    
+    <Grid Margin="10,10,10,10" RowDefinitions="*,Auto">
+      <ScrollViewer Grid.Row="0">
+        <ItemsControl ItemsSource="{Binding ConfigItems}" />
+      </ScrollViewer>
+      <TextBlock Grid.Row="1">此对话框中的所有更改会立即保存 (All changes in this dialog save immediately).</TextBlock>
+    </Grid>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 UserControl 根节点并指定 Avalonia 的默认 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name、x:DataType 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- xmlns:dlg="using:UABEANext4.ViewModels.Dialogs" -->
+<!-- 在 XAML 中引用 ViewModels.Dialogs 命名空间，以便使用 SettingsViewModel 等类型。 -->
+
+<!-- xmlns:cnf="using:UABEANext4.Logic.Configuration" -->
+<!-- 在 XAML 中引用 Logic.Configuration 命名空间，以便使用 Configuration*Item 类型。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="400" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（500x400）。 -->
+
+<!-- x:Class="UABEANext4.Views.Dialogs.SettingsView" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- x:DataType="dlg:SettingsViewModel"> -->
+<!-- 指定此视图的数据上下文类型为 SettingsViewModel，以便编译时绑定检查和 IntelliSense。 -->
+
+<!-- <UserControl.DataTemplates> -->
+<!-- 开始定义 UserControl 级别的数据模板集合（用于根据配置项类型渲染不同的编辑控件）。 -->
+
+<!-- <DataTemplate DataType="{x:Type cnf:ConfigurationBooleanItem}"> -->
+<!-- 定义适用于 ConfigurationBooleanItem 的数据模板（布尔配置项）。 -->
+
+<!-- <StackPanel Margin="10" ToolTip.Tip="{Binding Description}"> -->
+<!-- 使用 StackPanel 垂直布局，外边距 10，并将 ToolTip 绑定到配置项的 Description。 -->
+
+<!-- <TextBlock Text="{Binding Title}" FontWeight="Bold" /> -->
+<!-- 显示配置项标题，字体加粗。 -->
+
+<!-- <CheckBox IsChecked="{Binding Value}" Content="已启用 (Enabled)" /> -->
+<!-- 复选框：IsChecked 绑定到配置项的 Value（布尔值）；显示文本已翻译为中文并保留英文原名。 -->
+
+<!-- </StackPanel> -->
+<!-- 结束布尔项模板的 StackPanel。 -->
+
+<!-- </DataTemplate> -->
+<!-- 结束布尔项数据模板定义。 -->
+
+<!-- <DataTemplate DataType="{x:Type cnf:ConfigurationIntegerItem}"> -->
+<!-- 定义适用于 ConfigurationIntegerItem 的数据模板（整数配置项）。 -->
+
+<!-- <StackPanel Margin="10" ToolTip.Tip="{Binding Description}"> -->
+<!-- 使用 StackPanel 垂直布局，外边距 10，并将 ToolTip 绑定到配置项的 Description。 -->
+
+<!-- <TextBlock Text="{Binding Title}" FontWeight="Bold" /> -->
+<!-- 显示配置项标题，字体加粗。 -->
+
+<!-- <NumericUpDown Value="{Binding Value, UpdateSourceTrigger=PropertyChanged}" -->
+<!-- 使用 NumericUpDown 控件：Value 绑定到 Value，启用即时更新。 -->
+
+<!-- Minimum="{Binding RangeMin}" -->
+<!-- 最小值绑定到 RangeMin。 -->
+
+<!-- Maximum="{Binding RangeMax}" -->
+<!-- 最大值绑定到 RangeMax。 -->
+
+<!-- FormatString="0" /> -->
+<!-- 格式化字符串为整数显示。 -->
+
+<!-- </StackPanel> -->
+<!-- 结束整数项模板的 StackPanel。 -->
+
+<!-- </DataTemplate> -->
+<!-- 结束整数项数据模板定义。 -->
+
+<!-- <DataTemplate DataType="{x:Type cnf:ConfigurationStringItem}"> --> 
+<!-- 注释掉的字符串项模板（保留以供将来启用），未被包含在运行时模板集合中。 -->
+
+<!-- <StackPanel Margin="10" ToolTip.Tip="{Binding Description}"> --> 
+<!-- 注释内容：字符串项模板的 StackPanel。 -->
+
+<!-- <TextBlock Text="{Binding Title}" FontWeight="Bold" /> --> 
+<!-- 注释内容：字符串项标题。 -->
+
+<!-- <TextBox Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" /> -->
+<!-- 注释内容：字符串项的 TextBox，绑定 Value 并启用即时更新。 -->
+
+<!--  </StackPanel> --> 
+<!-- 注释内容：结束字符串项 StackPanel。 -->
+
+<!-- </DataTemplate> --> 
+<!-- 注释内容：结束字符串项模板。 -->
+
+<!-- <DataTemplate DataType="{x:Type cnf:ConfigurationEnumItem}"> -->
+<!-- 定义适用于 ConfigurationEnumItem 的数据模板（枚举配置项）。 -->
+
+<!-- <StackPanel Margin="10" ToolTip.Tip="{Binding Description}"> -->
+<!-- 使用 StackPanel 垂直布局，外边距 10，并将 ToolTip 绑定到配置项的 Description。 -->
+
+<!-- <TextBlock Text="{Binding Title}" FontWeight="Bold" /> -->
+<!-- 显示配置项标题，字体加粗。 -->
+
+<!-- <ComboBox ItemsSource="{Binding EnumValues}" -->
+<!-- 下拉框：ItemsSource 绑定到 EnumValues（枚举可选值集合）。 -->
+
+<!-- SelectedValue="{Binding Value, UpdateSourceTrigger=PropertyChanged}" /> -->
+<!-- SelectedValue 绑定到 Value，并启用即时更新。 -->
+
+<!-- </StackPanel> -->
+<!-- 结束枚举项模板的 StackPanel。 -->
+
+<!-- </DataTemplate> -->
+<!-- 结束枚举项数据模板定义。 -->
+
+<!-- </UserControl.DataTemplates> -->
+<!-- 结束 UserControl 的数据模板集合定义。 -->
+
+<!-- <Grid Margin="10,10,10,10" RowDefinitions="*,Auto"> -->
+<!-- 主布局：一个 Grid，外边距 10 像素（四边）；行定义为两行，第一行填充，第二行自动高度。 -->
+
+<!-- <ScrollViewer Grid.Row="0"> -->
+<!-- 可滚动容器，放在网格第一行，用于包含配置项列表。 -->
+
+<!-- <ItemsControl ItemsSource="{Binding ConfigItems}" /> -->
+<!-- ItemsControl：ItemsSource 绑定到 ViewModel 的 ConfigItems（配置项集合），每项将使用上面定义的 DataTemplate 渲染。 -->
+
+<!-- </ScrollViewer> -->
+<!-- 结束 ScrollViewer。 -->
+
+<!-- <TextBlock Grid.Row="1">此对话框中的所有更改会立即保存 (All changes in this dialog save immediately).</TextBlock> -->
+<!-- 底部提示文本：已翻译为中文并保留英文原名，提示用户更改会立即保存。 -->
+
+<!-- </Grid> -->
+<!-- 结束主 Grid 布局容器。 -->
+
+<!-- </UserControl> -->
+<!-- 结束 UserControl 根节点。 -->

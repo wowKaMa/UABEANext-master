@@ -1,0 +1,135 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "R18 » PCS v1.9.1",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "<b>启用</b>",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 3280466599319537428
+        },
+        "type": 102,
+        "parameter": {
+          "name": "pcs/isEnable"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "自我服务",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -8719963176911956643
+        },
+        "type": 102,
+        "parameter": {
+          "name": "pcs/mode/selfService"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "设置",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -3291992028853775179
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 578137730596699494
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "满意度",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 1808532684071242308
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 196748283560476142
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "声音和位置",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 2092236158515013022
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": -5856150541203966366
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

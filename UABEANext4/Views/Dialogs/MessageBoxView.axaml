@@ -1,0 +1,223 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dlg="using:UABEANext4.ViewModels.Dialogs"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="160"
+             x:Class="UABEANext4.Views.Dialogs.MessageBoxView"
+             x:DataType="dlg:MessageBoxViewModel">
+  <Design.DataContext>
+    <dlg:MessageBoxViewModel />
+  </Design.DataContext>
+  <UserControl.DataTemplates>
+    <dlg:MessageBoxTemplateSelector>
+      <DataTemplate x:Key="OK" DataType="dlg:MessageBoxType">
+        <StackPanel Orientation="Horizontal" Spacing="10" FlowDirection="RightToLeft">
+          <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnA_Click}">确定 (Ok)</Button>
+        </StackPanel>
+      </DataTemplate>
+      <DataTemplate x:Key="OKCancel" DataType="dlg:MessageBoxType">
+        <StackPanel Orientation="Horizontal" Spacing="10" FlowDirection="RightToLeft">
+          <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnB_Click}">取消 (Cancel)</Button>
+          <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnA_Click}">确定 (Ok)</Button>
+        </StackPanel>
+      </DataTemplate>
+      <DataTemplate x:Key="YesNo" DataType="dlg:MessageBoxType">
+        <StackPanel Orientation="Horizontal" Spacing="10" FlowDirection="RightToLeft">
+          <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnB_Click}">否 (No)</Button>
+          <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnA_Click}">是 (Yes)</Button>
+        </StackPanel>
+      </DataTemplate>
+      <DataTemplate x:Key="YesNoCancel" DataType="dlg:MessageBoxType">
+        <StackPanel Orientation="Horizontal" Spacing="10" FlowDirection="RightToLeft">
+          <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnC_Click}">取消 (Cancel)</Button>
+          <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnB_Click}">否 (No)</Button>
+          <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnA_Click}">是 (Yes)</Button>
+        </StackPanel>
+      </DataTemplate>
+      <DataTemplate x:Key="Custom" DataType="dlg:MessageBoxType">
+        <StackPanel Orientation="Horizontal" Spacing="10" FlowDirection="RightToLeft">
+          <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnC_Click}" Content="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).ButtonTextA}"/>
+          <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnB_Click}" Content="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).ButtonTextB}"/>
+          <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnA_Click}" Content="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).ButtonTextC}"/>
+        </StackPanel>
+      </DataTemplate>
+    </dlg:MessageBoxTemplateSelector>
+  </UserControl.DataTemplates>
+  <Grid Margin="10,10,10,10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="8" />
+      <RowDefinition Height="25" />
+    </Grid.RowDefinitions>
+    <TextBox IsReadOnly="True" TextWrapping="Wrap" Grid.Row="0" Name="msgTextBox" BorderBrush="Transparent" Text="{Binding MsgText}" />
+    <ContentControl Content="{Binding MsgType}" Grid.Row="2" />
+  </Grid>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 UserControl 根节点并指定 Avalonia 的默认 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name、x:DataType 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- xmlns:dlg="using:UABEANext4.ViewModels.Dialogs" -->
+<!-- 在 XAML 中引用 ViewModels.Dialogs 命名空间，以便使用 MessageBoxViewModel、MessageBoxType 等类型。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="160" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（400x160）。 -->
+
+<!-- x:Class="UABEANext4.Views.Dialogs.MessageBoxView" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- x:DataType="dlg:MessageBoxViewModel"> -->
+<!-- 指定此视图的数据上下文类型为 MessageBoxViewModel，以便编译时绑定检查和 IntelliSense。 -->
+
+<!-- <Design.DataContext> -->
+<!-- 设计时数据上下文开始：在设计器中实例化 ViewModel 以便预览。 -->
+
+<!-- <dlg:MessageBoxViewModel /> -->
+<!-- 在设计器中使用 MessageBoxViewModel 的实例作为 DataContext（仅设计时）。 -->
+
+<!-- </Design.DataContext> -->
+<!-- 设计时数据上下文结束。 -->
+
+<!-- <UserControl.DataTemplates> -->
+<!-- 开始定义 UserControl 级别的数据模板集合（用于根据消息框类型选择不同的按钮布局）。 -->
+
+<!-- <dlg:MessageBoxTemplateSelector> -->
+<!-- 使用自定义的 MessageBoxTemplateSelector 作为模板选择器的容器（该类型在 ViewModels.Dialogs 命名空间中）。 -->
+
+<!-- <DataTemplate x:Key="OK" DataType="dlg:MessageBoxType"> -->
+<!-- 定义键为 "OK" 的 DataTemplate，适用于 MessageBoxType（单按钮确认）。 -->
+
+<!-- <StackPanel Orientation="Horizontal" Spacing="10" FlowDirection="RightToLeft"> -->
+<!-- 使用水平 StackPanel，子项从右向左排列，间距 10。 -->
+
+<!-- <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnA_Click}">确定 (Ok)</Button> -->
+<!-- 单按钮模板：绑定到父 UserControl 的 DataContext（MessageBoxViewModel）中的 BtnA_Click 命令，按钮文本已翻译为中文并保留英文原名。 -->
+
+<!-- </StackPanel> -->
+<!-- 结束单按钮 StackPanel。 -->
+
+<!-- </DataTemplate> -->
+<!-- 结束 OK 模板定义。 -->
+
+<!-- <DataTemplate x:Key="OKCancel" DataType="dlg:MessageBoxType"> -->
+<!-- 定义键为 "OKCancel" 的 DataTemplate，适用于确认/取消类型。 -->
+
+<!-- <StackPanel Orientation="Horizontal" Spacing="10" FlowDirection="RightToLeft"> -->
+<!-- 水平 StackPanel，右到左排列按钮。 -->
+
+<!-- <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnB_Click}">取消 (Cancel)</Button> -->
+<!-- 取消按钮：绑定 BtnB_Click，文本为“取消 (Cancel)”。 -->
+
+<!-- <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnA_Click}">确定 (Ok)</Button> -->
+<!-- 确认按钮：绑定 BtnA_Click，文本为“确定 (Ok)”。 -->
+
+<!-- </StackPanel> -->
+<!-- 结束 OKCancel 模板的 StackPanel。 -->
+
+<!-- </DataTemplate> -->
+<!-- 结束 OKCancel 模板定义。 -->
+
+<!-- <DataTemplate x:Key="YesNo" DataType="dlg:MessageBoxType"> -->
+<!-- 定义键为 "YesNo" 的 DataTemplate，适用于是/否类型。 -->
+
+<!-- <StackPanel Orientation="Horizontal" Spacing="10" FlowDirection="RightToLeft"> -->
+<!-- 水平 StackPanel，右到左排列按钮。 -->
+
+<!-- <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnB_Click}">否 (No)</Button> -->
+<!-- 否按钮：绑定 BtnB_Click，文本为“否 (No)”。 -->
+
+<!-- <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnA_Click}">是 (Yes)</Button> -->
+<!-- 是按钮：绑定 BtnA_Click，文本为“是 (Yes)”。 -->
+
+<!-- </StackPanel> -->
+<!-- 结束 YesNo 模板的 StackPanel。 -->
+
+<!-- </DataTemplate> -->
+<!-- 结束 YesNo 模板定义. -->
+
+<!-- <DataTemplate x:Key="YesNoCancel" DataType="dlg:MessageBoxType"> -->
+<!-- 定义键为 "YesNoCancel" 的 DataTemplate，适用于是/否/取消三按钮类型。 -->
+
+<!-- <StackPanel Orientation="Horizontal" Spacing="10" FlowDirection="RightToLeft"> -->
+<!-- 水平 StackPanel，右到左排列按钮。 -->
+
+<!-- <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnC_Click}">取消 (Cancel)</Button> -->
+<!-- 取消按钮：绑定 BtnC_Click，文本为“取消 (Cancel)”。 -->
+
+<!-- <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnB_Click}">否 (No)</Button> -->
+<!-- 否按钮：绑定 BtnB_Click，文本为“否 (No)”。 -->
+
+<!-- <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnA_Click}">是 (Yes)</Button> -->
+<!-- 是按钮：绑定 BtnA_Click，文本为“是 (Yes)”。 -->
+
+<!-- </StackPanel> -->
+<!-- 结束 YesNoCancel 模板的 StackPanel。 -->
+
+<!-- </DataTemplate> -->
+<!-- 结束 YesNoCancel 模板定义。 -->
+
+<!-- <DataTemplate x:Key="Custom" DataType="dlg:MessageBoxType"> -->
+<!-- 定义键为 "Custom" 的 DataTemplate，适用于自定义按钮文本的情况。 -->
+
+<!-- <StackPanel Orientation="Horizontal" Spacing="10" FlowDirection="RightToLeft"> -->
+<!-- 水平 StackPanel，右到左排列按钮。 -->
+
+<!-- <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnC_Click}" Content="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).ButtonTextA}"/> -->
+<!-- 自定义按钮：绑定 BtnC_Click，按钮文本通过父 DataContext 的 ButtonTextA 提供。 -->
+
+<!-- <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnB_Click}" Content="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).ButtonTextB}"/> -->
+<!-- 自定义按钮：绑定 BtnB_Click，按钮文本通过 ButtonTextB 提供。 -->
+
+<!-- <Button MinWidth="70" Command="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).BtnA_Click}" Content="{Binding $parent[UserControl].((dlg:MessageBoxViewModel)DataContext).ButtonTextC}"/> -->
+<!-- 自定义按钮：绑定 BtnA_Click，按钮文本通过 ButtonTextC 提供。 -->
+
+<!-- </StackPanel> -->
+<!-- 结束 Custom 模板的 StackPanel。 -->
+
+<!-- </DataTemplate> -->
+<!-- 结束 Custom 模板定义。 -->
+
+<!-- </dlg:MessageBoxTemplateSelector> -->
+<!-- 结束 MessageBoxTemplateSelector 容器。 -->
+
+<!-- </UserControl.DataTemplates> -->
+<!-- 结束 UserControl 的数据模板集合定义。 -->
+
+<!-- <Grid Margin="10,10,10,10"> -->
+<!-- 主布局：一个 Grid，外边距 10 像素（四边）。 -->
+
+<!-- <Grid.RowDefinitions> -->
+<!-- 开始定义网格行。 -->
+
+<!-- <RowDefinition Height="*" /> -->
+<!-- 第一行占剩余空间（用于显示消息文本）。 -->
+
+<!-- <RowDefinition Height="8" /> -->
+<!-- 第二行高度 8，用作间隔。 -->
+
+<!-- <RowDefinition Height="25" /> -->
+<!-- 第三行高度 25，用于显示按钮模板（ContentControl）。 -->
+
+<!-- </Grid.RowDefinitions> -->
+<!-- 结束行定义。 -->
+
+<!-- <TextBox IsReadOnly="True" TextWrapping="Wrap" Grid.Row="0" Name="msgTextBox" BorderBrush="Transparent" Text="{Binding MsgText}" /> -->
+<!-- 文本框：只读，自动换行，绑定到 ViewModel 的 MsgText（显示消息内容），边框透明。 -->
+
+<!-- <ContentControl Content="{Binding MsgType}" Grid.Row="2" /> -->
+<!-- 内容控件：Content 绑定到 ViewModel 的 MsgType（MessageBoxType），结合上面定义的模板选择器显示相应按钮布局。 -->
+
+<!-- </Grid> -->
+<!-- 结束主 Grid 布局容器。 -->
+
+<!-- </UserControl> -->
+<!-- 结束 UserControl 根节点。 -->

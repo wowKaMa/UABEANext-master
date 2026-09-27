@@ -1,0 +1,18 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 584315112350666159
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1270563745786349783
+  },
+  "m_Name": "",
+  "Gain": 0.0,
+  "Far": 0.0,
+  "Near": 0.0,
+  "VolumetricRadius": 0.0,
+  "EnableSpatialization": 0,
+  "UseAudioSourceVolumeCurve": 0
+}

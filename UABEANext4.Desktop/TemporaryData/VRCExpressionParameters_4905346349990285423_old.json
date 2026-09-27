@@ -1,0 +1,871 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -8074938933423860320
+  },
+  "m_Name": "VRCFury Params",
+  "isEmpty": 0,
+  "parameters": {
+    "Array": [
+      {
+        "name": "服装",
+        "valueType": 0,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "爆衣",
+        "valueType": 0,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "耳朵",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "尾巴",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "角",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "脱鞋",
+        "valueType": 0,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "发型",
+        "valueType": 1,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "角1",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "精灵",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "鞭子",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "抓取",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "丝袜",
+        "valueType": 0,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "纹身",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "面纱",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "射精",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "superneko.realkiss.mode$$Internal_0",
+        "valueType": 0,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "superneko.realkiss.auto.getleadertiming_nosync$$Internal_1",
+        "valueType": 1,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "Cig.Toggle",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "Gimick_Off_Pipe",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "Gimick_Off_Smoke",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "zinken",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "syringe_heart",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "syringe_push",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "bh/length/pubes",
+        "valueType": 1,
+        "saved": 1,
+        "defaultValue": 0.5,
+        "networkSynced": 1
+      },
+      {
+        "name": "bh/tog/pubes",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "Lico White Breath Particle",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "Lico Breath Density",
+        "valueType": 1,
+        "saved": 1,
+        "defaultValue": 1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "MilkSystem_MilkL",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "MilkSystem_MilkR",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "MilkSystem_Pattern",
+        "valueType": 0,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "MilkSystem_Toggle",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "KissToggle",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "KissSFX",
+        "valueType": 1,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "KissSelector",
+        "valueType": 0,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "isStillKissing",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "Amaterasu_ON",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "BlackFire_Size",
+        "valueType": 1,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "typeN_Cchair_Wfix",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "typeN_Cchair_dill",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "typeN_Chair_sit",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "typeN_Chair_hight",
+        "valueType": 1,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "typeN_Cchair_DPSSPS",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "typeN_Cchair_ONOFF",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "DANMEN_WET",
+        "valueType": 1,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "DANMEN_HUD_X$$Internal_11",
+        "valueType": 1,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "DANMEN_HUD_Y$$Internal_12",
+        "valueType": 1,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "DANMEN_HUD_SCALE$$Internal_13",
+        "valueType": 1,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "DANMEN_HUD_A$$Internal_14",
+        "valueType": 1,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "RasenDan_L",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "RasenDan_R",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "Chidori_L",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "Chidori_R",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "FireSwitch",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "glass_hand_on",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "glass_receiver_1",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "glass_receiver_2",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "glass_receiver_3",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "tray_receiver",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "wine_hand_on",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "EnableSquishyBreast",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/isEnable",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/mode/smashHit",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/mode/selfService",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/mode/selfTouch",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/sound/smash",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/mode/insertSquirt",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/satisfaction/orgasm",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/reset",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/mode/autoDetect",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/local/eventIsReady",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/satisfaction/lust",
+        "valueType": 1,
+        "saved": 1,
+        "defaultValue": -1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/satisfaction/edging",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/sound/moan",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/select/mouth",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/select/boobs",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/select/pussy",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "pcs/select/ass",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "PoiyomiBrightness",
+        "valueType": 1,
+        "saved": 1,
+        "defaultValue": 0.5,
+        "networkSynced": 1
+      },
+      {
+        "name": "PoiyomiGrayscale",
+        "valueType": 1,
+        "saved": 1,
+        "defaultValue": 0.5,
+        "networkSynced": 1
+      },
+      {
+        "name": "__MA/AutoParam/开启吸附（需关闭其他吸附）$0",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "__MA/AutoParam/断面图$1",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "__MA/AutoParam/平板电脑$2",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "__MA/AutoParam/关闭抓取球$3",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "__MA/AutoParam/开启$4",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "__MA/AutoParam/音效$5",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF94_Cock_Toggle",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF94_Cock_Angle",
+        "valueType": 1,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF94_Cock_Throb",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF94_Cock_Erect",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF94_Cock_Shrunk",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF94_Cock_Size",
+        "valueType": 1,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF94_Cock_SPS",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF94_Sock_Toggle",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF94_Condom_Toggle",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF94_Condom_Fill",
+        "valueType": 1,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF94_Condom_Cum",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF94_Condom_Fill_Toggle",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 1.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "Go/VRCEmote",
+        "valueType": 0,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "Go/Float",
+        "valueType": 1,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "Go/PoseRadial",
+        "valueType": 1,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "Go/Stationary",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "Go/Locomotion",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "Go/Jump&Fall",
+        "valueType": 2,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "Go/StandIdle",
+        "valueType": 0,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "Go/CrouchIdle",
+        "valueType": 0,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "Go/ProneIdle",
+        "valueType": 0,
+        "saved": 1,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "Go/Swimming",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "Go/PuppetX",
+        "valueType": 1,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "Go/PuppetY",
+        "valueType": 1,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "Go/Height",
+        "valueType": 1,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "VF8_autoMode",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "VF8_stealth",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF8_multi",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      },
+      {
+        "name": "VF8_口交",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF8_阴道",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF8_菊花",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF8_右手",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF8_左手",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF8_乳交",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF8_右脚",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VF8_左脚（高跟）",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 1
+      },
+      {
+        "name": "VFH/Version/10",
+        "valueType": 2,
+        "saved": 0,
+        "defaultValue": 0.0,
+        "networkSynced": 0
+      }
+    ]
+  }
+}

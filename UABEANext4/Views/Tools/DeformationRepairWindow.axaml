@@ -1,0 +1,116 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:UABEANext4.ViewModels.Tools"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="700"
+        x:Class="UABEANext4.Views.Tools.DeformationRepairWindow"
+        x:DataType="vm:DeformationRepairViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="变形修复 (Deformation Repair)"
+        Width="1100" Height="750"
+        Background="{DynamicResource DockThemeBackgroundBrush}"
+        WindowStartupLocation="CenterOwner">
+
+  <Design.DataContext>
+    <vm:DeformationRepairViewModel />
+  </Design.DataContext>
+
+  <Grid RowDefinitions="Auto,*,Auto" Margin="15">
+    
+    <!-- Top: File Selection & Control -->
+    <Border Grid.Row="0" Classes="card" Padding="10" Margin="0,0,0,15" Background="{DynamicResource DockThemeBorderLowBrush}" CornerRadius="4">
+      <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*,Auto">
+        
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,10,0">
+          <TextBlock Text="源模型 (Model A - Source):" FontWeight="SemiBold" Margin="0,0,0,5" />
+          <ComboBox HorizontalAlignment="Stretch" ItemsSource="{Binding AvailableFiles}" SelectedItem="{Binding SourceFile}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="0,0,10,0">
+          <TextBlock Text="目标模型 (Model B - Target):" FontWeight="SemiBold" Margin="0,0,0,5" />
+          <ComboBox HorizontalAlignment="Stretch" ItemsSource="{Binding AvailableFiles}" SelectedItem="{Binding TargetFile}" />
+        </StackPanel>
+
+        <Button Grid.Row="0" Grid.Column="2" Content="开始匹配 (Start Match)" 
+                Height="50" Width="120" VerticalAlignment="Bottom"
+                Command="{Binding StartMatchingCommand}" IsEnabled="{Binding !IsWorking}" Classes="accent" />
+
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="3" FontSize="11" Foreground="Gray" Margin="0,10,0,0"
+                   Text="匹配规则：基于层级路径和名称完全匹配。Transform 仅修复旋转；Mesh 替换原始数据。 (Matching: Identity by hierarchy path. Transform: rotation only. Mesh: binary replacement.)" />
+      </Grid>
+    </Border>
+
+    <!-- Middle: Hierarchy Tree -->
+    <Grid Grid.Row="1" ColumnDefinitions="*,300" Margin="0,0,0,15">
+      
+      <Border Grid.Column="0" BorderThickness="1" BorderBrush="{DynamicResource DockThemeBorderLowBrush}" CornerRadius="4">
+        <Grid RowDefinitions="Auto,*">
+          <Border Grid.Row="0" Background="{DynamicResource DockThemeBorderLowBrush}" Padding="5">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+              <Button Content="全选 (Select All)" Command="{Binding SelectAllCommand}" FontSize="12" Padding="8,2" />
+              <Button Content="全不选 (Deselect All)" Command="{Binding DeselectAllCommand}" FontSize="12" Padding="8,2" />
+              <Separator Classes="vertical" />
+              <TextBlock Text="匹配列表 (Matched Hierarchy):" VerticalAlignment="Center" FontWeight="SemiBold" />
+            </StackPanel>
+          </Border>
+          
+          <TreeView Grid.Row="1" ItemsSource="{Binding MatchRoots}">
+            <TreeView.ItemTemplate>
+              <TreeDataTemplate ItemsSource="{Binding Children}" x:DataType="vm:DeformationMatchNode">
+                <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,2">
+                  <CheckBox IsChecked="{Binding IsChecked}" MinWidth="20" />
+                  <TextBlock Text="{Binding Type}" Foreground="#AAA" Width="80" VerticalAlignment="Center" FontSize="12" />
+                  <TextBlock Text="{Binding Name}" FontWeight="Medium" MinWidth="180" VerticalAlignment="Center" />
+                  <TextBlock Text="{Binding DiffOverview}" Foreground="#FE8" FontSize="12" VerticalAlignment="Center" Margin="10,0,0,0" />
+                </StackPanel>
+              </TreeDataTemplate>
+            </TreeView.ItemTemplate>
+          </TreeView>
+        </Grid>
+      </Border>
+
+      <!-- Right Panel: Logs & Differences -->
+      <Border Grid.Column="1" Margin="15,0,0,0" BorderThickness="1" BorderBrush="{DynamicResource DockThemeBorderLowBrush}" CornerRadius="4">
+        <TabControl Padding="0">
+          <TabItem Header="差异汇总 (Differences)">
+            <Grid RowDefinitions="Auto,*">
+              <TextBlock Grid.Row="0" Text="检测到的差异 (Mismatched Items):" FontWeight="SemiBold" Margin="10,10,10,5" />
+              <ListBox Grid.Row="1" ItemsSource="{Binding DifferenceList}" Background="Transparent" BorderThickness="0">
+                <ListBox.ItemTemplate>
+                  <DataTemplate x:DataType="vm:DeformationMatchNode">
+                    <StackPanel Spacing="2" Margin="0,2">
+                      <TextBlock Text="{Binding DisplayPath}" FontSize="11" TextWrapping="Wrap" />
+                      <TextBlock Text="{Binding DiffOverview}" FontSize="10" Foreground="#FE8" />
+                    </StackPanel>
+                  </DataTemplate>
+                </ListBox.ItemTemplate>
+              </ListBox>
+            </Grid>
+          </TabItem>
+          <TabItem Header="执行日志 (Logs)">
+            <Grid RowDefinitions="Auto,*">
+              <TextBlock Grid.Row="0" Text="执行日志 (Logs):" FontWeight="SemiBold" Margin="10,10,10,5" />
+              <TextBox Grid.Row="1" Text="{Binding LogText}" IsReadOnly="True" AcceptsReturn="True"
+                       Background="Transparent" BorderThickness="0" FontFamily="Consolas,Monospace" FontSize="11"
+                       ScrollViewer.VerticalScrollBarVisibility="Auto" />
+            </Grid>
+          </TabItem>
+        </TabControl>
+      </Border>
+    </Grid>
+
+    <!-- Bottom: Progress & Execute -->
+    <Grid Grid.Row="2" ColumnDefinitions="*,Auto">
+      <StackPanel Grid.Column="0" VerticalAlignment="Center" Spacing="5">
+        <TextBlock Text="{Binding ProgressText}" FontSize="13" />
+        <ProgressBar Minimum="0" Maximum="1" Value="{Binding ProgressValue}" Height="15" IsVisible="{Binding IsWorking}" />
+      </StackPanel>
+      
+      <Button Grid.Column="1" Content="确认修复 (Confirm Repair)" 
+              Height="45" Width="180" Margin="20,0,0,0"
+              Command="{Binding ExecuteRepairCommand}" IsEnabled="{Binding !IsWorking}" Classes="accent" />
+    </Grid>
+    
+  </Grid>
+</Window>

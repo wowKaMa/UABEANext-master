@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:UABEANext4.ViewModels.Dialogs"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="150"
+        x:Class="UABEANext4.Views.Dialogs.CompressionSelectionWindow"
+        x:DataType="vm:CompressionSelectionViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Save Options"
+        Width="400" Height="150"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False">
+
+  <Design.DataContext>
+    <vm:CompressionSelectionViewModel />
+  </Design.DataContext>
+
+  <StackPanel Margin="20" Spacing="20">
+    <TextBlock Text="Select Compression Method (选择压缩方式):" FontWeight="Bold" HorizontalAlignment="Center" />
+    
+    <Grid ColumnDefinitions="*,*,*" HorizontalAlignment="Center" Width="350">
+      <Button Grid.Column="0" Content="LZMA" Command="{Binding SelectLZMACommand}" CommandParameter="{Binding $parent[Window]}" Margin="5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+      <Button Grid.Column="1" Content="LZ4" Command="{Binding SelectLZ4Command}" CommandParameter="{Binding $parent[Window]}" Margin="5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+      <Button Grid.Column="2" Content="不压缩（No Compression）" Command="{Binding SelectNoneCommand}" CommandParameter="{Binding $parent[Window]}" Margin="5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+    </Grid>
+  </StackPanel>
+</Window>

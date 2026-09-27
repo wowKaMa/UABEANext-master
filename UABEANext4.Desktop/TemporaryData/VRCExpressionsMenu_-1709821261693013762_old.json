@@ -1,0 +1,212 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "功能 » GoGo Loco » .dup.1 » .dup.1 » ",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7820606835662739357
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 255.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -2913003160347834079
+        },
+        "type": 203,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 232.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": "Go/PoseRadial"
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -6126172753174070114
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 233.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7947610248450795528
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 230.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -8152989098649657020
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 231.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -4493952752643412650
+        },
+        "type": 101,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 229.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -7102473952621725759
+        },
+        "type": 203,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 125.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": "Go/Float"
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 1407950644678256035
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/Stationary"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

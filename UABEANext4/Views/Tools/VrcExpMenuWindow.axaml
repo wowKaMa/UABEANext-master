@@ -1,0 +1,329 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:UABEANext4.ViewModels.Tools"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
+        x:Class="UABEANext4.Views.Tools.VrcExpMenuWindow"
+        x:DataType="vm:VrcExpMenuViewModel"
+        Title="{Binding AssetName, StringFormat='菜单 (Menu) - {0}'}"
+        Width="800" Height="700"
+        Background="#3c3c3c"
+        WindowStartupLocation="CenterOwner">
+
+    <Window.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="#e0e0e0" />
+        </Style>
+        <Style Selector="TextBox">
+            <Setter Property="Background" Value="#2d2d2d" />
+            <Setter Property="BorderBrush" Value="#242424" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Padding" Value="5,2" />
+            <Setter Property="MinHeight" Value="24" />
+        </Style>
+        <Style Selector="ComboBox">
+            <Setter Property="Background" Value="#2d2d2d" />
+            <Setter Property="BorderBrush" Value="#242424" />
+            <Setter Property="MinHeight" Value="24" />
+            <Setter Property="FontSize" Value="12" />
+        </Style>
+        <Style Selector="Slider">
+            <Setter Property="MinHeight" Value="20" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto, *, Auto">
+        <!-- Main Scrollable Content -->
+        <ScrollViewer Grid.Row="1" Padding="10">
+            <StackPanel Spacing="10">
+                
+                <!-- Parameters Header -->
+                <Grid ColumnDefinitions="100, *, Auto" VerticalAlignment="Center">
+                    <TextBlock Text="Parameters" VerticalAlignment="Center" />
+                    <Button Grid.Column="1" Command="{Binding SelectParametersCommand}" HorizontalAlignment="Stretch" Padding="0" Background="Transparent" BorderThickness="0" Margin="5,0">
+                        <Border BorderBrush="#555" BorderThickness="1" CornerRadius="3" Background="#222" Padding="5,2" HorizontalAlignment="Stretch">
+                            <TextBlock Text="{Binding ParametersName}" VerticalAlignment="Center" Foreground="#DDD" TextTrimming="CharacterEllipsis" />
+                        </Border>
+                    </Button>
+                    <Button Grid.Column="2" Content="Open" Command="{Binding OpenParametersCommand}" Width="80" HorizontalContentAlignment="Center" />
+                </Grid>
+
+                <!-- Controls Section -->
+                <Expander IsExpanded="True" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" Padding="0">
+                    <Expander.Header>
+                        <Grid ColumnDefinitions="*, Auto" HorizontalAlignment="Stretch">
+                            <TextBlock Text="Controls" FontWeight="Bold" />
+                            <TextBlock Grid.Column="1" Text="{Binding SelectionCountText}" Margin="0,0,20,0" />
+                        </Grid>
+                    </Expander.Header>
+                    
+                    <StackPanel Spacing="2">
+                        <!-- Controls List -->
+                        <ListBox ItemsSource="{Binding Controls}" SelectedItem="{Binding SelectedControl}" 
+                                 Background="#353535" BorderBrush="#242424" BorderThickness="1" MinHeight="100" MaxHeight="250">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid ColumnDefinitions="Auto, *, Auto">
+                                        <TextBlock Text="=" FontWeight="Bold" Margin="5,0" VerticalAlignment="Center" Foreground="#808080" />
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Name}" />
+                                            <TextBlock Text="{Binding Parameter, StringFormat=' ({0})'}" Foreground="#808080" FontSize="11" Margin="5,0,0,0" />
+                                        </StackPanel>
+                                        <TextBlock Grid.Column="2" Text="{Binding DisplayType}" Foreground="#808080" FontSize="11" VerticalAlignment="Center" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                        <!-- Add/Remove Buttons -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="2">
+                            <Button Content="+" Command="{Binding AddControlCommand}" Width="30" HorizontalContentAlignment="Center" Background="#4a4a4a" />
+                            <Button Content="-" Command="{Binding DeleteControlCommand}" Width="30" HorizontalContentAlignment="Center" Background="#4a4a4a" />
+                        </StackPanel>
+
+                        <!-- Inspector Area (for Selected Item) -->
+                        <Border IsVisible="{Binding SelectedControl, Converter={x:Static ObjectConverters.IsNotNull}}"
+                                Background="#3c3c3c" BorderBrush="#242424" BorderThickness="1" CornerRadius="2" Padding="10" Margin="0,10,0,0">
+                            <StackPanel Spacing="8">
+                                <!-- Name and Icon -->
+                                <Grid ColumnDefinitions="100, *, 120, Auto">
+                                    <TextBlock Text="Name" VerticalAlignment="Center" />
+                                    <TextBox Grid.Column="1" Text="{Binding SelectedControl.Name}" Margin="0,0,5,0" />
+                                    <Button Grid.Column="2" Command="{Binding SelectIconCommand}" HorizontalAlignment="Stretch" Padding="0" Background="Transparent" BorderThickness="0">
+                                        <Border BorderBrush="#555" BorderThickness="1" CornerRadius="3" Background="#222" Padding="5,2" HorizontalAlignment="Stretch">
+                                            <TextBlock Text="{Binding SelectedControl.IconName}" VerticalAlignment="Center" Foreground="#DDD" TextTrimming="CharacterEllipsis" />
+                                        </Border>
+                                    </Button>
+                                    <TextBlock Grid.Column="3" Text="◎" Margin="5,0" VerticalAlignment="Center" />
+                                </Grid>
+
+                                <!-- Type -->
+                                <Grid ColumnDefinitions="100, *, Auto">
+                                    <TextBlock Text="Type" VerticalAlignment="Center" />
+                                    <ComboBox Grid.Column="1" ItemsSource="{Binding ControlTypes}"
+                                              SelectedValue="{Binding SelectedControl.Type}"
+                                              SelectedValueBinding="{Binding Id}"
+                                              DisplayMemberBinding="{Binding Name}"
+                                              HorizontalAlignment="Stretch" />
+                                    <TextBlock Grid.Column="2" Text="?" Margin="10,0,0,0" VerticalAlignment="Center" />
+                                </Grid>
+
+                                <!-- Parameter Selection Dropdown -->
+                                <Grid ColumnDefinitions="100, *, 120">
+                                    <TextBlock Text="Parameter" VerticalAlignment="Center" />
+                                    <ComboBox Grid.Column="1" ItemsSource="{Binding SelectedControl.AvailableParameters}"
+                                              SelectedValue="{Binding SelectedControl.Parameter}"
+                                              SelectedValueBinding="{Binding Name}"
+                                              DisplayMemberBinding="{Binding DisplayName}"
+                                              HorizontalAlignment="Stretch" Margin="0,0,5,0" />
+                                    <TextBox Grid.Column="2" Text="{Binding SelectedControl.Parameter}" IsReadOnly="True" Opacity="0.5" />
+                                </Grid>
+
+                                <!-- Dynamic Value Section -->
+                                <Grid ColumnDefinitions="100, *">
+                                    <TextBlock Text="Value" VerticalAlignment="Center" />
+                                    <Panel Grid.Column="1">
+                                        <!-- Int Inspector (0-255) -->
+                                        <Grid ColumnDefinitions="*, 80" IsVisible="{Binding SelectedControl.IsInt}">
+                                            <Slider Minimum="0" Maximum="255" Value="{Binding SelectedControl.IntValue}" 
+                                                    TickFrequency="1" IsSnapToTickEnabled="True" Grid.Column="0" />
+                                            <NumericUpDown Value="{Binding SelectedControl.IntValue}" Minimum="0" Maximum="255" 
+                                                           Increment="1" Grid.Column="1" Margin="5,0,0,0" FormatString="0" />
+                                        </Grid>
+                                        <!-- Float Inspector (0 to 255, Integer Only) -->
+                                        <Grid ColumnDefinitions="*, 80" IsVisible="{Binding SelectedControl.IsFloat}">
+                                            <Slider Minimum="0" Maximum="255" Value="{Binding SelectedControl.FloatValue}" 
+                                                    TickFrequency="1" IsSnapToTickEnabled="True" Grid.Column="0" />
+                                            <NumericUpDown Value="{Binding SelectedControl.FloatValue}" Minimum="0" Maximum="255" 
+                                                           Increment="1" Grid.Column="1" Margin="5,0,0,0" FormatString="0" />
+                                        </Grid>
+                                        <!-- Bool Inspector -->
+                                        <CheckBox IsChecked="{Binding SelectedControl.IsChecked}" IsVisible="{Binding SelectedControl.IsBool}" />
+                                        <!-- Unknown Inspector -->
+                                        <TextBox Text="{Binding SelectedControl.Value}" MaxWidth="100" HorizontalAlignment="Left"
+                                                 IsVisible="{Binding SelectedControl.IsUnknown}" />
+                                    </Panel>
+                                </Grid>
+                                
+                                <!-- Style -->
+                                <Grid ColumnDefinitions="100, *, Auto">
+                                    <TextBlock Text="Style" VerticalAlignment="Center" />
+                                    <NumericUpDown Grid.Column="1" Value="{Binding SelectedControl.Style}" Minimum="0" Maximum="255" Increment="1" FormatString="0" />
+                                </Grid>
+
+                                <!-- SubMenu selection row -->
+                                <StackPanel IsVisible="{Binding SelectedControl.IsSubMenu}">
+                                    <Separator Background="#242424" Margin="0,5" />
+                                    <Grid ColumnDefinitions="100, *" Margin="0,5">
+                                        <TextBlock Text="Sub Menu" VerticalAlignment="Center" />
+                                        <Grid Grid.Column="1" ColumnDefinitions="*, Auto">
+                                            <Button Grid.Column="0" Command="{Binding SelectSubMenuCommand}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0" Background="Transparent" BorderThickness="0">
+                                                <Border BorderBrush="#555" BorderThickness="1" CornerRadius="3" Background="#222" Padding="5,2" HorizontalAlignment="Stretch">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <PathIcon Data="{StaticResource folder_open_regular}" Width="14" Height="14" Margin="0,0,5,0" Foreground="#AAA" />
+                                                        <TextBlock Text="{Binding SelectedControl.SubMenuName}" VerticalAlignment="Center" Foreground="#DDD" />
+                                                    </StackPanel>
+                                                </Border>
+                                            </Button>
+                                            <Button Grid.Column="1" Content="Open" Command="{Binding OpenSubMenuCommand}" Margin="5,0,0,0" Width="80" HorizontalContentAlignment="Center" />
+                                        </Grid>
+                                    </Grid>
+                                </StackPanel>
+
+                                <!-- Specialized Puppet Sections -->
+                                <StackPanel IsVisible="{Binding SelectedControl.IsTwoAxisPuppet}">
+                                    <Separator Background="#242424" Margin="0,5" />
+                                    <StackPanel Spacing="5">
+                                        <Grid ColumnDefinitions="100, *, 120" Margin="0,5">
+                                            <TextBlock Text="Horizontal" VerticalAlignment="Center" />
+                                            <ComboBox Grid.Column="1" ItemsSource="{Binding SelectedControl.AvailableParameters}" SelectedValue="{Binding SelectedControl.HorizontalParam}" SelectedValueBinding="{Binding Name}" DisplayMemberBinding="{Binding DisplayName}" HorizontalAlignment="Stretch" Margin="0,0,5,0"/>
+                                            <TextBox Grid.Column="2" Text="{Binding SelectedControl.HorizontalParam}" IsReadOnly="True" Opacity="0.5" />
+                                        </Grid>
+                                        <Grid ColumnDefinitions="100, *, 120" Margin="0,5">
+                                            <TextBlock Text="Vertical" VerticalAlignment="Center" />
+                                            <ComboBox Grid.Column="1" ItemsSource="{Binding SelectedControl.AvailableParameters}" SelectedValue="{Binding SelectedControl.VerticalParam}" SelectedValueBinding="{Binding Name}" DisplayMemberBinding="{Binding DisplayName}" HorizontalAlignment="Stretch" Margin="0,0,5,0"/>
+                                            <TextBox Grid.Column="2" Text="{Binding SelectedControl.VerticalParam}" IsReadOnly="True" Opacity="0.5" />
+                                        </Grid>
+                                        <Grid ColumnDefinitions="100, *, 120, Auto" Margin="0,5">
+                                            <TextBlock Text="Up Label" VerticalAlignment="Center" />
+                                            <TextBox Grid.Column="1" Text="{Binding SelectedControl.UpLabel.Name}" Margin="0,0,5,0" />
+                                            <Button Grid.Column="2" Command="{Binding SelectedControl.UpLabel.SelectIconCommand}" HorizontalAlignment="Stretch" Padding="0" Background="Transparent" BorderThickness="0">
+                                                <Border BorderBrush="#555" BorderThickness="1" CornerRadius="3" Background="#222" Padding="5,2" HorizontalAlignment="Stretch">
+                                                    <TextBlock Text="{Binding SelectedControl.UpLabel.IconName}" VerticalAlignment="Center" Foreground="#DDD" TextTrimming="CharacterEllipsis" />
+                                                </Border>
+                                            </Button>
+                                            <TextBlock Grid.Column="3" Text="◎" Margin="5,0" VerticalAlignment="Center" />
+                                        </Grid>
+                                        <Grid ColumnDefinitions="100, *, 120, Auto" Margin="0,5">
+                                            <TextBlock Text="Right Label" VerticalAlignment="Center" />
+                                            <TextBox Grid.Column="1" Text="{Binding SelectedControl.RightLabel.Name}" Margin="0,0,5,0" />
+                                            <Button Grid.Column="2" Command="{Binding SelectedControl.RightLabel.SelectIconCommand}" HorizontalAlignment="Stretch" Padding="0" Background="Transparent" BorderThickness="0">
+                                                <Border BorderBrush="#555" BorderThickness="1" CornerRadius="3" Background="#222" Padding="5,2" HorizontalAlignment="Stretch">
+                                                    <TextBlock Text="{Binding SelectedControl.RightLabel.IconName}" VerticalAlignment="Center" Foreground="#DDD" TextTrimming="CharacterEllipsis" />
+                                                </Border>
+                                            </Button>
+                                            <TextBlock Grid.Column="3" Text="◎" Margin="5,0" VerticalAlignment="Center" />
+                                        </Grid>
+                                        <Grid ColumnDefinitions="100, *, 120, Auto" Margin="0,5">
+                                            <TextBlock Text="Down Label" VerticalAlignment="Center" />
+                                            <TextBox Grid.Column="1" Text="{Binding SelectedControl.DownLabel.Name}" Margin="0,0,5,0" />
+                                            <Button Grid.Column="2" Command="{Binding SelectedControl.DownLabel.SelectIconCommand}" HorizontalAlignment="Stretch" Padding="0" Background="Transparent" BorderThickness="0">
+                                                <Border BorderBrush="#555" BorderThickness="1" CornerRadius="3" Background="#222" Padding="5,2" HorizontalAlignment="Stretch">
+                                                    <TextBlock Text="{Binding SelectedControl.DownLabel.IconName}" VerticalAlignment="Center" Foreground="#DDD" TextTrimming="CharacterEllipsis" />
+                                                </Border>
+                                            </Button>
+                                            <TextBlock Grid.Column="3" Text="◎" Margin="5,0" VerticalAlignment="Center" />
+                                        </Grid>
+                                        <Grid ColumnDefinitions="100, *, 120, Auto" Margin="0,5">
+                                            <TextBlock Text="Left Label" VerticalAlignment="Center" />
+                                            <TextBox Grid.Column="1" Text="{Binding SelectedControl.LeftLabel.Name}" Margin="0,0,5,0" />
+                                            <Button Grid.Column="2" Command="{Binding SelectedControl.LeftLabel.SelectIconCommand}" HorizontalAlignment="Stretch" Padding="0" Background="Transparent" BorderThickness="0">
+                                                <Border BorderBrush="#555" BorderThickness="1" CornerRadius="3" Background="#222" Padding="5,2" HorizontalAlignment="Stretch">
+                                                    <TextBlock Text="{Binding SelectedControl.LeftLabel.IconName}" VerticalAlignment="Center" Foreground="#DDD" TextTrimming="CharacterEllipsis" />
+                                                </Border>
+                                            </Button>
+                                            <TextBlock Grid.Column="3" Text="◎" Margin="5,0" VerticalAlignment="Center" />
+                                        </Grid>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <StackPanel IsVisible="{Binding SelectedControl.IsFourAxisPuppet}">
+                                    <Separator Background="#242424" Margin="0,5" />
+                                    <StackPanel Spacing="5">
+                                        <Grid ColumnDefinitions="100, *, 120" Margin="0,5">
+                                            <TextBlock Text="Up Param" VerticalAlignment="Center" />
+                                            <ComboBox Grid.Column="1" ItemsSource="{Binding SelectedControl.AvailableParameters}" SelectedValue="{Binding SelectedControl.UpParam}" SelectedValueBinding="{Binding Name}" DisplayMemberBinding="{Binding DisplayName}" HorizontalAlignment="Stretch" Margin="0,0,5,0"/>
+                                            <TextBox Grid.Column="2" Text="{Binding SelectedControl.UpParam}" IsReadOnly="True" Opacity="0.5" />
+                                        </Grid>
+                                        <Grid ColumnDefinitions="100, *, 120" Margin="0,5">
+                                            <TextBlock Text="Right Param" VerticalAlignment="Center" />
+                                            <ComboBox Grid.Column="1" ItemsSource="{Binding SelectedControl.AvailableParameters}" SelectedValue="{Binding SelectedControl.RightParam}" SelectedValueBinding="{Binding Name}" DisplayMemberBinding="{Binding DisplayName}" HorizontalAlignment="Stretch" Margin="0,0,5,0"/>
+                                            <TextBox Grid.Column="2" Text="{Binding SelectedControl.RightParam}" IsReadOnly="True" Opacity="0.5" />
+                                        </Grid>
+                                        <Grid ColumnDefinitions="100, *, 120" Margin="0,5">
+                                            <TextBlock Text="Down Param" VerticalAlignment="Center" />
+                                            <ComboBox Grid.Column="1" ItemsSource="{Binding SelectedControl.AvailableParameters}" SelectedValue="{Binding SelectedControl.DownParam}" SelectedValueBinding="{Binding Name}" DisplayMemberBinding="{Binding DisplayName}" HorizontalAlignment="Stretch" Margin="0,0,5,0"/>
+                                            <TextBox Grid.Column="2" Text="{Binding SelectedControl.DownParam}" IsReadOnly="True" Opacity="0.5" />
+                                        </Grid>
+                                        <Grid ColumnDefinitions="100, *, 120" Margin="0,5">
+                                            <TextBlock Text="Left Param" VerticalAlignment="Center" />
+                                            <ComboBox Grid.Column="1" ItemsSource="{Binding SelectedControl.AvailableParameters}" SelectedValue="{Binding SelectedControl.LeftParam}" SelectedValueBinding="{Binding Name}" DisplayMemberBinding="{Binding DisplayName}" HorizontalAlignment="Stretch" Margin="0,0,5,0"/>
+                                            <TextBox Grid.Column="2" Text="{Binding SelectedControl.LeftParam}" IsReadOnly="True" Opacity="0.5" />
+                                        </Grid>
+                                        <Grid ColumnDefinitions="100, *, 120, Auto" Margin="0,5">
+                                            <TextBlock Text="Up Label" VerticalAlignment="Center" />
+                                            <TextBox Grid.Column="1" Text="{Binding SelectedControl.UpLabel.Name}" Margin="0,0,5,0" />
+                                            <Button Grid.Column="2" Command="{Binding SelectedControl.UpLabel.SelectIconCommand}" HorizontalAlignment="Stretch" Padding="0" Background="Transparent" BorderThickness="0">
+                                                <Border BorderBrush="#555" BorderThickness="1" CornerRadius="3" Background="#222" Padding="5,2" HorizontalAlignment="Stretch">
+                                                    <TextBlock Text="{Binding SelectedControl.UpLabel.IconName}" VerticalAlignment="Center" Foreground="#DDD" TextTrimming="CharacterEllipsis" />
+                                                </Border>
+                                            </Button>
+                                            <TextBlock Grid.Column="3" Text="◎" Margin="5,0" VerticalAlignment="Center" />
+                                        </Grid>
+                                        <Grid ColumnDefinitions="100, *, 120, Auto" Margin="0,5">
+                                            <TextBlock Text="Right Label" VerticalAlignment="Center" />
+                                            <TextBox Grid.Column="1" Text="{Binding SelectedControl.RightLabel.Name}" Margin="0,0,5,0" />
+                                            <Button Grid.Column="2" Command="{Binding SelectedControl.RightLabel.SelectIconCommand}" HorizontalAlignment="Stretch" Padding="0" Background="Transparent" BorderThickness="0">
+                                                <Border BorderBrush="#555" BorderThickness="1" CornerRadius="3" Background="#222" Padding="5,2" HorizontalAlignment="Stretch">
+                                                    <TextBlock Text="{Binding SelectedControl.RightLabel.IconName}" VerticalAlignment="Center" Foreground="#DDD" TextTrimming="CharacterEllipsis" />
+                                                </Border>
+                                            </Button>
+                                            <TextBlock Grid.Column="3" Text="◎" Margin="5,0" VerticalAlignment="Center" />
+                                        </Grid>
+                                        <Grid ColumnDefinitions="100, *, 120, Auto" Margin="0,5">
+                                            <TextBlock Text="Down Label" VerticalAlignment="Center" />
+                                            <TextBox Grid.Column="1" Text="{Binding SelectedControl.DownLabel.Name}" Margin="0,0,5,0" />
+                                            <Button Grid.Column="2" Command="{Binding SelectedControl.DownLabel.SelectIconCommand}" HorizontalAlignment="Stretch" Padding="0" Background="Transparent" BorderThickness="0">
+                                                <Border BorderBrush="#555" BorderThickness="1" CornerRadius="3" Background="#222" Padding="5,2" HorizontalAlignment="Stretch">
+                                                    <TextBlock Text="{Binding SelectedControl.DownLabel.IconName}" VerticalAlignment="Center" Foreground="#DDD" TextTrimming="CharacterEllipsis" />
+                                                </Border>
+                                            </Button>
+                                            <TextBlock Grid.Column="3" Text="◎" Margin="5,0" VerticalAlignment="Center" />
+                                        </Grid>
+                                        <Grid ColumnDefinitions="100, *, 120, Auto" Margin="0,5">
+                                            <TextBlock Text="Left Label" VerticalAlignment="Center" />
+                                            <TextBox Grid.Column="1" Text="{Binding SelectedControl.LeftLabel.Name}" Margin="0,0,5,0" />
+                                            <Button Grid.Column="2" Command="{Binding SelectedControl.LeftLabel.SelectIconCommand}" HorizontalAlignment="Stretch" Padding="0" Background="Transparent" BorderThickness="0">
+                                                <Border BorderBrush="#555" BorderThickness="1" CornerRadius="3" Background="#222" Padding="5,2" HorizontalAlignment="Stretch">
+                                                    <TextBlock Text="{Binding SelectedControl.LeftLabel.IconName}" VerticalAlignment="Center" Foreground="#DDD" TextTrimming="CharacterEllipsis" />
+                                                </Border>
+                                            </Button>
+                                            <TextBlock Grid.Column="3" Text="◎" Margin="5,0" VerticalAlignment="Center" />
+                                        </Grid>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <StackPanel IsVisible="{Binding SelectedControl.IsRadialPuppet}">
+                                    <Separator Background="#242424" Margin="0,5" />
+                                    <Grid ColumnDefinitions="100, *, 120" Margin="0,5">
+                                        <TextBlock Text="Parameter" VerticalAlignment="Center" />
+                                        <ComboBox Grid.Column="1" ItemsSource="{Binding SelectedControl.AvailableParameters}" SelectedValue="{Binding SelectedControl.RadialParam}" SelectedValueBinding="{Binding Name}" DisplayMemberBinding="{Binding DisplayName}" HorizontalAlignment="Stretch" Margin="0,0,5,0"/>
+                                        <TextBox Grid.Column="2" Text="{Binding SelectedControl.RadialParam}" IsReadOnly="True" Opacity="0.5" />
+                                    </Grid>
+                                </StackPanel>
+
+                                <!-- Reordering Buttons -->
+                                <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Right" Margin="0,5,0,0">
+                                    <Button Content="Move Up" Command="{Binding MoveUpCommand}" />
+                                    <Button Content="Move Down" Command="{Binding MoveDownCommand}" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Footer -->
+        <Border Grid.Row="2" Background="#383838" Padding="10" BorderBrush="#111111" BorderThickness="0,1,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+                <Button Content="应用修改 (Apply Change)" Command="{Binding ApplyChangesCommand}" Classes="accent" />
+                <Button Content="关闭 (Close)" Click="Close_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

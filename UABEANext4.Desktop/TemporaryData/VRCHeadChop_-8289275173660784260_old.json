@@ -1,0 +1,26 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 693436344812952265
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 141131925901019976
+  },
+  "m_Name": "",
+  "targetBones": {
+    "Array": [
+      {
+        "transform": {
+          "m_FileID": 0,
+          "m_PathID": -5278881723116075075
+        },
+        "scaleFactor": 1.0,
+        "applyCondition": 0,
+        "defaultScaleFactorAssigned": 1
+      }
+    ]
+  },
+  "globalScaleFactor": 1.0
+}

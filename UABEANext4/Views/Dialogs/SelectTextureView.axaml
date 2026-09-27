@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dlg="using:UABEANext4.ViewModels.Dialogs"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="500"
+             x:Class="UABEANext4.Views.Dialogs.SelectTextureView"
+             x:DataType="dlg:SelectTextureViewModel">
+    <Grid Margin="10" RowDefinitions="Auto, *, Auto">
+        <!-- Search Bar -->
+        <TextBox Grid.Row="0" Text="{Binding SearchText}" Watermark="搜索贴图... (Search Texture...)" Margin="0,0,0,10" />
+        
+        <!-- Texture List (Vertical) -->
+        <ListBox Grid.Row="1" ItemsSource="{Binding Textures}" SelectedItem="{Binding SelectedTexture}" Background="#1e1e1e">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="Auto, *, Auto" Margin="2" Height="50">
+                        <Border Width="42" Height="42" Margin="0,0,10,0" Background="#111" BorderBrush="#333" BorderThickness="1" CornerRadius="4">
+                            <Panel>
+                                <Image Source="{Binding Thumbnail}" Width="38" Height="38" Stretch="Uniform" />
+                                <TextBlock Text="?" IsVisible="{Binding Thumbnail, Converter={x:Static ObjectConverters.IsNull}}" 
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#333" />
+                            </Panel>
+                        </Border>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="#DDD" FontSize="12" />
+                            <TextBlock Text="{Binding FileName}" FontSize="10" Foreground="#666" />
+                        </StackPanel>
+                        <TextBlock Grid.Column="2" Text="{Binding Asset.PathId}" VerticalAlignment="Center" FontSize="10" Foreground="#444" Margin="10,0,0,0" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <!-- Action Buttons -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="0,10,0,0">
+            <Button Command="{Binding ConfirmCommand}" HotKey="Enter">选择 (Select)</Button>
+            <Button Command="{Binding CancelCommand}" HotKey="Escape">取消 (Cancel)</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

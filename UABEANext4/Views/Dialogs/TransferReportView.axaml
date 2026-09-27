@@ -1,0 +1,57 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dlg="using:UABEANext4.ViewModels.Dialogs"
+             mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="550"
+             x:Class="UABEANext4.Views.Dialogs.TransferReportView"
+             x:DataType="dlg:TransferReportViewModel">
+    <Grid RowDefinitions="Auto, Auto, *, Auto" Margin="15">
+        <!-- Header -->
+        <TextBlock Grid.Row="0" Text="转移报告 (Transfer Report)" FontSize="20" FontWeight="Bold" Margin="0,0,0,15" Foreground="#4CAF50" />
+        
+        <!-- Search Bar -->
+        <TextBox Grid.Row="1" Text="{Binding SearchText}" Watermark="搜索名称、类型或 PathID... (Search Name, Type, or PathID...)" Margin="0,0,0,10" />
+        
+        <!-- Grouped List -->
+        <ScrollViewer Grid.Row="2" Background="#1a1a1a" Padding="5">
+            <ItemsControl ItemsSource="{Binding Groups}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Expander Header="{Binding DisplayHeader}" IsExpanded="True" Margin="0,2" Padding="5">
+                            <StackPanel>
+                                <!-- Table Header -->
+                                <Grid ColumnDefinitions="*, 150, 150" Margin="5,2" Background="#222">
+                                    <TextBlock Text="名称 (Name)" FontWeight="Bold" Foreground="#888" Margin="5,2" />
+                                    <TextBlock Grid.Column="1" Text="原 PathID (Source)" FontWeight="Bold" Foreground="#888" Margin="5,2" />
+                                    <TextBlock Grid.Column="2" Text="新 PathID (Target)" FontWeight="Bold" Foreground="#888" Margin="5,2" />
+                                </Grid>
+                                <!-- Records -->
+                                <ItemsControl ItemsSource="{Binding Records}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="#333" BorderThickness="0,0,0,1">
+                                                <Grid ColumnDefinitions="*, 150, 150" Margin="5,8">
+                                                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Foreground="#DDD" TextWrapping="Wrap" />
+                                                    <TextBlock Grid.Column="1" Text="{Binding SourcePathId}" VerticalAlignment="Center" Foreground="#888" />
+                                                    <TextBlock Grid.Column="2" Text="{Binding TargetPathId}" VerticalAlignment="Center" Foreground="#4CAF50" FontWeight="Bold" />
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </Expander>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        
+        <!-- Summary/Close -->
+        <Grid Grid.Row="3" Margin="0,15,0,0">
+            <TextBlock Text="绿色显示的 PathID 已成功转移并在目标文件中创建。 (Green PathIDs are successfully transferred.)" 
+                       FontStyle="Italic" Foreground="#666" VerticalAlignment="Center" FontSize="11" />
+            <Button Content="关闭 (Close)" HorizontalAlignment="Right" IsCancel="True" />
+        </Grid>
+    </Grid>
+</UserControl>

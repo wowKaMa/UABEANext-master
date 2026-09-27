@@ -1,0 +1,89 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "R18 » 下一页 » RealKissSystem",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "Off",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "superneko.realkiss.mode$$Internal_0"
+        },
+        "value": 255.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "Auto",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "superneko.realkiss.mode$$Internal_0"
+        },
+        "value": 0.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "World Fixed",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "superneko.realkiss.mode$$Internal_0"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

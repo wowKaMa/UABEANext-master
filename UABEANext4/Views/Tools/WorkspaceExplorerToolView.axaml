@@ -1,0 +1,220 @@
+﻿<UserControl 
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uac="using:UABEANext4.Converters"
+    xmlns:uaw="using:UABEANext4.AssetWorkspace"
+    xmlns:tools="using:UABEANext4.ViewModels.Tools"
+    mc:Ignorable="d"
+    d:DesignWidth="800"
+    d:DesignHeight="450"
+    x:Class="UABEANext4.Views.Tools.WorkspaceExplorerToolView"
+    x:DataType="tools:WorkspaceExplorerToolViewModel">
+
+    <UserControl.KeyBindings>
+        <KeyBinding Gesture="F2" Command="{Binding RenameItem}" />
+    </UserControl.KeyBindings>
+
+    <UserControl.Resources>
+        <uac:WsItemColorConverter x:Key="WsItemColorConverter" />
+    </UserControl.Resources>
+
+    <Grid RowDefinitions="*,26">
+        <TreeView 
+            Margin="0,0,0,0" 
+            Background="{DynamicResource DockThemeListBackgroundBrush}" 
+            Name="SolutionTreeView"
+            ItemsSource="{Binding Workspace.RootItems}" 
+            SelectedItems="{Binding SelectedItems}"
+            SelectionMode="Multiple" 
+            Grid.Row="0">
+
+            <TreeView.ItemTemplate>
+                <TreeDataTemplate 
+                    DataType="{x:Type uaw:WorkspaceItem}" 
+                    ItemsSource="{Binding Children}">
+
+                    <TextBlock Text="{Binding Name}">
+                        <TextBlock.Foreground>
+                            <MultiBinding Converter="{StaticResource WsItemColorConverter}">
+                                <Binding Path="ObjectType" />
+                                <DynamicResource ResourceKey="DockThemeListBackgroundBrush" />
+                            </MultiBinding>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+
+                </TreeDataTemplate>
+            </TreeView.ItemTemplate>
+
+        </TreeView>
+
+        <Grid ColumnDefinitions="*,*,*" Grid.Row="1">
+            <Button 
+                Grid.Column="0" 
+                Command="{Binding LoadAll}" 
+                IsEnabled="{Binding Workspace.RootItems.Count}">
+                全部加载 (Load all)
+            </Button>
+
+            <Button 
+                Grid.Column="1" 
+                Click="ExpandAll" 
+                IsEnabled="{Binding Workspace.RootItems.Count}">
+                全部展开 (Expand all)
+            </Button>
+
+            <Button 
+                Grid.Column="2" 
+                Click="CollapseAll" 
+                IsEnabled="{Binding Workspace.RootItems.Count}">
+                全部折叠 (Collapse all)
+            </Button>
+        </Grid>
+
+    </Grid>
+
+</UserControl>
+<!-- <UserControl -->
+<!-- 根节点：定义一个 Avalonia 用户控件 -->
+
+<!-- xmlns="https://github.com/avaloniaui" -->
+<!-- Avalonia 的默认命名空间 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 提供 x: 前缀功能，比如 x:Class -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 设计时命名空间，只在设计器里用 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 兼容性命名空间 -->
+
+<!-- xmlns:uac="using:UABEANext4.Converters" -->
+<!-- 引用项目里的 Converters 命名空间 -->
+
+<!-- xmlns:uaw="using:UABEANext4.AssetWorkspace" -->
+<!-- 引用项目里的 AssetWorkspace 命名空间 -->
+
+<!-- xmlns:tools="using:UABEANext4.ViewModels.Tools" -->
+<!-- 引用项目里的 ViewModels.Tools 命名空间 -->
+
+<!-- mc:Ignorable="d" -->
+<!-- 忽略设计时命名空间 -->
+
+<!-- d:DesignWidth="800" -->
+<!-- 设计器里显示的宽度（800） -->
+
+<!-- d:DesignHeight="450" -->
+<!-- 设计器里显示的高度（450） -->
+
+<!-- x:Class="UABEANext4.Views.Tools.WorkspaceExplorerToolView" -->
+<!-- 指定这个控件对应的 C# 类 -->
+
+<!-- x:DataType="tools:WorkspaceExplorerToolViewModel" -->
+<!-- 指定绑定的数据类型（ViewModel） -->
+
+<!-- <UserControl.KeyBindings> -->
+<!-- 定义快捷键绑定 -->
+
+<!-- <KeyBinding Gesture="F2" Command="{Binding RenameItem}" /> -->
+<!-- 绑定 F2 键到 RenameItem 命令 -->
+
+<!-- </UserControl.KeyBindings> -->
+<!-- 结束快捷键绑定 -->
+
+<!-- <UserControl.Resources> -->
+<!-- 定义资源集合 -->
+
+<!-- <uac:WsItemColorConverter x:Key="WsItemColorConverter" /> -->
+<!-- 定义颜色转换器资源 -->
+
+<!-- </UserControl.Resources> -->
+<!-- 结束资源集合 -->
+
+<!-- <Grid RowDefinitions="*,26"> -->
+<!-- 定义一个网格布局，第一行自适应，第二行高度 26 -->
+
+<!-- <TreeView ...> -->
+<!-- 定义树视图控件 -->
+
+<!-- Margin="0,0,0,0" -->
+<!-- 设置外边距为 0 -->
+
+<!-- Background="{DynamicResource DockThemeListBackgroundBrush}" -->
+<!-- 设置背景颜色为 DockThemeListBackgroundBrush 动态资源 -->
+
+<!-- Name="SolutionTreeView" -->
+<!-- 设置控件名称为 SolutionTreeView -->
+
+<!-- ItemsSource="{Binding Workspace.RootItems}" -->
+<!-- 绑定树的根节点数据 -->
+
+<!-- SelectedItems="{Binding SelectedItems}" -->
+<!-- 绑定选中项集合 -->
+
+<!-- SelectionMode="Multiple" -->
+<!-- 设置选择模式为多选 -->
+
+<!-- Grid.Row="0" -->
+<!-- 放置在网格的第一行 -->
+
+<!-- <TreeView.ItemTemplate> -->
+<!-- 定义树节点的模板 -->
+
+<!-- <TreeDataTemplate DataType="{x:Type uaw:WorkspaceItem}" ItemsSource="{Binding Children}"> -->
+<!-- 定义数据模板，绑定 WorkspaceItem 类型，子节点绑定 Children -->
+
+<!-- <TextBlock Text="{Binding Name}"> -->
+<!-- 显示节点名称 -->
+
+<!-- <TextBlock.Foreground> -->
+<!-- 设置前景色 -->
+
+<!-- <MultiBinding Converter="{StaticResource WsItemColorConverter}"> -->
+<!-- 使用颜色转换器进行多重绑定 -->
+
+<!-- <Binding Path="ObjectType" /> -->
+<!-- 绑定对象类型 -->
+
+<!-- <DynamicResource ResourceKey="DockThemeListBackgroundBrush" /> -->
+<!-- 使用 DockThemeListBackgroundBrush 动态资源 -->
+
+<!-- </MultiBinding> -->
+<!-- 结束多重绑定 -->
+
+<!-- </TextBlock.Foreground> -->
+<!-- 结束前景色设置 -->
+
+<!-- </TextBlock> -->
+<!-- 结束文本块 -->
+
+<!-- </TreeDataTemplate> -->
+<!-- 结束数据模板 -->
+
+<!-- </TreeView.ItemTemplate> -->
+<!-- 结束树节点模板 -->
+
+<!-- </TreeView> -->
+<!-- 结束树视图控件 -->
+
+<!-- <Grid ColumnDefinitions="*,*,*" Grid.Row="1"> -->
+<!-- 定义一个三列的网格，放在第二行 -->
+
+<!-- <Button Grid.Column="0" Command="{Binding LoadAll}" IsEnabled="{Binding Workspace.RootItems.Count}">全部加载 (Load all)</Button> -->
+<!-- 第一个按钮，执行 LoadAll 命令，显示“全部加载 (Load all)” -->
+
+<!-- <Button Grid.Column="1" Click="ExpandAll" IsEnabled="{Binding Workspace.RootItems.Count}">全部展开 (Expand all)</Button> -->
+<!-- 第二个按钮，点击时调用 ExpandAll，显示“全部展开 (Expand all)” -->
+
+<!-- <Button Grid.Column="2" Click="CollapseAll" IsEnabled="{Binding Workspace.RootItems.Count}">全部折叠 (Collapse all)</Button> -->
+<!-- 第三个按钮，点击时调用 CollapseAll，显示“全部折叠 (Collapse all)” -->
+
+<!-- </Grid> -->
+<!-- 结束三列网格 -->
+
+<!-- </Grid> -->
+<!-- 结束主网格 -->
+
+<!-- </UserControl> -->
+<!-- 结束根节点 -->

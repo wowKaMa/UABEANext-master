@@ -1,0 +1,89 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "服装 » 下一页 » 服装二形态 » 通勤",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "A",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "服装"
+        },
+        "value": 24.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "B",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "服装"
+        },
+        "value": 25.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "C",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "服装"
+        },
+        "value": 26.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

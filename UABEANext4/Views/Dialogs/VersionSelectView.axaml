@@ -1,0 +1,79 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dlg="using:UABEANext4.ViewModels.Dialogs"
+             mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="140"
+             x:Class="UABEANext4.Views.Dialogs.VersionSelectView"
+             x:DataType="dlg:VersionSelectViewModel">
+  <Grid Margin="10,10,10,10">
+    <Grid VerticalAlignment="Top" ColumnDefinitions="100,*" RowDefinitions="60,Auto">
+      <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" TextWrapping="WrapWithOverflow">此包具有双重剥离版本。请为此文件提供引擎版本。取消此对话框可能会导致某些功能失效 (This bundle has a double stripped version. Please provide the engine version for this file. Cancelling this dialog may cause some functionality to fail.)</TextBlock>
+      <Label Grid.Column="0" Grid.Row="1">引擎版本 (Engine Version)</Label>
+      <TextBox Name="defaultBox" Grid.Column="1" Grid.Row="1">0.0.0f0</TextBox>
+    </Grid>
+    <Grid VerticalAlignment="Bottom" ColumnDefinitions="*,*">
+      <Button Grid.Column="0" Command="{Binding BtnOk_Click}">确定 (Ok)</Button>
+      <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">取消 (Cancel)</Button>
+    </Grid>
+  </Grid>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 UserControl 根节点并指定 Avalonia 的默认 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name、x:DataType 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- xmlns:dlg="using:UABEANext4.ViewModels.Dialogs" -->
+<!-- 在 XAML 中引用 ViewModels.Dialogs 命名空间，以便使用 VersionSelectViewModel 等类型。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="140" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（300x140）。 -->
+
+<!-- x:Class="UABEANext4.Views.Dialogs.VersionSelectView" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- x:DataType="dlg:VersionSelectViewModel"> -->
+<!-- 指定此视图的数据上下文类型为 VersionSelectViewModel，以便编译时绑定检查和 IntelliSense。 -->
+
+<!-- <Grid Margin="10,10,10,10"> -->
+<!-- 根布局：一个 Grid，外边距为 10 像素（四边）。 -->
+
+<!-- <Grid VerticalAlignment="Top" ColumnDefinitions="100,*" RowDefinitions="60,Auto"> -->
+<!-- 内部 Grid：垂直对齐到顶部，列定义为 100 和 *，行定义为高度 60 和 Auto。 -->
+
+<!-- <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" TextWrapping="WrapWithOverflow">此包具有双重剥离版本。请为此文件提供引擎版本。取消此对话框可能会导致某些功能失效 (This bundle has a double stripped version. Please provide the engine version for this file. Cancelling this dialog may cause some functionality to fail.)</TextBlock> -->
+<!-- 文本块：显示提示信息，已翻译为中文并保留英文原文在括号内；TextWrapping 设置为 WrapWithOverflow 以便在窄窗口中换行。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="1">引擎版本 (Engine Version)</Label> -->
+<!-- 标签：显示“引擎版本 (Engine Version)”，中文并保留英文原名。 -->
+
+<!-- <TextBox Name="defaultBox" Grid.Column="1" Grid.Row="1">0.0.0f0</TextBox> -->
+<!-- 文本框：命名为 defaultBox，放在第二列第二行，初始文本为 "0.0.0f0"（保留原始默认值）。 -->
+
+<!-- </Grid> -->
+<!-- 结束顶部内部 Grid。 -->
+
+<!-- <Grid VerticalAlignment="Bottom" ColumnDefinitions="*,*"> -->
+<!-- 底部按钮行的 Grid：垂直对齐到底部，包含两列等分宽度。 -->
+
+<!-- <Button Grid.Column="0" Command="{Binding BtnOk_Click}">确定 (Ok)</Button> -->
+<!-- 左侧按钮：绑定到 ViewModel 的 BtnOk_Click 命令，显示“确定 (Ok)”。 -->
+
+<!-- <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">取消 (Cancel)</Button> -->
+<!-- 右侧按钮：绑定到 ViewModel 的 BtnCancel_Click 命令，显示“取消 (Cancel)”。 -->
+
+<!-- </Grid> -->
+<!-- 结束底部按钮行 Grid。 -->
+
+<!-- </Grid> -->
+<!-- 结束根 Grid 布局容器。 -->
+
+<!-- </UserControl> -->
+<!-- 结束 UserControl 根节点。 -->

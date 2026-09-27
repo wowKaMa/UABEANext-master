@@ -1,0 +1,181 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "功能 » GoGo Loco » NSFW Loco By Lastation »  » .dup.1",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 8265018777737577502
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 114.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 5803092323134526097
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 113.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 5895461777418835084
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 112.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "<b><size=23><line-height=100%><voffset=24.5em>Custom World Loco",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -6828525842401889341
+        },
+        "type": 101,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -6828525842401889341
+        },
+        "type": 101,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -7245905490515267955
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/Swimming"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -6828525842401889341
+        },
+        "type": 101,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

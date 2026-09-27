@@ -1,0 +1,32 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -1446941559672284741
+  },
+  "m_Name": "Copied from GoLocoBaseWD/(Clone)",
+  "parameters": {
+    "Array": [
+      {
+        "type": 0,
+        "name": "Go/Mirror",
+        "source": "",
+        "value": 0.0,
+        "valueMin": 0.0,
+        "valueMax": 0.0,
+        "chance": 0.0,
+        "convertRange": 0,
+        "sourceMin": 0.0,
+        "sourceMax": 0.0,
+        "destMin": 0.0,
+        "destMax": 0.0
+      }
+    ]
+  },
+  "localOnly": 0,
+  "debugString": ""
+}

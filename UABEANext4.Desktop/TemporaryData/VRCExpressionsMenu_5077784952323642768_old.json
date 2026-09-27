@@ -1,0 +1,116 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "功能 » GoGo Loco » ",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "<b>Default",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -7618385340928501940
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": -6466326994303879897
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "<b>TPose",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -1958977988026357291
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 9.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "<b>TSpin",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -1958977988026357291
+        },
+        "type": 203,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 10.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": "Go/Float"
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "<b>Knockback",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 42360635341321006
+        },
+        "type": 102,
+        "parameter": {
+          "name": "Go/VRCEmote"
+        },
+        "value": 11.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

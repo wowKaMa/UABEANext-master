@@ -1,0 +1,23 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 7934648412060016548
+  },
+  "m_Name": "(Clone)",
+  "trackingHead": 1,
+  "trackingLeftHand": 1,
+  "trackingRightHand": 1,
+  "trackingHip": 1,
+  "trackingLeftFoot": 1,
+  "trackingRightFoot": 1,
+  "trackingLeftFingers": 1,
+  "trackingRightFingers": 1,
+  "trackingEyes": 1,
+  "trackingMouth": 1,
+  "debugString": ""
+}

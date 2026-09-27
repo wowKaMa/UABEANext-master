@@ -1,0 +1,129 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:UABEANext4.ViewModels.Tools"
+             xmlns:logic="using:UABEANext4.Logic"
+             xmlns:cv="using:UABEANext4.Converters"
+             xmlns:controls="using:UABEANext4.Controls.MeshPreviewer"
+             xmlns:rootControls="using:UABEANext4.Controls"
+             xmlns:local="using:UABEANext4.Views.Tools"
+             x:Class="UABEANext4.Views.Tools.VrcaPreviewerToolView"
+             x:DataType="vm:VrcaPreviewerToolViewModel">
+
+  <UserControl.Resources>
+    <cv:BoolToBrushConverter x:Key="BoolToBrushConverter" />
+    <cv:MeshPresenceColorConverter x:Key="MeshPresenceColorConverter" />
+  </UserControl.Resources>
+
+  <DockPanel Background="#1e1e1e">
+    <!-- Top Toolbar -->
+    <Border DockPanel.Dock="Top" Background="#2d2d2d" BorderBrush="#3f3f3f" BorderThickness="0,0,0,1" Padding="5">
+      <StackPanel Orientation="Horizontal" Spacing="10">
+        <TextBlock Text="VRCA 浏览器 (VRCA EXPLORER)" Foreground="#aaa" FontSize="10" VerticalAlignment="Center" Margin="5,0,15,0" FontWeight="Bold"/>
+        <Button Command="{Binding ClearPreviewCommand}" Padding="8,2" Background="#444" BorderThickness="0">
+          <TextBlock Text="清空预览 (Clear Preview)" FontSize="11" Foreground="White"/>
+        </Button>
+        <Button Command="{Binding OpenInUnityViewerCommand}" Padding="8,2" Background="#007ACC" BorderThickness="0" Margin="5,0,0,0">
+          <TextBlock Text="在 Unity 视图中打开 (Open in Unity Viewer)" FontSize="11" Foreground="White"/>
+        </Button>
+        <Rectangle Width="1" Fill="#555" Margin="5,2"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="5">
+          <Ellipse Width="8" Height="8" Fill="{Binding IsWorking, Converter={StaticResource BoolToBrushConverter}, ConverterParameter=Yellow:Lime}" />
+          <TextBlock Text="{Binding StatusText}" Foreground="#ddd" FontSize="11" />
+        </StackPanel>
+      </StackPanel>
+    </Border>
+
+    <!-- Bottom Status Bar -->
+    <Border DockPanel.Dock="Bottom" Background="#252526" BorderBrush="#3f3f3f" BorderThickness="0,1,0,0" Padding="8,4">
+      <Grid ColumnDefinitions="*, Auto, Auto">
+        <StackPanel Orientation="Horizontal" Spacing="20">
+          <StackPanel Orientation="Horizontal" Spacing="4">
+            <TextBlock Text="网格数 (Meshes):" Foreground="#888" FontSize="11"/>
+            <TextBlock Text="{Binding TotalMeshes}" Foreground="Yellow" FontSize="11" FontWeight="SemiBold"/>
+          </StackPanel>
+          <StackPanel Orientation="Horizontal" Spacing="4">
+            <TextBlock Text="顶点数 (Vertices):" Foreground="#888" FontSize="11"/>
+            <TextBlock Text="{Binding TotalVertices, StringFormat={}{0:N0}}" Foreground="Lime" FontSize="11" FontWeight="SemiBold"/>
+          </StackPanel>
+        </StackPanel>
+        
+        <ProgressBar Grid.Column="1" IsIndeterminate="{Binding IsWorking}" IsVisible="{Binding IsWorking}" 
+                     Width="100" Height="2" VerticalAlignment="Center" Margin="0,0,15,0"
+                     Foreground="SkyBlue" Background="#333"/>
+                     
+        <TextBlock Grid.Column="2" Text="ARC Style Engine" Foreground="#555" FontSize="10" VerticalAlignment="Center"/>
+      </Grid>
+    </Border>
+
+      <!-- Main Content Area -->
+      <Grid ColumnDefinitions="300, 5, *, 200">
+        <!-- Hierarchy Tree -->
+        <TreeView Grid.Column="0" 
+                  ItemsSource="{Binding HierarchyRoots}" 
+                  SelectedItem="{Binding SelectedNode, Mode=TwoWay}"
+                  Background="#252526" BorderThickness="0,0,1,0" BorderBrush="#3f3f3f">
+          <TreeView.ItemTemplate>
+            <TreeDataTemplate DataType="logic:UnityTreeHelper+HierarchyNode" ItemsSource="{Binding Children}">
+              <StackPanel Orientation="Horizontal" Spacing="5">
+                 <CheckBox IsChecked="{Binding IsChecked}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                 <Path Data="M 0 0 L 5 5 L 0 10 Z" Fill="#888" Stretch="Uniform" Width="6" IsVisible="{Binding Children.Count}" VerticalAlignment="Center"/>
+                 <TextBlock Text="{Binding Name}" Foreground="{Binding Children.Count, Converter={StaticResource MeshPresenceColorConverter}}" FontSize="12" VerticalAlignment="Center"/>
+              </StackPanel>
+            </TreeDataTemplate>
+          </TreeView.ItemTemplate>
+        </TreeView>
+  
+        <GridSplitter Grid.Column="1" Background="#333" Width="5"/>
+  
+        <!-- 3D Viewport with Switcher -->
+        <Grid Grid.Column="2" RowDefinitions="Auto,*">
+           <!-- Switcher Bar -->
+           <Border Grid.Row="0" Background="#333" Padding="5">
+               <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
+                   <RadioButton Content="内置 OpenGL 渲染 (Internal OpenGL)" IsChecked="{Binding IsOpenGLMode}" GroupName="RenderMode" Foreground="White"/>
+                   <RadioButton Content="Unity 外部查看器 (Unity Viewer - External)" IsChecked="{Binding IsUnityMode}" GroupName="RenderMode" Foreground="White"/>
+               </StackPanel>
+           </Border>
+
+           <!-- OpenGL -->
+           <controls:MeshPreviewerControl Name="PreviewerControl"
+                                        Grid.Row="1" 
+                                        ActiveMeshes="{Binding ActiveMeshes}"
+                                        Focusable="True"
+                                        IsHitTestVisible="True"
+                                        IsVisible="{Binding IsOpenGLMode}"/>
+           
+           <!-- Unity -->
+           <rootControls:UnityViewHost Grid.Row="1"
+                                   x:Name="UnityHost"
+                                   FileName="{Binding CurrentVrcaPath}"
+                                   IsVisible="{Binding IsUnityMode}"
+                                   IsActive="{Binding IsUnityMode}"/>
+        </Grid>
+
+      <!-- Right Debug Panel -->
+      <Border Grid.Column="3" Background="#252526" BorderBrush="#3f3f3f" BorderThickness="1,0,0,0" Padding="10">
+        <StackPanel Spacing="10">
+          <TextBlock Text="调试信息 (DEBUG INFO)" Foreground="#888" FontSize="10" FontWeight="Bold"/>
+          <Border Background="#1e1e1e" Padding="8" CornerRadius="4">
+            <StackPanel Spacing="5">
+              <TextBlock Text="{Binding GlInfo}" Foreground="#0f0" FontSize="10" FontFamily="Cascadia Code, Consolas" TextWrapping="Wrap"/>
+              <Separator Background="#333" Height="1" Margin="0,5"/>
+              <TextBlock Text="{Binding FocusStatus}" Foreground="#ff0" FontSize="10" FontWeight="Bold"/>
+              <TextBlock Text="{Binding KeysStatus, StringFormat='KEYS: {0}'}" Foreground="#0ff" FontSize="10"/>
+              <Separator Background="#333" Height="1" Margin="0,5"/>
+              <TextBlock Text="{Binding ShaderStatus, StringFormat='SHADERS: {0}'}" Foreground="#f0f" FontSize="10"/>
+              <Separator Background="#333" Height="1" Margin="0,5"/>
+              <TextBlock Text="{Binding DebugData}" Foreground="#ccc" FontSize="11" FontFamily="Cascadia Code, Consolas" TextWrapping="Wrap"/>
+            </StackPanel>
+          </Border>
+          <Button Content="强制键盘聚焦 (FORCE KEYBOARD FOCUS)" Command="{Binding $parent[local:VrcaPreviewerToolView].ForceFocus}" HorizontalAlignment="Stretch" Margin="0,5,0,0" FontSize="10"/>
+          <TextBlock Text="摄像机控制 (Camera Controls)" Foreground="#888" FontSize="10" FontWeight="Bold" Margin="0,10,0,0"/>
+          <TextBlock Text="左键: 旋转 (LMB: Rotate)" Foreground="#666" FontSize="10"/>
+          <TextBlock Text="滚轮: 缩放 (Wheel: Zoom)" Foreground="#666" FontSize="10"/>
+          <TextBlock Text="请在查看前等待“准备就绪”状态。 (Wait for 'Ready' status before inspecting.)" Foreground="#444" FontSize="10" TextWrapping="Wrap" Margin="0,20,0,0"/>
+        </StackPanel>
+      </Border>
+    </Grid>
+  </DockPanel>
+</UserControl>

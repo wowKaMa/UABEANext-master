@@ -1,0 +1,85 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dlg="using:UABEANext4.ViewModels.Dialogs"
+             mc:Ignorable="d" d:DesignWidth="1050" d:DesignHeight="780"
+             x:Class="UABEANext4.Views.Dialogs.SetupOutfitReportView"
+             x:DataType="dlg:SetupOutfitReportViewModel">
+    <Grid RowDefinitions="Auto, Auto, Auto, *, Auto" Margin="18">
+        <!-- Header with Status -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="MA 服装设置诊断报告" FontSize="22" FontWeight="Bold" Foreground="#64B5F6" VerticalAlignment="Center" />
+            <Border Background="{Binding StatusColor}" CornerRadius="4" Padding="10,4" Margin="15,0,0,0" VerticalAlignment="Center">
+                <TextBlock Text="{Binding StatusText}" FontWeight="Bold" Foreground="White" FontSize="13" />
+            </Border>
+        </StackPanel>
+
+        <!-- Summary -->
+        <Border Grid.Row="1" Background="#1e2a3a" CornerRadius="6" Padding="12,8" Margin="0,0,0,10">
+            <TextBlock Text="{Binding SummaryText}" Foreground="#B0BEC5" TextWrapping="Wrap" FontSize="13" />
+        </Border>
+
+        <!-- Search Bar -->
+        <TextBox Grid.Row="2" Text="{Binding SearchText}" Watermark="🔍 搜索骨骼名称、PathID、匹配方式... (Search bones, PathID, method...)" Margin="0,0,0,10" FontSize="13" />
+
+        <!-- Sections -->
+        <ScrollViewer Grid.Row="3" Background="#111418" Padding="6" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Sections}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Expander IsExpanded="True" Margin="0,3" Padding="4">
+                            <Expander.Header>
+                                <TextBlock Text="{Binding DisplayHeader}" FontWeight="Bold" FontSize="14" Foreground="#90CAF9" />
+                            </Expander.Header>
+                            <Border Background="#1a1e24" CornerRadius="4" Padding="4" Margin="0,2">
+                                <StackPanel>
+                                    <!-- Column Header -->
+                                    <Grid ColumnDefinitions="28, 2*, 2*, 3*, Auto" Margin="4,4,4,2">
+                                        <TextBlock Grid.Column="0" Text="" />
+                                        <TextBlock Grid.Column="1" Text="项目 (Item)" FontWeight="Bold" Foreground="#546E7A" FontSize="11" />
+                                        <TextBlock Grid.Column="2" Text="值 (Value)" FontWeight="Bold" Foreground="#546E7A" FontSize="11" />
+                                        <TextBlock Grid.Column="3" Text="详情 (Detail)" FontWeight="Bold" Foreground="#546E7A" FontSize="11" />
+                                        <TextBlock Grid.Column="4" Text="跳转" FontWeight="Bold" Foreground="#546E7A" FontSize="11" Margin="4,0" />
+                                    </Grid>
+                                    <!-- Rows -->
+                                    <ItemsControl ItemsSource="{Binding Rows}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border BorderBrush="#2a2e34" BorderThickness="0,0,0,1" Padding="4,6">
+                                                    <Grid ColumnDefinitions="28, 2*, 2*, 3*, Auto">
+                                                        <TextBlock Grid.Column="0" Text="{Binding StatusIcon}" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                                        <TextBlock Grid.Column="1" Text="{Binding Label}" FontSize="12" Foreground="#E0E0E0" VerticalAlignment="Center" TextWrapping="Wrap" Margin="0,0,6,0" />
+                                                        <TextBlock Grid.Column="2" Text="{Binding Value}" FontSize="12" Foreground="#81C784" VerticalAlignment="Center" TextWrapping="Wrap" Margin="0,0,6,0" />
+                                                        <TextBlock Grid.Column="3" Text="{Binding Detail}" FontSize="11" Foreground="#78909C" VerticalAlignment="Center" TextWrapping="Wrap" Margin="0,0,6,0" />
+                                                        <Button Grid.Column="4"
+                                                                Content="📍"
+                                                                IsVisible="{Binding CanNavigate}"
+                                                                Command="{Binding $parent[UserControl].((dlg:SetupOutfitReportViewModel)DataContext).NavigateToItemCommand}"
+                                                                CommandParameter="{Binding}"
+                                                                FontSize="13"
+                                                                Padding="6,2"
+                                                                MinWidth="32"
+                                                                VerticalAlignment="Center"
+                                                                ToolTip.Tip="跳转到层级树中的对应节点 (Navigate to this item in hierarchy)" />
+                                                    </Grid>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </Border>
+                        </Expander>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <!-- Footer -->
+        <Grid Grid.Row="4" Margin="0,12,0,0" ColumnDefinitions="*, Auto">
+            <TextBlock Text="📍 = 点击跳转到层级树节点   ✅ = 成功   ❌ = 失败   ⏭️ = 跳过   ⚠️ = 警告" 
+                       FontSize="11" Foreground="#546E7A" VerticalAlignment="Center" TextWrapping="Wrap" />
+            <Button Grid.Column="1" Content="关闭 (Close)" HorizontalAlignment="Right" IsCancel="True" Padding="20,6" />
+        </Grid>
+    </Grid>
+</UserControl>

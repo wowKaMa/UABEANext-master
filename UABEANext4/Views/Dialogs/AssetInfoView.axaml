@@ -1,0 +1,167 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:avedit="using:AvaloniaEdit"
+             xmlns:dlg="using:UABEANext4.ViewModels.Dialogs"
+             xmlns:assetWorkspace="clr-namespace:UABEANext4.AssetWorkspace"
+             xmlns:uac="using:UABEANext4.Converters"
+             xmlns:info="using:UABEANext4.Logic.AssetInfo"
+             mc:Ignorable="d" d:DesignWidth="850" d:DesignHeight="500"
+             x:Class="UABEANext4.Views.Dialogs.AssetInfoView"
+             x:DataType="dlg:AssetInfoViewModel">
+  <Design.DataContext>
+    <dlg:AssetInfoViewModel />
+  </Design.DataContext>
+
+  <UserControl.Resources>
+    <uac:AssetTypeIconConverter x:Key="TypeTreeNodeConverter" />
+  </UserControl.Resources>
+
+  <UserControl.Styles>
+    <Style Selector="TextBlock">
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="TextBox">
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="Grid > TextBlock">
+       <Setter Property="Margin" Value="0,0,10,0"/>
+    </Style>
+  </UserControl.Styles>
+
+  <Grid Margin="5" RowDefinitions="*,Auto">
+    
+    <TabControl Grid.Row="0" Margin="0,0,0,5">
+      
+      <TabItem Header="常规信息 (General Info)">
+        <ScrollViewer>
+          <StackPanel Orientation="Vertical" Spacing="10" Margin="5">
+            <HeaderedContentControl Header="头信息 (Header Info)">
+              <Grid Margin="5,5,5,5" RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*">
+                <TextBlock Grid.Row="0" Grid.Column="0">元数据大小 (Metadata Size)</TextBlock>
+                <TextBox Text="{Binding GeneralInfo.MetadataSize, FallbackValue=0}" Grid.Row="0" Grid.Column="1" IsEnabled="false" Margin="0,2"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0">文件大小 (File Size)</TextBlock>
+                <TextBox Text="{Binding GeneralInfo.FileSize, FallbackValue=0}" Grid.Row="1" Grid.Column="1" IsEnabled="false" Margin="0,2"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0">格式 (Format)</TextBlock>
+                <TextBox Text="{Binding GeneralInfo.Format, FallbackValue=''}" Grid.Row="2" Grid.Column="1" IsEnabled="false" Margin="0,2"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0">第一个文件偏移 (First File Offset)</TextBlock>
+                <TextBox Text="{Binding GeneralInfo.FirstFileOffset, FallbackValue=0}" Grid.Row="3" Grid.Column="1" IsEnabled="false" Margin="0,2"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0">字节序 (Endianness)</TextBlock>
+                <TextBox Text="{Binding GeneralInfo.Endianness, FallbackValue=false}" Grid.Row="4" Grid.Column="1" IsEnabled="false" Margin="0,2"/>
+              </Grid>
+            </HeaderedContentControl>
+            
+            <HeaderedContentControl Header="元数据详情 (Metadata Info)">
+              <Grid Margin="5,5,5,5" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*">
+                <TextBlock Grid.Row="0" Grid.Column="0">引擎版本 (Engine Version)</TextBlock>
+                <TextBox Text="{Binding GeneralInfo.EngineVersion, FallbackValue=''}" Grid.Row="0" Grid.Column="1" IsEnabled="false" Margin="0,2"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0">平台 (Platform)</TextBlock>
+                <TextBox Text="{Binding GeneralInfo.Platform, FallbackValue=0}" Grid.Row="1" Grid.Column="1" IsEnabled="false" Margin="0,2"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0">类型树已启用 (Type Tree Enabled)</TextBlock>
+                <TextBox Text="{Binding GeneralInfo.TypeTreeEnabled, FallbackValue=false}" Grid.Row="2" Grid.Column="1" IsEnabled="false" Margin="0,2"/>
+              </Grid>
+            </HeaderedContentControl>
+          </StackPanel>
+        </ScrollViewer>
+      </TabItem>
+
+      <TabItem Header="类型树 (Type Tree)">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" /> <ColumnDefinition Width="5" /> <ColumnDefinition Width="Auto" MinWidth="280"/> </Grid.ColumnDefinitions>
+          
+          <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="5" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <TreeView Grid.Column="0" ItemsSource="{Binding TypeTreeInfo.TypeTreeNodes}">
+              <TreeView.ItemTemplate>
+                <TreeDataTemplate DataType="{x:Type info:TypeTreeUINode}" ItemsSource="{Binding Children}">
+                  <TextBlock Inlines="{Binding Display}" />
+                </TreeDataTemplate>
+              </TreeView.ItemTemplate>
+            </TreeView>
+            
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Background="LightGray"/>
+            
+            <ListBox Grid.Column="2" ItemsSource="{Binding TypeTreeInfo.TypeTreeTypeInfos}" />
+          </Grid>
+          
+          <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Background="Transparent" />
+
+          <Border Grid.Column="2" BorderBrush="#FFDDDDDD" BorderThickness="1,0,0,0" Padding="10,0,0,0">
+            <ScrollViewer>
+                <Grid Width="300" RowDefinitions="Auto,Auto,Auto,Auto,Auto,15,Auto" ColumnDefinitions="Auto,*">
+                  
+                  <TextBlock Grid.Column="0" Grid.Row="0">类型名称 (Type Name)</TextBlock>
+                  <TextBox Grid.Column="1" Grid.Row="0" IsReadOnly="True" Text="{Binding TypeTreeInfo.SelectedTypeName}" Margin="0,3"/>
+
+                  <TextBlock Grid.Column="0" Grid.Row="1">类型 ID (Type ID)</TextBlock>
+                  <TextBox Grid.Column="1" Grid.Row="1" IsReadOnly="True" Text="{Binding TypeTreeInfo.SelectedTypeId}" Margin="0,3"/>
+
+                  <TextBlock Grid.Column="0" Grid.Row="2">脚本 ID (Script ID)</TextBlock>
+                  <TextBox Grid.Column="1" Grid.Row="2" IsReadOnly="True" Text="{Binding TypeTreeInfo.SelectedScriptId}" Margin="0,3"/>
+
+                  <TextBlock Grid.Column="0" Grid.Row="3">类型哈希 (Type Hash)</TextBlock>
+                  <TextBox Grid.Column="1" Grid.Row="3" IsReadOnly="True" Text="{Binding TypeTreeInfo.SelectedTypeHash}" Margin="0,3"/>
+
+                  <TextBlock Grid.Column="0" Grid.Row="4">脚本哈希 (Script Hash)</TextBlock>
+                  <TextBox Grid.Column="1" Grid.Row="4" IsReadOnly="True" Text="{Binding TypeTreeInfo.SelectedMonoHash}" Margin="0,3"/>
+
+                  <TextBlock Grid.Column="0" Grid.Row="6">是否对齐 (Aligned)</TextBlock>
+                  <TextBox Grid.Column="1" Grid.Row="6" IsReadOnly="True" Text="{Binding TypeTreeInfo.SelectedAligned}" Margin="0,3"/>
+                </Grid>
+            </ScrollViewer>
+          </Border>
+        </Grid>
+      </TabItem>
+
+      <TabItem Header="外部依赖 (Externals)">
+        <Grid RowDefinitions="*,Auto">
+          <ListBox Grid.Row="0" ItemsSource="{Binding ExternalsInfo.ExternalsDisplay}" SelectedIndex="{Binding ExternalsInfo.SelectedExternIndex}" Margin="0,0,0,5" />
+          
+          <Grid Grid.Row="1" ColumnDefinitions="*,*,*,*,*">
+            <Grid.Styles>
+                <Style Selector="Button">
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+            </Grid.Styles>
+            <Button Grid.Column="0" Content="添加 (Add)" Command="{Binding ExternalsInfo.Add_Click}" />
+            <Button Grid.Column="1" Content="编辑 (Edit)" IsEnabled="{Binding ExternalsInfo.IsAssetSelected}"  Command="{Binding ExternalsInfo.Edit_Click}" />
+            <Button Grid.Column="2" Content="移除 (Remove)" IsEnabled="{Binding ExternalsInfo.IsAssetSelected}" Command="{Binding ExternalsInfo.Remove_Click}" />
+            <Button Grid.Column="3" Content="上移 (Move Up)" IsEnabled="{Binding ExternalsInfo.CanSelectedAssetMoveUp}" Command="{Binding ExternalsInfo.MoveUp_Click}" />
+            <Button Grid.Column="4" Content="下移 (Move Down)" IsEnabled="{Binding ExternalsInfo.CanSelectedAssetMoveDown}" Command="{Binding ExternalsInfo.MoveDown_Click}" />
+          </Grid>
+        </Grid>
+      </TabItem>
+
+      <TabItem Header="脚本信息 (Script Infos)">
+        <ListBox ItemsSource="{Binding ScriptsInfo.ScriptsDisplay}" />
+      </TabItem>
+    </TabControl>
+    
+    <Grid Grid.Row="1" ColumnDefinitions="Auto, *" Margin="0,2,0,0">
+      <TextBlock Grid.Column="0" FontWeight="Bold" Margin="0,0,10,0">当前选择资产 (Selected asset):</TextBlock>
+      <ComboBox Grid.Column="1" x:Name="SelectedAssetComboBox" SelectedIndex="0" HorizontalAlignment="Stretch" SelectedItem="{Binding SelectedItem}">
+        <ComboBox.ItemTemplate>
+          <DataTemplate x:DataType="assetWorkspace:WorkspaceItem">
+            <TextBlock Text="{Binding Name}"></TextBlock>
+          </DataTemplate>
+        </ComboBox.ItemTemplate>
+      </ComboBox>
+    </Grid>
+    
+  </Grid>
+</UserControl>

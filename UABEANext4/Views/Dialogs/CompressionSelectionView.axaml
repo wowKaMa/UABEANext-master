@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:UABEANext4.ViewModels.Dialogs"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="150"
+             x:Class="UABEANext4.Views.Dialogs.CompressionSelectionView"
+             x:DataType="vm:CompressionSelectionViewModel">
+
+  <Design.DataContext>
+    <vm:CompressionSelectionViewModel />
+  </Design.DataContext>
+
+  <StackPanel Margin="20" Spacing="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <TextBlock Text="Select Compression Method (选择压缩方式):" FontWeight="Bold" HorizontalAlignment="Center" />
+    
+    <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
+      <Button Content="LZMA" Command="{Binding SelectLZMACommand}" Width="80" HorizontalContentAlignment="Center"/>
+      <Button Content="LZ4" Command="{Binding SelectLZ4Command}" Width="80" HorizontalContentAlignment="Center"/>
+      <Button Content="No Compression" Command="{Binding SelectNoneCommand}" Width="120" HorizontalContentAlignment="Center"/>
+      <Button Content="32MB Chunked LZMA" Command="{Binding SelectChunkedLZMACommand}" Width="150" HorizontalContentAlignment="Center" Background="#2e7d32"/>
+    </StackPanel>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,204 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "服装",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "热裤",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "服装"
+        },
+        "value": 0.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "巫女",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "服装"
+        },
+        "value": 3.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "兔女郎",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "服装"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "南半球\n（前胸互动）",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "服装"
+        },
+        "value": 2.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "女仆",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "服装"
+        },
+        "value": 4.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "旗袍",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "服装"
+        },
+        "value": 5.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "牛仔",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 102,
+        "parameter": {
+          "name": "服装"
+        },
+        "value": 6.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "下一页",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": -8509961385969919588
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

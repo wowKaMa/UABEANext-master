@@ -1,0 +1,17 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1425835672658073299
+  },
+  "m_Name": "(Clone)",
+  "playable": 0,
+  "layer": 3,
+  "goalWeight": 1.0,
+  "blendDuration": 0.0,
+  "debugString": ""
+}

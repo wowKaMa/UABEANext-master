@@ -1,0 +1,2057 @@
+VRCAvatarDescriptor Raw Dump:
+MonoBehaviour Base 
+  PPtr<GameObject> m_GameObject 
+    int m_FileID = 0
+    SInt64 m_PathID = -3816590184833847328
+  UInt8 m_Enabled = 1
+  PPtr<MonoScript> m_Script 
+    int m_FileID = 0
+    SInt64 m_PathID = -1553566539822497163
+  string m_Name = 
+  string Name = 
+  Vector3f ViewPosition 
+    float x = 0
+    float y = 1.1197615
+    float z = 0.054001987
+  int Animations = 1
+  UInt8 ScaleIPD = 1
+  int lipSync = 3
+  PPtr<$Transform> lipSyncJawBone 
+    int m_FileID = 0
+    SInt64 m_PathID = 0
+  Quaternionf lipSyncJawClosed 
+    float x = 0
+    float y = 0
+    float z = 0
+    float w = 1
+  Quaternionf lipSyncJawOpen 
+    float x = 0
+    float y = 0
+    float z = 0
+    float w = 1
+  PPtr<$SkinnedMeshRenderer> VisemeSkinnedMesh 
+    int m_FileID = 0
+    SInt64 m_PathID = 104087759879562450
+  string MouthOpenBlendShapeName = Facial_Blends.Jaw_Down
+  vector VisemeBlendShapes 
+    Array Array 
+      string data = vrc.v_sil
+      string data = vrc.v_pp
+      string data = vrc.v_ff
+      string data = vrc.v_th
+      string data = vrc.v_dd
+      string data = vrc.v_kk.FT
+      string data = vrc.v_ch
+      string data = vrc.v_ss
+      string data = vrc.v_nn
+      string data = vrc.v_rr
+      string data = vrc.v_aa.FT
+      string data = vrc.v_e
+      string data = vrc.v_ih
+      string data = vrc.v_oh.FT
+      string data = vrc.v_ou.FT
+  string unityVersion = 2022.3.22f1
+  Vector3f portraitCameraPositionOffset 
+    float x = 0
+    float y = 0
+    float z = 0
+  Quaternionf portraitCameraRotationOffset 
+    float x = 0
+    float y = 1
+    float z = 0
+    float w = -4.371139E-08
+  NetworkIDPair networkIDs 
+    Array Array 
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 1872554512412801911
+        int ID = 10
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -3446425425359880201
+        int ID = 11
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 3472696464077369288
+        int ID = 12
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -8501269517589315307
+        int ID = 13
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -7042347916240285835
+        int ID = 14
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 7459173637732790093
+        int ID = 15
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 8523739307562141614
+        int ID = 16
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 8652330699753538600
+        int ID = 17
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -3505541297597420314
+        int ID = 18
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 5464214011126632126
+        int ID = 19
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -2344775606741413303
+        int ID = 20
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 2220958949148424838
+        int ID = 21
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 4695336853449527388
+        int ID = 22
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 4542036826769899864
+        int ID = 23
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 513127469572323722
+        int ID = 24
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 8625322842784496174
+        int ID = 25
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -4887754335208862967
+        int ID = 26
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 4162653419033381209
+        int ID = 27
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -2378533921548988190
+        int ID = 28
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -7755968394047260661
+        int ID = 29
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -4909929261756845108
+        int ID = 30
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -8656682620754781147
+        int ID = 31
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -611021216163232793
+        int ID = 32
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -2893021255922858100
+        int ID = 33
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -2971326707649498105
+        int ID = 34
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -5830534428074533592
+        int ID = 35
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -7243796753838639470
+        int ID = 36
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 775773370196120100
+        int ID = 37
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -2810097352833992158
+        int ID = 38
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 2525082757466210675
+        int ID = 39
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -3387181978459080703
+        int ID = 40
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 7014674421978778626
+        int ID = 41
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 9051857835090540489
+        int ID = 42
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 1289902778228042051
+        int ID = 43
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 1309743107906880494
+        int ID = 44
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -7482311522941665019
+        int ID = 45
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 7733640714161176956
+        int ID = 46
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -3774918618399040461
+        int ID = 47
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 4004411064885288038
+        int ID = 48
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -5148542994075722535
+        int ID = 49
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -9075010486840685477
+        int ID = 50
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -129727351539172621
+        int ID = 51
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -5584421979669585776
+        int ID = 52
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -8375514424766770811
+        int ID = 53
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -5785071981460784279
+        int ID = 54
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 7265624859078392661
+        int ID = 55
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 4248150823505438492
+        int ID = 56
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -960008630874112946
+        int ID = 57
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -1081029764532762143
+        int ID = 58
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 3125457113561390553
+        int ID = 59
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -4079699364403403921
+        int ID = 60
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -5235602447962719730
+        int ID = 61
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -9039383770003430069
+        int ID = 62
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -3718280029035956104
+        int ID = 63
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -2597834187247304553
+        int ID = 64
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -7026057685377147298
+        int ID = 65
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -7005280598341120801
+        int ID = 66
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -8584303456343048053
+        int ID = 67
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 1348902359561184863
+        int ID = 68
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -3519115230837616457
+        int ID = 69
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 1628472663796142697
+        int ID = 70
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -1099740190262498387
+        int ID = 71
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 7893005412820481896
+        int ID = 72
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 298780513173934695
+        int ID = 73
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 8079663548962508598
+        int ID = 74
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -808516183856723619
+        int ID = 75
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -1545160702063468321
+        int ID = 76
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -6345673806565591770
+        int ID = 77
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -4052120286782996771
+        int ID = 78
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 8617536122415987928
+        int ID = 79
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 1475358248581835477
+        int ID = 80
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 2580721481299761282
+        int ID = 81
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -5817504450692244287
+        int ID = 82
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -8738022931936396641
+        int ID = 83
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -2205637427259078217
+        int ID = 84
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 8902387856704118896
+        int ID = 85
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 2490174607898116225
+        int ID = 86
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -80788450494625850
+        int ID = 87
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -5190197122848994418
+        int ID = 88
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -3951040341574815773
+        int ID = 89
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -1693082949234500129
+        int ID = 90
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 7436646823394761725
+        int ID = 91
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 4493066862731415277
+        int ID = 92
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -8023331097547323100
+        int ID = 93
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 931505530965526967
+        int ID = 94
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -4457588362223326214
+        int ID = 95
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 5281877315750131958
+        int ID = 96
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 1532768259027168507
+        int ID = 97
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -4923054542086019446
+        int ID = 98
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 5453097037986941728
+        int ID = 99
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -81663029659372675
+        int ID = 100
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 1274895471171543453
+        int ID = 101
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -7533450032341479777
+        int ID = 102
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 1640440014651341432
+        int ID = 103
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 5416264146381821829
+        int ID = 104
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -6245265543967841959
+        int ID = 105
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 7648800723264339444
+        int ID = 106
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -7864965306579581431
+        int ID = 107
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -8668169351284692699
+        int ID = 108
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 4719615623679843919
+        int ID = 109
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 8708540169723585136
+        int ID = 110
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 5570085801305582621
+        int ID = 111
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -3823568479572645704
+        int ID = 112
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -1773410766560369580
+        int ID = 113
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 4823408000088886611
+        int ID = 114
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -688437503233533777
+        int ID = 115
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 5997215904757409948
+        int ID = 116
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -7411175627764455121
+        int ID = 117
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 8440789889371632572
+        int ID = 118
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 6361968043646306305
+        int ID = 119
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -9125983419664613994
+        int ID = 120
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 4507448654567053806
+        int ID = 121
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -8249353662421286101
+        int ID = 122
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -8688331324710803264
+        int ID = 123
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -1109088864350873804
+        int ID = 124
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -2081731732895757281
+        int ID = 125
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = -2370655378116241903
+        int ID = 126
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 5841334599024984010
+        int ID = 127
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 6014212572663698306
+        int ID = 128
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+      NetworkIDPair data 
+        PPtr<$GameObject> gameObject 
+          int m_FileID = 0
+          SInt64 m_PathID = 2475722539327003410
+        int ID = 129
+        vector SerializedTypeNames 
+          Array Array = AssetsTools.NET.AssetTypeArrayInfo
+  UInt8 customExpressions = 1
+  PPtr<$VRCExpressionsMenu> expressionsMenu 
+    int m_FileID = 0
+    SInt64 m_PathID = -2907781298606403117
+  PPtr<$VRCExpressionParameters> expressionParameters 
+    int m_FileID = 0
+    SInt64 m_PathID = -6078414720923834525
+  UInt8 enableEyeLook = 1
+  CustomEyeLookSettings customEyeLookSettings 
+    EyeMovements eyeMovement 
+      float confidence = 0.5
+      float excitement = 0.5
+    PPtr<$Transform> leftEye 
+      int m_FileID = 0
+      SInt64 m_PathID = -2557839790841930498
+    PPtr<$Transform> rightEye 
+      int m_FileID = 0
+      SInt64 m_PathID = 389449787800062702
+    EyeRotations eyesLookingStraight 
+      UInt8 linked = 1
+      Quaternionf left 
+        float x = 0
+        float y = 0
+        float z = 0
+        float w = 1
+      Quaternionf right 
+        float x = 0
+        float y = 0
+        float z = 0
+        float w = 1
+    EyeRotations eyesLookingUp 
+      UInt8 linked = 1
+      Quaternionf left 
+        float x = -0.08215345
+        float y = 0
+        float z = 0
+        float w = 0.9966197
+      Quaternionf right 
+        float x = -0.08215345
+        float y = 0
+        float z = 0
+        float w = 0.9966197
+    EyeRotations eyesLookingDown 
+      UInt8 linked = 1
+      Quaternionf left 
+        float x = 0.084687054
+        float y = 0
+        float z = 0
+        float w = 0.9964076
+      Quaternionf right 
+        float x = 0.084687054
+        float y = 0
+        float z = 0
+        float w = 0.9964076
+    EyeRotations eyesLookingLeft 
+      UInt8 linked = 1
+      Quaternionf left 
+        float x = 0
+        float y = -0.09584575
+        float z = 0
+        float w = 0.9953962
+      Quaternionf right 
+        float x = 0
+        float y = -0.09584575
+        float z = 0
+        float w = 0.9953962
+    EyeRotations eyesLookingRight 
+      UInt8 linked = 1
+      Quaternionf left 
+        float x = 0
+        float y = 0.09584575
+        float z = 0
+        float w = 0.9953962
+      Quaternionf right 
+        float x = 0
+        float y = 0.09584575
+        float z = 0
+        float w = 0.9953962
+    int eyelidType = 2
+    PPtr<$Transform> upperLeftEyelid 
+      int m_FileID = 0
+      SInt64 m_PathID = 0
+    PPtr<$Transform> upperRightEyelid 
+      int m_FileID = 0
+      SInt64 m_PathID = 0
+    PPtr<$Transform> lowerLeftEyelid 
+      int m_FileID = 0
+      SInt64 m_PathID = 0
+    PPtr<$Transform> lowerRightEyelid 
+      int m_FileID = 0
+      SInt64 m_PathID = 0
+    EyelidRotations eyelidsDefault 
+      EyeRotations upper 
+        UInt8 linked = 1
+        Quaternionf left 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+        Quaternionf right 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+      EyeRotations lower 
+        UInt8 linked = 1
+        Quaternionf left 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+        Quaternionf right 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+    EyelidRotations eyelidsClosed 
+      EyeRotations upper 
+        UInt8 linked = 1
+        Quaternionf left 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+        Quaternionf right 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+      EyeRotations lower 
+        UInt8 linked = 1
+        Quaternionf left 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+        Quaternionf right 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+    EyelidRotations eyelidsLookingUp 
+      EyeRotations upper 
+        UInt8 linked = 1
+        Quaternionf left 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+        Quaternionf right 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+      EyeRotations lower 
+        UInt8 linked = 1
+        Quaternionf left 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+        Quaternionf right 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+    EyelidRotations eyelidsLookingDown 
+      EyeRotations upper 
+        UInt8 linked = 1
+        Quaternionf left 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+        Quaternionf right 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+      EyeRotations lower 
+        UInt8 linked = 1
+        Quaternionf left 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+        Quaternionf right 
+          float x = 0
+          float y = 0
+          float z = 0
+          float w = 0
+    PPtr<$SkinnedMeshRenderer> eyelidsSkinnedMesh 
+      int m_FileID = 0
+      SInt64 m_PathID = 104087759879562450
+    vector eyelidsBlendshapes 
+      Array Array 
+        int data = 11
+        int data = 12
+        int data = 13
+  UInt8 customizeAnimationLayers = 1
+  CustomAnimLayer baseAnimationLayers 
+    Array Array 
+      CustomAnimLayer data 
+        UInt8 isEnabled = 0
+        int type = 0
+        PPtr<$RuntimeAnimatorController> animatorController 
+          int m_FileID = 0
+          SInt64 m_PathID = 8413419898575007525
+        PPtr<$AvatarMask> mask 
+          int m_FileID = 0
+          SInt64 m_PathID = 0
+        UInt8 isDefault = 0
+      CustomAnimLayer data 
+        UInt8 isEnabled = 0
+        int type = 2
+        PPtr<$RuntimeAnimatorController> animatorController 
+          int m_FileID = 0
+          SInt64 m_PathID = -380014943566984352
+        PPtr<$AvatarMask> mask 
+          int m_FileID = 0
+          SInt64 m_PathID = 0
+        UInt8 isDefault = 0
+      CustomAnimLayer data 
+        UInt8 isEnabled = 0
+        int type = 3
+        PPtr<$RuntimeAnimatorController> animatorController 
+          int m_FileID = 0
+          SInt64 m_PathID = 5187753170703048428
+        PPtr<$AvatarMask> mask 
+          int m_FileID = 0
+          SInt64 m_PathID = 3849380378508726943
+        UInt8 isDefault = 0
+      CustomAnimLayer data 
+        UInt8 isEnabled = 0
+        int type = 4
+        PPtr<$RuntimeAnimatorController> animatorController 
+          int m_FileID = 0
+          SInt64 m_PathID = -43827356997670918
+        PPtr<$AvatarMask> mask 
+          int m_FileID = 0
+          SInt64 m_PathID = 0
+        UInt8 isDefault = 0
+      CustomAnimLayer data 
+        UInt8 isEnabled = 0
+        int type = 5
+        PPtr<$RuntimeAnimatorController> animatorController 
+          int m_FileID = 0
+          SInt64 m_PathID = -163578944911470684
+        PPtr<$AvatarMask> mask 
+          int m_FileID = 0
+          SInt64 m_PathID = 0
+        UInt8 isDefault = 0
+  CustomAnimLayer specialAnimationLayers 
+    Array Array 
+      CustomAnimLayer data 
+        UInt8 isEnabled = 0
+        int type = 6
+        PPtr<$RuntimeAnimatorController> animatorController 
+          int m_FileID = 0
+          SInt64 m_PathID = -83977488324089660
+        PPtr<$AvatarMask> mask 
+          int m_FileID = 0
+          SInt64 m_PathID = 0
+        UInt8 isDefault = 0
+      CustomAnimLayer data 
+        UInt8 isEnabled = 0
+        int type = 7
+        PPtr<$RuntimeAnimatorController> animatorController 
+          int m_FileID = 0
+          SInt64 m_PathID = 3229446474563343466
+        PPtr<$AvatarMask> mask 
+          int m_FileID = 0
+          SInt64 m_PathID = 0
+        UInt8 isDefault = 0
+      CustomAnimLayer data 
+        UInt8 isEnabled = 0
+        int type = 8
+        PPtr<$RuntimeAnimatorController> animatorController 
+          int m_FileID = 0
+          SInt64 m_PathID = -3130975062766811073
+        PPtr<$AvatarMask> mask 
+          int m_FileID = 0
+          SInt64 m_PathID = 0
+        UInt8 isDefault = 0
+  PPtr<$ScriptableObject> AnimationPreset 
+    int m_FileID = 0
+    SInt64 m_PathID = 0
+  DebugHash animationHashSet 
+    Array Array 
+      DebugHash data 
+        int hash = 1127303507
+        string name = Prone
+      DebugHash data 
+        int hash = -510014593
+        string name = Standing
+      DebugHash data 
+        int hash = 1277114970
+        string name = Crouching
+      DebugHash data 
+        int hash = -1999147179
+        string name = FullBody Tracking
+      DebugHash data 
+        int hash = -542948443
+        string name = Preview
+      DebugHash data 
+        int hash = 196538068
+        string name = JumpAndFall.SmallHop
+      DebugHash data 
+        int hash = 1754499299
+        string name = Upright Idle
+      DebugHash data 
+        int hash = -1931295847
+        string name = Empty
+      DebugHash data 
+        int hash = -1963515926
+        string name = Fist
+      DebugHash data 
+        int hash = -1368897710
+        string name = Point
+      DebugHash data 
+        int hash = 99779634
+        string name = Open
+      DebugHash data 
+        int hash = 282634289
+        string name = Peace
+      DebugHash data 
+        int hash = 935782528
+        string name = RockNRoll
+      DebugHash data 
+        int hash = 420425210
+        string name = Gun
+      DebugHash data 
+        int hash = 1949755150
+        string name = Thumbs up
+      DebugHash data 
+        int hash = 2108076675
+        string name = Idle
+      DebugHash data 
+        int hash = -1069212025
+        string name = Smartphone
+      DebugHash data 
+        int hash = 1781153929
+        string name = Fist
+      DebugHash data 
+        int hash = 2050206447
+        string name = Point
+      DebugHash data 
+        int hash = -449848495
+        string name = Open
+      DebugHash data 
+        int hash = -998029940
+        string name = Peace
+      DebugHash data 
+        int hash = -1592414362
+        string name = RockNRoll
+      DebugHash data 
+        int hash = 297357552
+        string name = Gun
+      DebugHash data 
+        int hash = -488267544
+        string name = Thumbs up
+      DebugHash data 
+        int hash = -1652822560
+        string name = Idle
+      DebugHash data 
+        int hash = -1878344472
+        string name = Empty
+      DebugHash data 
+        int hash = -1022575284
+        string name = Crouching
+      DebugHash data 
+        int hash = -2119562163
+        string name = Empty
+      DebugHash data 
+        int hash = -1836707409
+        string name = Prone
+      DebugHash data 
+        int hash = 575477760
+        string name = Empty
+      DebugHash data 
+        int hash = 203748452
+        string name = Sitting
+      DebugHash data 
+        int hash = 2043794168
+        string name = Stand_Die_Loop
+      DebugHash data 
+        int hash = -1688386262
+        string name = Stand_Sadkick
+      DebugHash data 
+        int hash = -1791344954
+        string name = Stand_Backflip
+      DebugHash data 
+        int hash = -368063302
+        string name = Stand_Dance_Loop
+      DebugHash data 
+        int hash = -2078704937
+        string name = Stand_Cheer_Loop
+      DebugHash data 
+        int hash = 1344015811
+        string name = Stand_Point
+      DebugHash data 
+        int hash = 1202791948
+        string name = Stand_Clap_Loop
+      DebugHash data 
+        int hash = -606646905
+        string name = Stand_Wave
+      DebugHash data 
+        int hash = 553760842
+        string name = Seated_Raise Hand_Loop
+      DebugHash data 
+        int hash = -182331011
+        string name = Seated_Point
+      DebugHash data 
+        int hash = 1611753951
+        string name = Seated_Laugh
+      DebugHash data 
+        int hash = -582911272
+        string name = Seated_Drum_Loop
+      DebugHash data 
+        int hash = 788790842
+        string name = Seated_Disbelief
+      DebugHash data 
+        int hash = 777458745
+        string name = Seated_Disapprove
+      DebugHash data 
+        int hash = -53961328
+        string name = Seated_Clap_Loop
+      DebugHash data 
+        int hash = 1639672035
+        string name = Seated_Shake Fist
+      DebugHash data 
+        int hash = 711312144
+        string name = BlendOut Stand
+      DebugHash data 
+        int hash = 831101588
+        string name = Die_Outro
+      DebugHash data 
+        int hash = 1242512264
+        string name = Prepare Standing
+      DebugHash data 
+        int hash = -1439543933
+        string name = WaitForActionOrAFK
+      DebugHash data 
+        int hash = -1291029408
+        string name = Restore Tracking Stand
+      DebugHash data 
+        int hash = -916604327
+        string name = Prepare Sitting
+      DebugHash data 
+        int hash = 527979128
+        string name = BlendOut Sit
+      DebugHash data 
+        int hash = 1228702951
+        string name = Restore Tracking Sit
+      DebugHash data 
+        int hash = -741837223
+        string name = Sit
+      DebugHash data 
+        int hash = -1533005770
+        string name = BlendOut AFK
+      DebugHash data 
+        int hash = 1860483981
+        string name = Prepare AFK
+      DebugHash data 
+        int hash = -219879767
+        string name = Restore Tracking AFK
+      DebugHash data 
+        int hash = -1414441153
+        string name = AFK_Milfy.AFK
+      DebugHash data 
+        int hash = 1448615515
+        string name = AFK_Milfy.AFK_Outro
+      DebugHash data 
+        int hash = 1577073509
+        string name = AFK_Milfy.AFK_Intro
+      DebugHash data 
+        int hash = -1601426558
+        string name = AFK_Milfy.AFK_Loop
+      DebugHash data 
+        int hash = 749858573
+        string name = State
+      DebugHash data 
+        int hash = -475617725
+        string name = Dummy
+      DebugHash data 
+        int hash = -1833787555
+        string name = Initial
+      DebugHash data 
+        int hash = 2084293426
+        string name = NotMMD
+      DebugHash data 
+        int hash = 2121792290
+        string name = MMD
+      DebugHash data 
+        int hash = -1287552476
+        string name = TrackingControl
+      DebugHash data 
+        int hash = -1753585402
+        string name = Idle_M
+      DebugHash data 
+        int hash = -1963515926
+        string name = Fist
+      DebugHash data 
+        int hash = -1368897710
+        string name = Point
+      DebugHash data 
+        int hash = 99779634
+        string name = Open
+      DebugHash data 
+        int hash = 282634289
+        string name = Peace
+      DebugHash data 
+        int hash = 935782528
+        string name = RockNRoll
+      DebugHash data 
+        int hash = 420425210
+        string name = Gun
+      DebugHash data 
+        int hash = 1949755150
+        string name = Thumbs up
+      DebugHash data 
+        int hash = 2108076675
+        string name = Idle
+      DebugHash data 
+        int hash = -2005129276
+        string name = InStation
+      DebugHash data 
+        int hash = -852415980
+        string name = Idle_FToff
+      DebugHash data 
+        int hash = 1587880400
+        string name = RockNRoll_another
+      DebugHash data 
+        int hash = -1725529767
+        string name = Fist_another
+      DebugHash data 
+        int hash = 1255084655
+        string name = Peace_another
+      DebugHash data 
+        int hash = -1257848131
+        string name = Gun_another
+      DebugHash data 
+        int hash = -1033209658
+        string name = Open_another
+      DebugHash data 
+        int hash = 1417594569
+        string name = Point_another
+      DebugHash data 
+        int hash = -459408047
+        string name = Thumbs up_another
+      DebugHash data 
+        int hash = -362666383
+        string name = Thumbs up_another
+      DebugHash data 
+        int hash = 1348139760
+        string name = RockNRoll_another
+      DebugHash data 
+        int hash = -806908178
+        string name = Open_another
+      DebugHash data 
+        int hash = 1640424389
+        string name = Point_another
+      DebugHash data 
+        int hash = -1800702095
+        string name = Fist_another
+      DebugHash data 
+        int hash = 1781153929
+        string name = Fist
+      DebugHash data 
+        int hash = 2050206447
+        string name = Point
+      DebugHash data 
+        int hash = 297357552
+        string name = Gun
+      DebugHash data 
+        int hash = -488267544
+        string name = Thumbs up
+      DebugHash data 
+        int hash = -1592414362
+        string name = RockNRoll
+      DebugHash data 
+        int hash = 2138519395
+        string name = Peace_another
+      DebugHash data 
+        int hash = -1652822560
+        string name = Idle
+      DebugHash data 
+        int hash = 514809890
+        string name = InStation
+      DebugHash data 
+        int hash = -2066825698
+        string name = Idle_FToff
+      DebugHash data 
+        int hash = -998029940
+        string name = Peace
+      DebugHash data 
+        int hash = -449848495
+        string name = Open
+      DebugHash data 
+        int hash = 1436210231
+        string name = Gun_another
+      DebugHash data 
+        int hash = -1344945325
+        string name = Sync_Active
+      DebugHash data 
+        int hash = -1642747133
+        string name = Sync_Inactive
+      DebugHash data 
+        int hash = -1127499919
+        string name = ON
+      DebugHash data 
+        int hash = -1562768579
+        string name = OFF
+      DebugHash data 
+        int hash = 824053860
+        string name = Sleeve
+      DebugHash data 
+        int hash = -1867236543
+        string name = BLength
+      DebugHash data 
+        int hash = 2132931938
+        string name = ON
+      DebugHash data 
+        int hash = 648519841
+        string name = OFF
+      DebugHash data 
+        int hash = 1944416666
+        string name = ON
+      DebugHash data 
+        int hash = -1781719541
+        string name = OFF
+      DebugHash data 
+        int hash = 1147693011
+        string name = ON
+      DebugHash data 
+        int hash = -1694864855
+        string name = OFF
+      DebugHash data 
+        int hash = -116711382
+        string name = Default
+      DebugHash data 
+        int hash = 1477972080
+        string name = Oval
+      DebugHash data 
+        int hash = 678440393
+        string name = Stiletto
+      DebugHash data 
+        int hash = -1791414548
+        string name = round
+      DebugHash data 
+        int hash = 1149661254
+        string name = Default
+      DebugHash data 
+        int hash = -72531313
+        string name = Tearbag
+      DebugHash data 
+        int hash = -1707783148
+        string name = dark cercle
+      DebugHash data 
+        int hash = 1788232908
+        string name = BreastSize
+      DebugHash data 
+        int hash = 722069021
+        string name = Hutomomo
+      DebugHash data 
+        int hash = -1835637094
+        string name = Front Hair_length
+      DebugHash data 
+        int hash = -1001117462
+        string name = OFF
+      DebugHash data 
+        int hash = 886287019
+        string name = ON
+      DebugHash data 
+        int hash = 1863062447
+        string name = OFF
+      DebugHash data 
+        int hash = -1110067580
+        string name = ON
+      DebugHash data 
+        int hash = 820834275
+        string name = Twintail_length
+      DebugHash data 
+        int hash = -1772081386
+        string name = Twintail_volume
+      DebugHash data 
+        int hash = -958591232
+        string name = OFF
+      DebugHash data 
+        int hash = -371875877
+        string name = Smartphone
+      DebugHash data 
+        int hash = 496730959
+        string name = Smartphone_mirror_OFF
+      DebugHash data 
+        int hash = 757257026
+        string name = Smartphone_mirror_ON
+      DebugHash data 
+        int hash = 1948685973
+        string name = Smartphone_light_OFF
+      DebugHash data 
+        int hash = -1762265135
+        string name = Smartphone_light_ON
+      DebugHash data 
+        int hash = -799620264
+        string name = Empty
+      DebugHash data 
+        int hash = -76804184
+        string name = InStation
+      DebugHash data 
+        int hash = -230943851
+        string name = OFF
+      DebugHash data 
+        int hash = 1604461313
+        string name = ON
+      DebugHash data 
+        int hash = 1580072300
+        string name = WaitForActionOrAFK
+      DebugHash data 
+        int hash = -1051395708
+        string name = BlendOut AFK
+      DebugHash data 
+        int hash = 720687061
+        string name = Prepare AFK
+      DebugHash data 
+        int hash = -530362855
+        string name = Restore Tracking AFK
+      DebugHash data 
+        int hash = -1900318378
+        string name = AFK_Milfy.AFK
+      DebugHash data 
+        int hash = 1712979458
+        string name = AFK_Milfy.AFK_Outro
+      DebugHash data 
+        int hash = 1849809724
+        string name = AFK_Milfy.AFK_Intro
+      DebugHash data 
+        int hash = 1418959725
+        string name = AFK_Milfy.AFK_Loop
+      DebugHash data 
+        int hash = 702700559
+        string name = Blo_Mid_OFF
+      DebugHash data 
+        int hash = -692170598
+        string name = bloodbath
+      DebugHash data 
+        int hash = -480977803
+        string name = dtr
+      DebugHash data 
+        int hash = -415416649
+        string name = mid
+      DebugHash data 
+        int hash = 1195609562
+        string name = 8Page
+      DebugHash data 
+        int hash = 459698621
+        string name = hair_idle
+      DebugHash data 
+        int hash = 1390770946
+        string name = hair_inactive
+      DebugHash data 
+        int hash = -1312224504
+        string name = hair_active
+      DebugHash data 
+        int hash = 1261435166
+        string name = bousi_idle
+      DebugHash data 
+        int hash = -1462951319
+        string name = bousi_inactive
+      DebugHash data 
+        int hash = -679428231
+        string name = bousi_active
+      DebugHash data 
+        int hash = -659347283
+        string name = huku_idle
+      DebugHash data 
+        int hash = -1615619086
+        string name = huku_inactive
+      DebugHash data 
+        int hash = -373541924
+        string name = huku_active
+      DebugHash data 
+        int hash = -420227635
+        string name = niso_idle
+      DebugHash data 
+        int hash = 680648412
+        string name = niso_inactive
+      DebugHash data 
+        int hash = 1330505882
+        string name = niso_active
+      DebugHash data 
+        int hash = 399387651
+        string name = Head_Contact_ON
+      DebugHash data 
+        int hash = -1299178788
+        string name = Head_Contact_Off
+      DebugHash data 
+        int hash = 1926018930
+        string name = Ear_Contact_L_ON
+      DebugHash data 
+        int hash = 991780231
+        string name = Ear_Contact_L_OFF
+      DebugHash data 
+        int hash = -175842993
+        string name = Ear_Contact_R_ON
+      DebugHash data 
+        int hash = 1676827128
+        string name = Ear_Contact_R_OFF
+      DebugHash data 
+        int hash = -1639146660
+        string name = Jelly_Eye_FT_Idle
+      DebugHash data 
+        int hash = -586424738
+        string name = Step2
+      DebugHash data 
+        int hash = 1141018596
+        string name = Step1
+      DebugHash data 
+        int hash = -1772770222
+        string name = Idle
+      DebugHash data 
+        int hash = 653759117
+        string name = InStation
+      DebugHash data 
+        int hash = 726931918
+        string name = Eye Tracking Off
+      DebugHash data 
+        int hash = 919229334
+        string name = AFK
+      DebugHash data 
+        int hash = -768045444
+        string name = Idle
+      DebugHash data 
+        int hash = -504191800
+        string name = Eye Tracking On
+      DebugHash data 
+        int hash = -952551906
+        string name = Lip Tracking On
+      DebugHash data 
+        int hash = 403273856
+        string name = AFK
+      DebugHash data 
+        int hash = 1153607101
+        string name = Lip Tracking Off
+      DebugHash data 
+        int hash = 323110684
+        string name = InStation
+      DebugHash data 
+        int hash = 650311686
+        string name = Idle
+      DebugHash data 
+        int hash = 1431638994
+        string name = Idle
+      DebugHash data 
+        int hash = 1408342461
+        string name = QPro Toggle On
+      DebugHash data 
+        int hash = -377187316
+        string name = New State 1
+      DebugHash data 
+        int hash = 819561091
+        string name = QPro TongueOut
+      DebugHash data 
+        int hash = 1323045306
+        string name = Idle
+      DebugHash data 
+        int hash = -709943425
+        string name = FT Idle
+      DebugHash data 
+        int hash = -615302062
+        string name = AFK
+      DebugHash data 
+        int hash = 863132767
+        string name = AFK Out
+      DebugHash data 
+        int hash = 1666853253
+        string name = OSCmooth_Local
+      DebugHash data 
+        int hash = -378687850
+        string name = OSCmooth_Net
+      DebugHash data 
+        int hash = 1813314576
+        string name = <default>
+      DebugHash data 
+        int hash = -1895592812
+        string name = p
+      DebugHash data 
+        int hash = -1615356126
+        string name = <default>
+      DebugHash data 
+        int hash = -129990951
+        string name = gantai
+      DebugHash data 
+        int hash = -1080206074
+        string name = <default>
+      DebugHash data 
+        int hash = -135917996
+        string name = s
+      DebugHash data 
+        int hash = 1472115457
+        string name = <default>
+      DebugHash data 
+        int hash = -1997199648
+        string name = top
+      DebugHash data 
+        int hash = 115917684
+        string name = <default>
+      DebugHash data 
+        int hash = 1367559644
+        string name = top
+      DebugHash data 
+        int hash = -1982046779
+        string name = Merged Direct BlendTrees
+  UInt8 autoFootsteps = 0
+  UInt8 autoLocomotion = 1
+  ColliderConfig collider_head 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = 4747386894829587333
+    float radius = 0.043605722
+    float height = 0
+    Vector3f position 
+      float x = 1.7347235E-18
+      float y = 0.044310626
+      float z = 1.5599653E-08
+    Quaternionf rotation 
+      float x = 0
+      float y = 0
+      float z = 0
+      float w = 1
+  ColliderConfig collider_torso 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = 6506047485552254171
+    float radius = 0.066069275
+    float height = 0.2740608
+    Vector3f position 
+      float x = -6.938894E-18
+      float y = 0.026599146
+      float z = -0.008467596
+    Quaternionf rotation 
+      float x = 0.030911377
+      float y = 0
+      float z = 1.266546E-17
+      float w = 0.99952215
+  ColliderConfig collider_footR 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = 8444061710763601377
+    float radius = 0.060734898
+    float height = 0
+    Vector3f position 
+      float x = 0
+      float y = 0
+      float z = 0
+    Quaternionf rotation 
+      float x = 0
+      float y = 0
+      float z = 0
+      float w = 1
+  ColliderConfig collider_footL 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = -3109045038745714024
+    float radius = 0.060734898
+    float height = 0
+    Vector3f position 
+      float x = 0
+      float y = 0
+      float z = 0
+    Quaternionf rotation 
+      float x = 0
+      float y = 0
+      float z = 0
+      float w = 1
+  ColliderConfig collider_handR 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = 4921561662997696791
+    float radius = 0.015316604
+    float height = 0.061266415
+    Vector3f position 
+      float x = 0.0031114689
+      float y = 0.051949706
+      float z = -0.0018733806
+    Quaternionf rotation 
+      float x = 3.248881E-08
+      float y = 0
+      float z = 0.68564355
+      float w = 0.7279375
+  ColliderConfig collider_handL 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = -6522137625181033731
+    float radius = 0.015316604
+    float height = 0.061266415
+    Vector3f position 
+      float x = -0.0031114689
+      float y = 0.051949706
+      float z = -0.0018733806
+    Quaternionf rotation 
+      float x = 3.248881E-08
+      float y = 0
+      float z = -0.68564355
+      float w = 0.7279375
+  ColliderConfig collider_fingerIndexL 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = 262371629731246453
+    float radius = 0.0063418387
+    float height = 0.031709194
+    Vector3f position 
+      float x = 0
+      float y = 0
+      float z = 0
+    Quaternionf rotation 
+      float x = 0
+      float y = 0
+      float z = 0
+      float w = 1
+  ColliderConfig collider_fingerMiddleL 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = 3985004054366962316
+    float radius = 0.0066861147
+    float height = 0.033430573
+    Vector3f position 
+      float x = 0
+      float y = 0
+      float z = 0
+    Quaternionf rotation 
+      float x = 0
+      float y = 0
+      float z = 0
+      float w = 1
+  ColliderConfig collider_fingerRingL 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = -6878380372135839865
+    float radius = 0.006220891
+    float height = 0.031104455
+    Vector3f position 
+      float x = 0
+      float y = 0
+      float z = 0
+    Quaternionf rotation 
+      float x = 0
+      float y = 0
+      float z = 0
+      float w = 1
+  ColliderConfig collider_fingerLittleL 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = 9060084937854731522
+    float radius = 0.0048407004
+    float height = 0.0242035
+    Vector3f position 
+      float x = 0
+      float y = 0
+      float z = 0
+    Quaternionf rotation 
+      float x = 0
+      float y = 0
+      float z = 0
+      float w = 1
+  ColliderConfig collider_fingerIndexR 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = -685806288233262358
+    float radius = 0.0063418387
+    float height = 0.031709194
+    Vector3f position 
+      float x = 0
+      float y = 0
+      float z = 0
+    Quaternionf rotation 
+      float x = 0
+      float y = 0
+      float z = 0
+      float w = 1
+  ColliderConfig collider_fingerMiddleR 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = -3048245781656709325
+    float radius = 0.0066861147
+    float height = 0.033430573
+    Vector3f position 
+      float x = 0
+      float y = 0
+      float z = 0
+    Quaternionf rotation 
+      float x = 0
+      float y = 0
+      float z = 0
+      float w = 1
+  ColliderConfig collider_fingerRingR 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = -4271931072555463797
+    float radius = 0.006220891
+    float height = 0.031104455
+    Vector3f position 
+      float x = 0
+      float y = 0
+      float z = 0
+    Quaternionf rotation 
+      float x = 0
+      float y = 0
+      float z = 0
+      float w = 1
+  ColliderConfig collider_fingerLittleR 
+    UInt8 isMirrored = 1
+    int state = 0
+    PPtr<$Transform> transform 
+      int m_FileID = 0
+      SInt64 m_PathID = 3323461094753620045
+    float radius = 0.0048407004
+    float height = 0.0242035
+    Vector3f position 
+      float x = 0
+      float y = 0
+      float z = 0
+    Quaternionf rotation 
+      float x = 0
+      float y = 0
+      float z = 0
+      float w = 1

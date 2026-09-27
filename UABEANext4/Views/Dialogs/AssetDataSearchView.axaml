@@ -1,0 +1,107 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dlg="using:UABEANext4.ViewModels.Dialogs"
+             mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="400"
+             x:Class="UABEANext4.Views.Dialogs.AssetDataSearchView"
+             x:DataType="dlg:AssetDataSearchViewModel">
+  <Grid Margin="10,10,10,10" RowDefinitions="Auto,*,Auto">
+    <Grid ColumnDefinitions="*,Auto" Grid.Row="0">
+      <TextBox Text="{Binding SearchText}" Name="defaultBox" Grid.Column="0" />
+      <ComboBox SelectedIndex="{Binding SearchKind}" Width="130" Grid.Column="1">
+        <ComboBoxItem Content="字节 (Bytes)" />
+        <ComboBoxItem Content="文本 (Text)" />
+        <ComboBoxItem Content="有符号 4 字节 (Signed 4-byte)" />
+        <ComboBoxItem Content="有符号 8 字节 (Signed 8-byte)" />
+        <ComboBoxItem Content="无符号 4 字节 (Unsigned 4-byte)" />
+        <ComboBoxItem Content="无符号 8 字节 (Unsigned 8-byte)" />
+      </ComboBox>
+    </Grid>
+    <ListBox ItemsSource="{Binding SearchResults}" Grid.Row="1" />
+    <Grid ColumnDefinitions="*,*" Grid.Row="2">
+      <Button Grid.Column="0" Command="{Binding BtnSearch_Click}">搜索 (Search)</Button>
+      <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">关闭 (Close)</Button>
+    </Grid>
+  </Grid>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 UserControl 根节点并指定 Avalonia 的默认 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name、x:DataType 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- xmlns:dlg="using:UABEANext4.ViewModels.Dialogs" -->
+<!-- 在 XAML 中引用 ViewModels.Dialogs 命名空间，以便使用 AssetDataSearchViewModel 等类型。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="400" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（350x400）。 -->
+
+<!-- x:Class="UABEANext4.Views.Dialogs.AssetDataSearchView" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- x:DataType="dlg:AssetDataSearchViewModel"> -->
+<!-- 指定此视图的数据上下文类型为 AssetDataSearchViewModel，以便编译时绑定检查和 IntelliSense。 -->
+
+<!-- <Grid Margin="10,10,10,10" RowDefinitions="Auto,*,Auto"> -->
+<!-- 根布局：一个 Grid，外边距为 10 像素（四边）；行定义为三行：第一行 Auto，第二行 *（填充），第三行 Auto。 -->
+
+<!-- <Grid ColumnDefinitions="*,Auto" Grid.Row="0"> -->
+<!-- 第一行内部 Grid：两列，第一列占剩余空间，第二列自动宽度。 -->
+
+<!-- <TextBox Text="{Binding SearchText}" Name="defaultBox" Grid.Column="0" /> -->
+<!-- 第一列的文本框：Text 绑定到 ViewModel 的 SearchText，Name 为 defaultBox，放在第一列。 -->
+
+<!-- <ComboBox SelectedIndex="{Binding SearchKind}" Width="130" Grid.Column="1"> -->
+<!-- 第二列的下拉框：SelectedIndex 绑定到 ViewModel 的 SearchKind，宽度 130，放在第二列。 -->
+
+<!-- <ComboBoxItem Content="字节 (Bytes)" /> -->
+<!-- 下拉项：字节（Bytes）。 -->
+
+<!-- <ComboBoxItem Content="文本 (Text)" /> -->
+<!-- 下拉项：文本（Text）。 -->
+
+<!-- <ComboBoxItem Content="有符号 4 字节 (Signed 4-byte)" /> -->
+<!-- 下拉项：有符号 4 字节（Signed 4-byte）。 -->
+
+<!-- <ComboBoxItem Content="有符号 8 字节 (Signed 8-byte)" /> -->
+<!-- 下拉项：有符号 8 字节（Signed 8-byte）。 -->
+
+<!-- <ComboBoxItem Content="无符号 4 字节 (Unsigned 4-byte)" /> -->
+<!-- 下拉项：无符号 4 字节（Unsigned 4-byte）。 -->
+
+<!-- <ComboBoxItem Content="无符号 8 字节 (Unsigned 8-byte)" /> -->
+<!-- 下拉项：无符号 8 字节（Unsigned 8-byte）。 -->
+
+<!-- </ComboBox> -->
+<!-- 结束下拉框定义。 -->
+
+<!-- </Grid> -->
+<!-- 结束第一行内部 Grid。 -->
+
+<!-- <ListBox ItemsSource="{Binding SearchResults}" Grid.Row="1" /> -->
+<!-- 第二行：ListBox，ItemsSource 绑定到 ViewModel 的 SearchResults，用于显示搜索结果。 -->
+
+<!-- <Grid ColumnDefinitions="*,*" Grid.Row="2"> -->
+<!-- 第三行：底部 Grid，包含两列，均为等分宽度，用于放置操作按钮。 -->
+
+<!-- <Button Grid.Column="0" Command="{Binding BtnSearch_Click}">搜索 (Search)</Button> -->
+<!-- 左侧按钮：绑定 BtnSearch_Click 命令，显示文本“搜索 (Search)”。 -->
+
+<!-- <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">关闭 (Close)</Button> -->
+<!-- 右侧按钮：绑定 BtnCancel_Click 命令，显示文本“关闭 (Close)”。 -->
+
+<!-- </Grid> -->
+<!-- 结束底部 Grid。 -->
+
+<!-- </Grid> -->
+<!-- 结束根 Grid 布局容器。 -->
+
+<!-- </UserControl> -->
+<!-- 结束 UserControl 根节点。 -->

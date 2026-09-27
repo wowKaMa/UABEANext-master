@@ -1,0 +1,59 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:docs="using:UABEANext4.ViewModels.Documents"
+             xmlns:uac="using:UABEANext4.Converters"
+             xmlns:ws="using:UABEANext4.AssetWorkspace"
+             x:Class="UABEANext4.Views.Documents.BlankDocumentView"
+             x:DataType="docs:BlankDocumentViewModel">
+  <TextBlock TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">
+    打开一个资产文件或包文件，并在工作区浏览器中选择它以在此处加载 (Open an assets file or bundle file and select it in the Workspace Explorer to load it here.)
+  </TextBlock>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 UserControl 根节点并指定 Avalonia 的默认 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（800x450）。 -->
+
+<!-- xmlns:docs="using:UABEANext4.ViewModels.Documents" -->
+<!-- 在 XAML 中引用 ViewModels.Documents 命名空间，以便使用 BlankDocumentViewModel 等类型。 -->
+
+<!-- xmlns:uac="using:UABEANext4.Converters" -->
+<!-- 在 XAML 中引用 Converters 命名空间（此文件未直接使用转换器，但命名空间保留以便一致性）。 -->
+
+<!-- xmlns:ws="using:UABEANext4.AssetWorkspace" -->
+<!-- 在 XAML 中引用 AssetWorkspace 命名空间（此文件未直接使用该命名空间类型，但保留以便一致性）。 -->
+
+<!-- x:Class="UABEANext4.Views.Documents.BlankDocumentView" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- x:DataType="docs:BlankDocumentViewModel"> -->
+<!-- 指定此视图的数据上下文类型为 BlankDocumentViewModel，以便编译时绑定检查和 IntelliSense（即使此视图没有绑定属性，也保持类型声明以便一致性）。 -->
+
+<!-- <TextBlock TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"> -->
+<!-- 在 UserControl 中放置一个 TextBlock： -->
+<!-- - TextAlignment="Center" 将文本水平居中； -->
+<!-- - VerticalAlignment="Center" 将控件在容器中垂直居中； -->
+<!-- - TextWrapping="Wrap" 启用自动换行以适应窄窗口。 -->
+
+<!-- 打开一个资产文件或包文件，并在工作区浏览器中选择它以在此处加载 (Open an assets file or bundle file and select it in the Workspace Explorer to load it here.) -->
+<!-- TextBlock 的显示文本已翻译为中文并保留英文原名在括号内，便于用户识别原始英文提示。 -->
+<!-- 该文本是静态显示提示，提示用户如何在工作区浏览器中选择并加载资产或包文件。 -->
+
+<!-- </TextBlock> -->
+<!-- 结束 TextBlock 定义。 -->
+
+<!-- </UserControl> -->
+<!-- 结束 UserControl 根节点。 -->

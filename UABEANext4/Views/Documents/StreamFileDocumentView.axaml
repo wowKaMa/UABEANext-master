@@ -1,0 +1,211 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:docs="using:UABEANext4.ViewModels.Documents"
+             xmlns:ws="using:UABEANext4.AssetWorkspace"
+             xmlns:uac="using:UABEANext4.Converters"
+             x:Class="UABEANext4.Views.Documents.StreamFileDocumentView"
+             x:DataType="docs:StreamFileDocumentViewModel">
+  <Grid>
+    <Grid.Resources>
+      <uac:AssetTypeIconConverter x:Key="AssetTypeIconConverter" />
+      <x:Double x:Key="IconSize">14</x:Double>
+    </Grid.Resources>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <!-- Toolbar Section (Mirroring AssetDocumentView) -->
+    <WrapPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" Margin="2">
+      <Button MinWidth="90" Margin="0,0,4,4" Padding="4" Command="{Binding ViewScene}" HorizontalContentAlignment="Left">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4">
+          <Image Source="avares://UABEANext4/Assets/Icons/action-view-scene.png" Width="{StaticResource IconSize}" Height="{StaticResource IconSize}" VerticalAlignment="Center" />
+          <TextBlock Text="查看场景(View Scene)" VerticalAlignment="Center" FontSize="12" />
+        </StackPanel>
+      </Button>
+
+      <Button MinWidth="90" Margin="0,0,4,4" Padding="4" Command="{Binding Export}" HorizontalContentAlignment="Left">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4">
+          <Image Source="avares://UABEANext4/Assets/Icons/action-export-asset.png" Width="{StaticResource IconSize}" Height="{StaticResource IconSize}" VerticalAlignment="Center" />
+          <TextBlock Text="导出(Export)" VerticalAlignment="Center" FontSize="12" />
+        </StackPanel>
+      </Button>
+
+      <Button MinWidth="90" Margin="0,0,4,4" Padding="4" Command="{Binding Import}" HorizontalContentAlignment="Left">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4">
+          <Image Source="avares://UABEANext4/Assets/Icons/action-import-asset.png" Width="{StaticResource IconSize}" Height="{StaticResource IconSize}" VerticalAlignment="Center" />
+          <TextBlock Text="导入(Import)" VerticalAlignment="Center" FontSize="12" />
+        </StackPanel>
+      </Button>
+
+      <Button MinWidth="90" Margin="0,0,4,4" Padding="4" Command="{Binding EditDump}" HorizontalContentAlignment="Left">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4">
+          <Image Source="avares://UABEANext4/Assets/Icons/action-view-info.png" Width="{StaticResource IconSize}" Height="{StaticResource IconSize}" VerticalAlignment="Center" />
+          <TextBlock Text="编辑数据(Edit Data)" VerticalAlignment="Center" FontSize="12" />
+        </StackPanel>
+      </Button>
+
+      <Button MinWidth="90" Margin="0,0,4,4" Padding="4" Command="{Binding ShowPlugins}" HorizontalContentAlignment="Left">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4">
+          <Image Source="avares://UABEANext4/Assets/Icons/action-plugins.png" Width="{StaticResource IconSize}" Height="{StaticResource IconSize}" VerticalAlignment="Center" />
+          <TextBlock Text="插件(Plugins)" VerticalAlignment="Center" FontSize="12" />
+        </StackPanel>
+      </Button>
+
+      <Button MinWidth="90" Margin="0,0,4,4" Padding="4" Command="{Binding AddAsset}" HorizontalContentAlignment="Left">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4">
+          <Image Source="avares://UABEANext4/Assets/Icons/action-add-asset.png" Width="{StaticResource IconSize}" Height="{StaticResource IconSize}" VerticalAlignment="Center" />
+          <TextBlock Text="添加(Add)" VerticalAlignment="Center" FontSize="12" />
+        </StackPanel>
+      </Button>
+
+      <Button MinWidth="90" Margin="0,0,4,4" Padding="4" Command="{Binding RemoveAsset}" HorizontalContentAlignment="Left">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4">
+          <Image Source="avares://UABEANext4/Assets/Icons/action-remove-asset.png" Width="{StaticResource IconSize}" Height="{StaticResource IconSize}" VerticalAlignment="Center" />
+          <TextBlock Text="移除(Remove)" VerticalAlignment="Center" FontSize="12" />
+        </StackPanel>
+      </Button>
+    </WrapPanel>
+
+    <!-- Search Section -->
+    <Grid Grid.Row="1" Margin="4" ColumnDefinitions="*,Auto" VerticalAlignment="Center">
+      <TextBox Grid.Column="0" Text="{Binding SearchText}" Watermark="资产名称搜索 (Asset name search)"
+               MinWidth="160" VerticalContentAlignment="Center" Margin="0,0,6,0" FontSize="12" />
+
+      <Button Grid.Column="1" MinWidth="120" Padding="4" HorizontalContentAlignment="Left">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4">
+          <Image Source="avares://UABEANext4/Assets/Icons/action-filter.png" Width="{StaticResource IconSize}" Height="{StaticResource IconSize}" VerticalAlignment="Center" />
+          <TextBlock Text="搜索过滤 (Search Filters)" VerticalAlignment="Center" FontSize="12" />
+        </StackPanel>
+        <Button.Flyout>
+          <Flyout>
+            <StackPanel Margin="4" Width="200">
+              <TextBlock Margin="0,0,0,6" FontSize="12">筛选 (Filters)</TextBlock>
+              <Button Command="{Binding SetTypeFilter}" HorizontalAlignment="Stretch" FontSize="12">设置类型过滤 (Set type filter)</Button>
+              <Separator Margin="0,6,0,6" />
+              <TextBlock Margin="0,0,0,6" FontSize="12">文件: <Run Text="{Binding Title}" Foreground="#0097fb"/></TextBlock>
+            </StackPanel>
+          </Flyout>
+        </Button.Flyout>
+      </Button>
+    </Grid>
+
+    <!-- DataGrid Section -->
+    <DataGrid Grid.Row="2"
+              ItemsSource="{Binding CollectionView}"
+              AutoGenerateColumns="False"
+              CanUserResizeColumns="True"
+              CanUserReorderColumns="True"
+              IsReadOnly="True"
+              Margin="4"
+              RowHeight="30"
+              ColumnHeaderHeight="32"
+              GridLinesVisibility="Horizontal"
+              HorizontalGridLinesBrush="#1FFFFFFF">
+      
+      <DataGrid.Styles>
+        <Style Selector="DataGridCell TextBlock">
+          <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+          <Setter Property="TextBlock.TextTrimming" Value="CharacterEllipsis"/>
+          <Setter Property="TextBlock.FontSize" Value="12"/>
+        </Style>
+
+        <Style Selector="DataGridCell">
+          <Setter Property="Padding" Value="6,0,6,0"/>
+        </Style>
+
+        <Style Selector="DataGridColumnHeader">
+          <Setter Property="Padding" Value="6,4,6,4"/>
+          <Setter Property="FontSize" Value="12"/>
+        </Style>
+      </DataGrid.Styles>
+
+      <DataGrid.RowTheme>
+        <ControlTheme TargetType="DataGridRow" BasedOn="{StaticResource {x:Type DataGridRow}}">
+          <ControlTheme.Children>
+            <Style Selector="^:nth-child(2n)">
+              <Setter Property="Background" Value="#08FFFFFF" />
+            </Style>
+          </ControlTheme.Children>
+        </ControlTheme>
+      </DataGrid.RowTheme>
+
+      <DataGrid.Columns>
+        <DataGridTemplateColumn Header=" " Width="36">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate x:DataType="ws:ResourceEntry">
+              <Image Source="{Binding Type, Converter={StaticResource AssetTypeIconConverter}}"
+                     Width="14" Height="14" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+
+        <DataGridTemplateColumn Header="名称（Name）" Width="2*" SortMemberPath="Name">
+          <DataGridTemplateColumn.HeaderTemplate>
+            <DataTemplate>
+              <TextBlock Text="名称（Name）" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" FontSize="12" />
+            </DataTemplate>
+          </DataGridTemplateColumn.HeaderTemplate>
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate x:DataType="ws:ResourceEntry">
+              <TextBlock Text="{Binding Name}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" MaxWidth="360" FontSize="12" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+
+        <DataGridTextColumn Header="类型（Type）" Width="110" Binding="{Binding Type}" x:DataType="ws:ResourceEntry">
+          <DataGridTextColumn.HeaderTemplate>
+            <DataTemplate>
+              <TextBlock Text="类型（Type）" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" FontSize="12" />
+            </DataTemplate>
+          </DataGridTextColumn.HeaderTemplate>
+        </DataGridTextColumn>
+
+        <DataGridTemplateColumn Header="文件名（File Name）" Width="1.4*" SortMemberPath="FileName">
+          <DataGridTemplateColumn.HeaderTemplate>
+            <DataTemplate>
+              <TextBlock Text="文件名（File Name）" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" FontSize="12" />
+            </DataTemplate>
+          </DataGridTemplateColumn.HeaderTemplate>
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate x:DataType="ws:ResourceEntry">
+              <TextBlock Text="{Binding FileName}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" MaxWidth="260" FontSize="12" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+
+        <DataGridTextColumn Header="路径 ID（Path ID）" Width="120" Binding="{Binding PathId}" x:DataType="ws:ResourceEntry">
+          <DataGridTextColumn.HeaderTemplate>
+            <DataTemplate>
+              <TextBlock Text="路径 ID（Path ID）" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" FontSize="12" />
+            </DataTemplate>
+          </DataGridTextColumn.HeaderTemplate>
+        </DataGridTextColumn>
+
+        <DataGridTextColumn Header="大小（Size）" Width="80" SortMemberPath="Size" Binding="{Binding DisplaySize}" x:DataType="ws:ResourceEntry">
+          <DataGridTextColumn.HeaderTemplate>
+            <DataTemplate>
+              <TextBlock Text="大小（Size）" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" FontSize="12" />
+            </DataTemplate>
+          </DataGridTextColumn.HeaderTemplate>
+        </DataGridTextColumn>
+
+        <DataGridTextColumn Header="偏移（Offset）" Width="100" Binding="{Binding Offset}" x:DataType="ws:ResourceEntry">
+          <DataGridTextColumn.HeaderTemplate>
+            <DataTemplate>
+              <TextBlock Text="偏移（Offset）" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" FontSize="12" />
+            </DataTemplate>
+          </DataGridTextColumn.HeaderTemplate>
+        </DataGridTextColumn>
+      </DataGrid.Columns>
+    </DataGrid>
+
+    <!-- Busy Indicator Overlay -->
+    <ProgressBar Grid.Row="2" VerticalAlignment="Top" IsIndeterminate="True" Height="2" IsVisible="{Binding IsBusy}" Foreground="#0097fb" Background="Transparent"/>
+  </Grid>
+</UserControl>

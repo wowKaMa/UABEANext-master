@@ -1,0 +1,206 @@
+<UserControl 
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:UABEANext4.ViewModels"
+    mc:Ignorable="d"
+    d:DesignWidth="800"
+    d:DesignHeight="450"
+    x:Class="UABEANext4.Views.MainView"
+    x:DataType="vm:MainViewModel"
+    RenderOptions.BitmapInterpolationMode="MediumQuality">
+
+    <Design.DataContext>
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto,*,22" Margin="4">
+        <Menu Grid.Row="0" Padding="0,6">
+            <MenuItem Header="文件 (File)">
+                <MenuItem Header="打开 (Open)" Command="{Binding FileOpen}" HotKey="Ctrl+O" InputGesture="Ctrl+O" />
+                <MenuItem Header="打开文件夹 (Open Folder)" Command="{Binding FileOpenFolder}" HotKey="Ctrl+Shift+O" InputGesture="Ctrl+Shift+O" />
+                <MenuItem Header="保存已选 (Save Selected)" Command="{Binding FileSave}" HotKey="Ctrl+S" InputGesture="Ctrl+S" />
+                <MenuItem Header="另存已选为... (Save Selected As...)" Command="{Binding FileSaveAs}" HotKey="Ctrl+Shift+S" InputGesture="Ctrl+Shift+S" />
+                <MenuItem Header="保存全部 (Save All)" Command="{Binding FileSaveAll}" HotKey="Ctrl+Alt+S" InputGesture="Ctrl+Alt+S" />
+                <MenuItem Header="关闭全部 (Close All)" Command="{Binding FileCloseAll}" HotKey="Ctrl+Shift+W" InputGesture="Ctrl+Shift+W" />
+            </MenuItem>
+
+            <MenuItem Header="视图 (View)">
+                <MenuItem Header="复制标签页 (Duplicate Tab)" Command="{Binding ViewDuplicateTab}" />
+                <MenuItem Header="-" />
+                <MenuItem Header="工作区浏览器 (Workspace Explorer)" ToggleType="CheckBox" IsChecked="{Binding DockWorkspaceExplorerVisible, Mode=TwoWay}" />
+                <MenuItem Header="层级 (Hierarchy)" ToggleType="CheckBox" IsChecked="{Binding DockHierarchyVisible, Mode=TwoWay}" />
+                <MenuItem Header="检查器 (Inspector)" ToggleType="CheckBox" IsChecked="{Binding DockInspectorVisible, Mode=TwoWay}" />
+                <MenuItem Header="预览器 (Previewer)" ToggleType="CheckBox" IsChecked="{Binding DockPreviewerVisible, Mode=TwoWay}" />
+                <MenuItem Header="Unity 组件 (Unity Components)" ToggleType="CheckBox" IsChecked="{Binding DockUnityComponentsVisible, Mode=TwoWay}" />
+                <MenuItem Header="-" />
+                <MenuItem Header="显示容器路径 (Show container paths) (较慢/Slower)" ToggleType="CheckBox" IsChecked="{Binding LoadContainers, Mode=TwoWay}" />
+            </MenuItem>
+
+            <MenuItem Header="工具 (Tools)">
+                <MenuItem Header="VRCA 深度结构审查器 (VRCA Deep Structure Inspector)" Command="{Binding ShowVrcaInspector}" />
+                <MenuItem Header="-" />
+                <MenuItem Header="资产信息 (Asset Info)" Command="{Binding ShowAssetInfoDialog}" IsEnabled="{Binding Workspace.RootItems.Count}" />
+                <MenuItem Header="搜索字节 (Search Bytes)" Command="{Binding ShowSearchBytesDialog}" IsEnabled="{Binding Workspace.RootItems.Count}" />
+                <MenuItem Header="二进制改模 (Binary Modding)" Command="{Binding ShowVrcaPatcher}" IsEnabled="{Binding Workspace.RootItems.Count}" />
+                <MenuItem Header="密码破解 (Password Cracker)" Command="{Binding ShowPasswordCracker}"  IsEnabled="{Binding Workspace.RootItems.Count}" />
+                <MenuItem Header="批量替换贴图 (Batch Texture Replacement)" Command="{Binding ShowTextureReplacement}" IsEnabled="{Binding Workspace.RootItems.Count}"/>
+                <MenuItem Header="贴图纹理压缩 (Texture Compression)" Command="{Binding ShowTextureCompression}" />
+                <MenuItem Header="变形修复 (Deformation Repair)" Command="{Binding ShowDeformationRepair}" IsEnabled="{Binding Workspace.RootItems.Count}" />
+                <MenuItem Header="OSC 工具 (OSC Tool)" Command="{Binding ShowOscTool}" />
+                <MenuItem Header="选项设置 (Options)" Command="{Binding ShowOptionsDialog}" />
+            </MenuItem>
+        </Menu>
+
+        <DockControl Layout="{Binding Layout}" Margin="4" Grid.Row="1" Name="dockControl" />
+
+        <Grid ColumnDefinitions="1*,4,2*" Margin="4,0,0,4" Grid.Row="2">
+            <ProgressBar Value="{Binding Workspace.ProgressValue}" Minimum="0" Maximum="1" Grid.Column="0" />
+            <Label Content="{Binding Workspace.ProgressText}" Grid.Column="2" Padding="0" />
+        </Grid>
+    </Grid>
+</UserControl>
+<!-- <UserControl  -->
+<!-- 根节点：定义一个 Avalonia 用户控件，作为此视图的根元素。 -->
+
+<!-- xmlns="https://github.com/avaloniaui" -->
+<!-- 指定 Avalonia 的默认 XAML 命名空间，必须保留以便解析控件。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 提供 x: 前缀功能（例如 x:Class、x:Name 等）。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 兼容性命名空间，用于处理不同 XAML 版本或设计时属性。 -->
+
+<!-- xmlns:vm="clr-namespace:UABEANext4.ViewModels" -->
+<!-- 引用项目中 ViewModels 的 CLR 命名空间，以便在 XAML 中使用类型。 -->
+
+<!-- mc:Ignorable="d" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性）。 -->
+
+<!-- d:DesignWidth="800" -->
+<!-- 设计器中显示的默认宽度（仅设计时参考）。 -->
+
+<!-- d:DesignHeight="450" -->
+<!-- 设计器中显示的默认高度（仅设计时参考）。 -->
+
+<!-- x:Class="UABEANext4.Views.MainView" -->
+<!-- 指定此 XAML 对应的后台 C# 类（partial class）。 -->
+
+<!-- x:DataType="vm:MainViewModel" -->
+<!-- 指定此视图的数据上下文类型（用于编译时绑定检查和 IntelliSense）。 -->
+
+<!-- RenderOptions.BitmapInterpolationMode="MediumQuality" -->
+<!-- 设置位图插值模式为中等质量，影响图像缩放时的渲染质量。 -->
+
+<!-- <Design.DataContext> -->
+<!-- 设计时数据上下文开始：仅在设计器中实例化 ViewModel 以便预览。 -->
+
+<!-- <vm:MainViewModel /> -->
+<!-- 在设计器中使用 MainViewModel 的实例作为 DataContext（仅设计时）。 -->
+
+<!-- </Design.DataContext> -->
+<!-- 设计时数据上下文结束。 -->
+
+<!-- <Grid RowDefinitions="Auto,*,22" Margin="4"> -->
+<!-- 主布局：三行网格。第一行高度自适应（Auto），第二行占满剩余空间（*），第三行固定高度 22。外边距 4。 -->
+
+<!-- <Menu Grid.Row="0" Padding="0,6"> -->
+<!-- 菜单栏，放在网格第一行，内边距上/下为 6。 -->
+
+<!-- <MenuItem Header="文件 (File)"> -->
+<!-- 菜单项：文件（显示为中文并保留英文原名在括号内）。 -->
+
+<!-- <MenuItem Header="打开 (Open)" Command="{Binding FileOpen}" HotKey="Ctrl+O" InputGesture="Ctrl+O" /> -->
+<!-- 子菜单：打开，绑定到 ViewModel 的 FileOpen 命令，设置快捷键 Ctrl+O。 -->
+
+<!-- <MenuItem Header="打开文件夹 (Open Folder)" Command="{Binding FileOpenFolder}" HotKey="Ctrl+Shift+O" InputGesture="Ctrl+Shift+O" /> -->
+<!-- 子菜单：打开文件夹，绑定 FileOpenFolder 命令，快捷键 Ctrl+Shift+O。 -->
+
+<!-- <MenuItem Header="保存已选 (Save Selected)" Command="{Binding FileSave}" HotKey="Ctrl+S" InputGesture="Ctrl+S" /> -->
+<!-- 子菜单：保存已选，绑定 FileSave 命令，快捷键 Ctrl+S。 -->
+
+<!-- <MenuItem Header="另存已选为... (Save Selected As...)" Command="{Binding FileSaveAs}" HotKey="Ctrl+Shift+S" InputGesture="Ctrl+Shift+S" /> -->
+<!-- 子菜单：另存为，绑定 FileSaveAs 命令，快捷键 Ctrl+Shift+S。 -->
+
+<!-- <MenuItem Header="保存全部 (Save All)" Command="{Binding FileSaveAll}" HotKey="Ctrl+Alt+S" InputGesture="Ctrl+Alt+S" /> -->
+<!-- 子菜单：保存全部，绑定 FileSaveAll 命令，快捷键 Ctrl+Alt+S。 -->
+
+<!-- <MenuItem Header="关闭全部 (Close All)" Command="{Binding FileCloseAll}" HotKey="Ctrl+Shift+W" InputGesture="Ctrl+Shift+W" /> -->
+<!-- 子菜单：关闭全部，绑定 FileCloseAll 命令，快捷键 Ctrl+Shift+W。 -->
+
+<!-- </MenuItem> -->
+<!-- 结束“文件”菜单项。 -->
+
+<!-- <MenuItem Header="视图 (View)"> -->
+<!-- 菜单项：视图（中文 + 英文原名）。 -->
+
+<!-- <MenuItem Header="复制标签页 (Duplicate Tab)" Command="{Binding ViewDuplicateTab}" /> -->
+<!-- 子菜单：复制标签页，绑定 ViewDuplicateTab 命令。 -->
+
+<!-- <MenuItem Header="-" /> -->
+<!-- 分隔符（显示为短横线）。 -->
+
+<!-- <MenuItem Header="工作区浏览器 (Workspace Explorer)" ToggleType="CheckBox" IsChecked="{Binding DockWorkspaceExplorerVisible, Mode=TwoWay}" /> -->
+<!-- 子菜单：工作区浏览器，使用复选框切换，双向绑定 DockWorkspaceExplorerVisible。 -->
+
+<!-- <MenuItem Header="层级 (Hierarchy)" ToggleType="CheckBox" IsChecked="{Binding DockHierarchyVisible, Mode=TwoWay}" /> -->
+<!-- 子菜单：层级，复选框绑定 DockHierarchyVisible。 -->
+
+<!-- <MenuItem Header="检查器 (Inspector)" ToggleType="CheckBox" IsChecked="{Binding DockInspectorVisible, Mode=TwoWay}" /> -->
+<!-- 子菜单：检查器，复选框绑定 DockInspectorVisible。 -->
+
+<!-- <MenuItem Header="预览器 (Previewer)" ToggleType="CheckBox" IsChecked="{Binding DockPreviewerVisible, Mode=TwoWay}" /> -->
+<!-- 子菜单：预览器，复选框绑定 DockPreviewerVisible。 -->
+
+<!-- <MenuItem Header="-" /> -->
+<!-- 分隔符。 -->
+
+<!-- <MenuItem Header="显示容器路径 (Show container paths) - 较慢" ToggleType="CheckBox" IsChecked="{Binding LoadContainers, Mode=TwoWay}" /> -->
+<!-- 子菜单：显示容器路径（提示较慢），复选框绑定 LoadContainers。 -->
+
+<!-- </MenuItem> -->
+<!-- 结束“视图”菜单项。 -->
+
+<!-- <MenuItem Header="工具 (Tools)"> -->
+<!-- 菜单项：工具（中文 + 英文原名）。 -->
+
+<!-- <MenuItem Header="资产信息 (Asset Info)" Command="{Binding ShowAssetInfoDialog}" IsEnabled="{Binding Workspace.RootItems.Count}" /> -->
+<!-- 子菜单：资产信息，绑定 ShowAssetInfoDialog 命令，仅当 Workspace.RootItems.Count 非零时启用。 -->
+
+<!-- <MenuItem Header="搜索字节 (Search Bytes)" Command="{Binding ShowSearchBytesDialog}" IsEnabled="{Binding Workspace.RootItems.Count}" /> -->
+<!-- 子菜单：搜索字节，绑定 ShowSearchBytesDialog 命令，仅当 Workspace.RootItems.Count 非零时启用。 -->
+
+<!-- <MenuItem Header="选项设置 (Options)" Command="{Binding ShowOptionsDialog}" /> -->
+<!-- 子菜单：选项设置，绑定 ShowOptionsDialog 命令。 -->
+
+<!-- </MenuItem> -->
+<!-- 结束“工具”菜单项。 -->
+
+<!-- </Menu> -->
+<!-- 结束菜单栏定义。 -->
+
+<!-- <DockControl Layout="{Binding Layout}" Margin="4" Grid.Row="1" Name="dockControl" /> -->
+<!-- 停靠控件：绑定到 ViewModel 的 Layout，用于显示可停靠面板布局，放在网格第二行。 -->
+
+<!-- <Grid ColumnDefinitions="1*,4,2*" Margin="4,0,0,4" Grid.Row="2"> -->
+<!-- 底部状态行：三列布局，列宽分别为 1*, 4, 2*，放在网格第三行。 -->
+
+<!-- <ProgressBar Value="{Binding Workspace.ProgressValue}" Minimum="0" Maximum="1" Grid.Column="0" /> -->
+<!-- 进度条：绑定 Workspace.ProgressValue（0 到 1），放在第一列。 -->
+
+<!-- <Label Content="{Binding Workspace.ProgressText}" Grid.Column="2" Padding="0" /> -->
+<!-- 标签：显示 Workspace.ProgressText，放在第三列，内边距 0。 -->
+
+<!-- </Grid> -->
+<!-- 结束底部状态行网格。 -->
+
+<!-- </Grid> -->
+<!-- 结束主网格布局。 -->
+
+<!-- </UserControl> -->
+<!-- 结束 UserControl 根节点。 -->

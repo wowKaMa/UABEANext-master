@@ -1,0 +1,32 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -1861468574276225158
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5747351305837597138
+  },
+  "m_Name": "",
+  "PlayerMobility": 2,
+  "canUseStationFromStation": 1,
+  "animatorController": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "disableStationExit": 0,
+  "seated": 1,
+  "stationEnterPlayerLocation": {
+    "m_FileID": 0,
+    "m_PathID": 5052838445713170920
+  },
+  "stationExitPlayerLocation": {
+    "m_FileID": 0,
+    "m_PathID": 1799126859210278883
+  },
+  "controlsObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  }
+}

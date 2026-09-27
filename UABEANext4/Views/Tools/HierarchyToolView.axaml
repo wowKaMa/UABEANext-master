@@ -1,0 +1,122 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:um="using:UABEANext4.Controls"
+             xmlns:tools="using:UABEANext4.ViewModels.Tools"
+             xmlns:hier="using:UABEANext4.Logic.Hierarchy"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="UABEANext4.Views.Tools.HierarchyToolView"
+             x:DataType="tools:HierarchyToolViewModel">
+  <Grid RowDefinitions="*,20">
+    <TreeView Grid.Row="0" Margin="0,0,0,0" Background="{DynamicResource DockThemeListBackgroundBrush}" Name="GameObjectTreeView" SelectionChanged="HierarchyTreeView_OnSelectionChanged" SelectedItems="{Binding SelectedItems}" ItemsSource="{Binding RootItems}" SelectionMode="Multiple" DragDrop.AllowDrop="True">
+      <TreeView.ItemTemplate>
+        <TreeDataTemplate DataType="{x:Type hier:HierarchyItem}" ItemsSource="{Binding Children}">
+          <TextBlock Text="{Binding Name}">
+            <TextBlock.ContextMenu>
+              <ContextMenu>
+                <MenuItem Header="设置服装 (Setup Outfit) (MA)" Click="SetupOutfit_Click" />
+                <MenuItem Header="移除 (Remove) (Del)" Foreground="Red" Click="RemoveNode_Click" />
+              </ContextMenu>
+            </TextBlock.ContextMenu>
+          </TextBlock>
+        </TreeDataTemplate>
+      </TreeView.ItemTemplate>
+      <TreeView.Styles>
+        <Style Selector="TreeViewItem" x:DataType="hier:HierarchyItem">
+          <Setter Property="IsExpanded" Value="{Binding Expanded}" />
+        </Style>
+      </TreeView.Styles>
+    </TreeView>
+    <CheckBox Grid.Row="1" IsChecked="{Binding SortAlphabetically}" IsEnabled="{Binding !IsLoadingNewItems}">按字母排序根游戏对象 (Sort root GameObjects alphabetically)</CheckBox>
+  </Grid>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 UserControl 根节点并指定 Avalonia 的默认 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- xmlns:um="using:UABEANext4.Controls" -->
+<!-- 在 XAML 中引用项目内的 UABEANext4.Controls 命名空间，以便使用自定义控件。 -->
+
+<!-- xmlns:tools="using:UABEANext4.ViewModels.Tools" -->
+<!-- 在 XAML 中引用 ViewModels.Tools 命名空间，以便在 x:DataType 或绑定路径中使用 ViewModel 类型。 -->
+
+<!-- xmlns:hier="using:UABEANext4.Logic.Hierarchy" -->
+<!-- 在 XAML 中引用 Logic.Hierarchy 命名空间，以便使用 HierarchyItem 等类型。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（800x450）。 -->
+
+<!-- x:Class="UABEANext4.Views.Tools.HierarchyToolView" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- x:DataType="tools:HierarchyToolViewModel"> -->
+<!-- 指定此视图的数据上下文类型为 HierarchyToolViewModel，以便编译时绑定检查和 IntelliSense。 -->
+
+<!-- <Grid RowDefinitions="*,20"> -->
+<!-- 定义一个 Grid 布局，包含两行：第一行占满剩余空间（*），第二行固定高度 20。 -->
+
+<!-- <TreeView Grid.Row="0" Margin="0,0,0,0" Background="{DynamicResource DockThemeListBackgroundBrush}" Name="GameObjectTreeView" SelectionChanged="HierarchyTreeView_OnSelectionChanged" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding RootItems}"> -->
+<!-- 在网格第一行放置 TreeView： -->
+<!-- - Margin 设置为 0； -->
+<!-- - Background 使用动态资源 DockThemeListBackgroundBrush（主题相关）； -->
+<!-- - Name 为 GameObjectTreeView（可在后台代码中引用）； -->
+<!-- - SelectionChanged 指定事件处理器 HierarchyTreeView_OnSelectionChanged（在 code-behind 中实现）； -->
+<!-- - SelectedItem 绑定到 ViewModel 的 SelectedItem 属性（单选绑定）； -->
+<!-- - ItemsSource 绑定到 ViewModel 的 RootItems（树的根节点集合）。 -->
+
+<!-- <TreeView.ItemTemplate> -->
+<!-- 开始定义 TreeView 的节点模板（ItemTemplate）。 -->
+
+<!-- <TreeDataTemplate DataType="{x:Type hier:HierarchyItem}" ItemsSource="{Binding Children}"> -->
+<!-- 使用 TreeDataTemplate： -->
+<!-- - DataType 指定模板适用于 hier:HierarchyItem 类型； -->
+<!-- - ItemsSource 绑定到该项的 Children 属性（用于显示子节点）。 -->
+
+<!-- <TextBlock Text="{Binding Name}" /> -->
+<!-- 在模板中使用 TextBlock 显示节点名称，Text 绑定到当前项的 Name 属性。 -->
+
+<!-- </TreeDataTemplate> -->
+<!-- 结束 TreeDataTemplate 定义。 -->
+
+<!-- </TreeView.ItemTemplate> -->
+<!-- 结束 TreeView 的 ItemTemplate 定义。 -->
+
+<!-- <TreeView.Styles> -->
+<!-- 开始为 TreeView 定义样式集合（局部样式）。 -->
+
+<!-- <Style Selector="TreeViewItem" x:DataType="hier:HierarchyItem"> -->
+<!-- 定义一个样式，选择器为 TreeViewItem，并指定 x:DataType 为 hier:HierarchyItem（便于绑定类型检查）。 -->
+
+<!-- <Setter Property="IsExpanded" Value="{Binding Expanded}" /> -->
+<!-- 将 TreeViewItem 的 IsExpanded 属性绑定到数据项的 Expanded 属性，以便展开/折叠状态由 ViewModel 控制。 -->
+
+<!-- </Style> -->
+<!-- 结束该样式定义。 -->
+
+<!-- </TreeView.Styles> -->
+<!-- 结束 TreeView 的样式集合。 -->
+
+<!-- </TreeView> -->
+<!-- 结束 TreeView 控件定义。 -->
+
+<!-- <CheckBox Grid.Row="1" IsChecked="{Binding SortAlphabetically}" IsEnabled="{Binding !IsLoadingNewItems}">按字母排序根游戏对象 (Sort root GameObjects alphabetically)</CheckBox> -->
+<!-- 在网格第二行放置 CheckBox： -->
+<!-- - Grid.Row="1" 表示放在第二行； -->
+<!-- - IsChecked 绑定到 ViewModel 的 SortAlphabetically（控制是否按字母排序）； -->
+<!-- - IsEnabled 绑定到 !IsLoadingNewItems（当正在加载新项时禁用复选框）； -->
+<!-- - 显示文本已翻译为中文并保留原英文括注：按字母排序根游戏对象 (Sort root GameObjects alphabetically)。 -->
+
+<!-- </Grid> -->
+<!-- 结束 Grid 布局容器。 -->
+
+<!-- </UserControl> -->
+<!-- 结束 UserControl 根节点。 -->

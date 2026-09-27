@@ -1,0 +1,148 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:UABEANext4.ViewModels"
+        xmlns:v="using:UABEANext4.Views"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="UABEANext4.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        x:CompileBindings="True"
+        Icon="/Assets/logo-new.ico"
+        Title="UABEA 资产管理器 (UABEA Asset Manager)"
+        Name="MainWindowName"
+        ExtendClientAreaToDecorationsHint="{Binding UsesChrome}"
+        ExtendClientAreaChromeHints="{Binding ChromeHints}"
+        DragDrop.AllowDrop="True">
+        <Design.DataContext>
+    <vm:MainViewModel/>
+    </Design.DataContext>
+
+  <Panel Margin="{Binding #MainWindowName.OffScreenMargin}">
+    <Panel Height="30" HorizontalAlignment="Center" VerticalAlignment="Top">
+      <Label Content="{Binding Path=Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
+             Margin="4,8,4,0"
+             FontSize="14"
+             FontWeight="Normal"
+             FontFamily="Consolas,Monospace,Courier,DejaVu Sans Mono,Roboto Mono"
+             VerticalAlignment="Center"
+             VerticalContentAlignment="Center"
+             IsHitTestVisible="False"
+             IsVisible="{Binding UsesChrome}"/>
+             </Panel>
+
+    <Panel Margin="0,0,0,0">
+      <v:MainView/>
+      </Panel>
+
+  </Panel>
+
+</Window>
+<!-- <Window xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 Window 根节点并指定 Avalonia 的默认 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name、x:DataType 等 XAML 语言功能。 -->
+
+<!-- xmlns:vm="using:UABEANext4.ViewModels" -->
+<!-- 在 XAML 中引用 UABEANext4.ViewModels 命名空间，以便在 x:DataType 中使用 MainViewModel。 -->
+
+<!-- xmlns:v="using:UABEANext4.Views" -->
+<!-- 在 XAML 中引用 UABEANext4.Views 命名空间，以便在此文件中使用 v:MainView 等视图控件。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用的属性。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（800x450）。 -->
+
+<!-- x:Class="UABEANext4.Views.MainWindow" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- x:DataType="vm:MainViewModel" -->
+<!-- 指定此视图的数据上下文类型为 MainViewModel，以便编译时绑定检查和 IntelliSense。 -->
+
+<!-- x:CompileBindings="True" -->
+<!-- 启用绑定编译以在编译时检查绑定表达式（提高绑定安全性）。 -->
+
+<!-- Icon="/Assets/logo-new.ico" -->
+<!-- 指定窗口图标资源路径（相对于应用资源）。 -->
+
+<!-- Title="UABE 资产管理器 (UABEAvalonia)" -->
+<!-- 窗口标题：已翻译为中文并保留英文原名在括号内，显示在窗口装饰或绑定到 UI 的地方。 -->
+
+<!-- Name="MainWindowName" -->
+<!-- 为窗口设置名称 MainWindowName，可用于绑定或在代码中引用。 -->
+
+<!-- ExtendClientAreaToDecorationsHint="{Binding UsesChrome}" -->
+<!-- 绑定 ExtendClientAreaToDecorationsHint 到 ViewModel 的 UsesChrome 属性，用于控制是否扩展客户区到窗口装饰（无边框/自定义标题栏场景）。 -->
+
+<!-- ExtendClientAreaChromeHints="{Binding ChromeHints}" -->
+<!-- 绑定 ExtendClientAreaChromeHints 到 ViewModel 的 ChromeHints 属性，传递额外的装饰提示。 -->
+
+<!-- DragDrop.AllowDrop="True" -->
+<!-- 启用窗口级别的拖放接收。 -->
+
+<!-- <Design.DataContext> -->
+<!-- 设计时数据上下文开始：仅在设计器中实例化 ViewModel 以便预览。 -->
+
+<!-- <vm:MainViewModel/> -->
+<!-- 在设计器中使用 MainViewModel 的实例作为 DataContext（仅设计时）。 -->
+
+<!-- </Design.DataContext> -->
+<!-- 设计时数据上下文结束。 -->
+
+<!-- <Panel Margin="{Binding #MainWindowName.OffScreenMargin}"> -->
+<!-- 根 Panel：外边距绑定到窗口实例的 OffScreenMargin（通过窗口名称引用），用于处理窗口偏移或动画。 -->
+
+<!-- <Panel Height="30" HorizontalAlignment="Center" VerticalAlignment="Top"> -->
+<!-- 顶部子 Panel：高度 30，水平居中，垂直靠上，用于显示标题文本（当 UsesChrome 为 true 时可见）。 -->
+
+<!-- <Label Content="{Binding Path=Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" -->
+<!-- Label 的 Content 绑定到最近祖先 Window 的 Title 属性，显示窗口标题文本。 -->
+
+<!-- Margin="4,8,4,0" -->
+<!-- Label 的外边距：左 4，上 8，右 4，下 0。 -->
+
+<!-- FontSize="14" -->
+<!-- 字体大小设置为 14。 -->
+
+<!-- FontWeight="Normal" -->
+<!-- 字体粗细设置为 Normal。 -->
+
+<!-- FontFamily="Consolas,Monospace,Courier,DejaVu Sans Mono,Roboto Mono" -->
+<!-- 指定字体优先列表，优先使用等宽字体以保持标题对齐一致。 -->
+
+<!-- VerticalAlignment="Center" -->
+<!-- Label 在父容器中垂直居中对齐。 -->
+
+<!-- VerticalContentAlignment="Center" -->
+<!-- Label 内部内容垂直居中对齐。 -->
+
+<!-- IsHitTestVisible="False" -->
+<!-- 禁用命中测试，使 Label 不响应鼠标事件（点击穿透到下层）。 -->
+
+<!-- IsVisible="{Binding UsesChrome}"/> -->
+<!-- Label 的可见性绑定到 ViewModel 的 UsesChrome（当使用自定义窗口装饰时显示标题）。 -->
+
+<!-- </Panel> -->
+<!-- 结束顶部子 Panel。 -->
+
+<!-- <Panel Margin="0,0,0,0"> -->
+<!-- 主内容容器 Panel，外边距为 0。 -->
+
+<!-- <v:MainView/> -->
+<!-- 在主内容容器中嵌入应用的主视图 v:MainView（该视图在 UABEANext4.Views 命名空间中定义）。 -->
+
+<!-- </Panel> -->
+<!-- 结束主内容容器 Panel。 -->
+
+<!-- </Panel> -->
+<!-- 结束根 Panel。 -->
+
+<!-- </Window> -->
+<!-- 结束 Window 根节点。 -->

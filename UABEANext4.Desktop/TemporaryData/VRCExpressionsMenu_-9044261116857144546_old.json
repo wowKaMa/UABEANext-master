@@ -1,0 +1,189 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "R18 » 寄吧",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "休眠状态",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 5498945758772204807
+        },
+        "type": 102,
+        "parameter": {
+          "name": "VF94_Cock_Shrunk"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "快高长大\n（不能吸附）",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 4525842361437762657
+        },
+        "type": 102,
+        "parameter": {
+          "name": "VF94_Cock_Erect"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "亮剑\n（开这个才能吸附）",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -1519097799266200916
+        },
+        "type": 102,
+        "parameter": {
+          "name": "VF94_Cock_Toggle"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "大小",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 1991016501351124539
+        },
+        "type": 203,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": "VF94_Cock_Size"
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "角度",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -596393764351624653
+        },
+        "type": 203,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": "VF94_Cock_Angle"
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "抽搐",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 7597339356423870444
+        },
+        "type": 102,
+        "parameter": {
+          "name": "VF94_Cock_Throb"
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      },
+      {
+        "name": "吸附还需要在\n这里面开启！！",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "type": 103,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 7997346330993904876
+        },
+        "subParameters": {
+          "Array": []
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dlg="using:UABEANext4.ViewModels.Dialogs"
+             mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="350"
+             x:Class="UABEANext4.Views.Dialogs.BatchImportView"
+             x:DataType="dlg:BatchImportViewModel">
+  <Grid Margin="10,10,10,10">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="0.6*"></ColumnDefinition>
+      <ColumnDefinition Width="5"></ColumnDefinition>
+      <ColumnDefinition Width="0.4*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+    <Border Margin="0,0,0,30" BorderBrush="Black" BorderThickness="1" Grid.Column="0">
+      <DataGrid AutoGenerateColumns="True" CanUserResizeColumns="True" IsReadOnly="True"
+                ItemsSource="{Binding DataGridItems}"
+                SelectedItem="{Binding DataGridSelectedItem}" />
+    </Border>
+    <GridSplitter Grid.Column="1" />
+    <Grid Grid.Column="2">
+      <ListBox Margin="0,0,0,30" ItemsSource="{Binding MatchingFilesItems}"
+               SelectedIndex="{Binding MatchingFilesSelectedIndex}" />
+      <Grid Margin="0,0,0,0" VerticalAlignment="Bottom">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Command="{Binding BtnOk_Click}">确定 (Ok)</Button>
+        <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">取消 (Cancel)</Button>
+      </Grid>
+    </Grid>
+  </Grid>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 UserControl 根节点并指定 Avalonia 的默认 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name、x:DataType 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- xmlns:dlg="using:UABEANext4.ViewModels.Dialogs" -->
+<!-- 在 XAML 中引用 ViewModels.Dialogs 命名空间，以便使用 BatchImportViewModel 等类型。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="350" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（700x350）。 -->
+
+<!-- x:Class="UABEANext4.Views.Dialogs.BatchImportView" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- x:DataType="dlg:BatchImportViewModel"> -->
+<!-- 指定此视图的数据上下文类型为 BatchImportViewModel，以便编译时绑定检查和 IntelliSense。 -->
+
+<!-- <Grid Margin="10,10,10,10"> -->
+<!-- 根布局：一个 Grid，外边距为 10 像素（四边）。 -->
+
+<!-- <Grid.ColumnDefinitions> -->
+<!-- 开始定义网格的列。 -->
+
+<!-- <ColumnDefinition Width="0.6*"></ColumnDefinition> -->
+<!-- 第一列宽度为 0.6*（占比 60% 的可用宽度）。 -->
+
+<!-- <ColumnDefinition Width="5"></ColumnDefinition> -->
+<!-- 第二列宽度为 5 像素，作为分隔器列。 -->
+
+<!-- <ColumnDefinition Width="0.4*"></ColumnDefinition> -->
+<!-- 第三列宽度为 0.4*（占比 40% 的可用宽度）。 -->
+
+<!-- </Grid.ColumnDefinitions> -->
+<!-- 结束列定义。 -->
+
+<!-- <Border Margin="0,0,0,30" BorderBrush="Black" BorderThickness="1" Grid.Column="0"> -->
+<!-- 在第一列放置一个带边框的容器，底部留出 30 像素空间。 -->
+
+<!-- <DataGrid AutoGenerateColumns="True" CanUserResizeColumns="True" IsReadOnly="True" -->
+<!-- DataGrid：自动生成列，允许用户调整列宽，只读模式。 -->
+
+<!-- ItemsSource="{Binding DataGridItems}" -->
+<!-- ItemsSource 绑定到 ViewModel 的 DataGridItems 集合（用于显示表格数据）。 -->
+
+<!-- SelectedItem="{Binding DataGridSelectedItem}" /> -->
+<!-- SelectedItem 绑定到 ViewModel 的 DataGridSelectedItem（当前选中项）。 -->
+
+<!-- </Border> -->
+<!-- 结束带边框的容器。 -->
+
+<!-- <GridSplitter Grid.Column="1" /> -->
+<!-- 在第二列放置 GridSplitter，允许用户调整左右两侧列宽。 -->
+
+<!-- <Grid Grid.Column="2"> -->
+<!-- 第三列的内部 Grid，包含匹配文件列表和底部按钮行。 -->
+
+<!-- <ListBox Margin="0,0,0,30" ItemsSource="{Binding MatchingFilesItems}" -->
+<!-- 列表框：显示匹配文件项，ItemsSource 绑定到 MatchingFilesItems，底部留出 30 像素。 -->
+
+<!-- SelectedIndex="{Binding MatchingFilesSelectedIndex}" /> -->
+<!-- SelectedIndex 绑定到 MatchingFilesSelectedIndex（所选索引）。 -->
+
+<!-- <Grid Margin="0,0,0,0" VerticalAlignment="Bottom"> -->
+<!-- 底部按钮行的 Grid，垂直对齐到底部。 -->
+
+<!-- <Grid.ColumnDefinitions> -->
+<!-- 定义底部 Grid 的列。 -->
+
+<!-- <ColumnDefinition Width="*" /> -->
+<!-- 第一列占剩余空间（用于左侧按钮）。 -->
+
+<!-- <ColumnDefinition Width="*" /> -->
+<!-- 第二列占剩余空间（用于右侧按钮）。 -->
+
+<!-- </Grid.ColumnDefinitions> -->
+<!-- 结束底部 Grid 的列定义。 -->
+
+<!-- <Button Grid.Column="0" Command="{Binding BtnOk_Click}">确定 (Ok)</Button> -->
+<!-- 左侧按钮：绑定 BtnOk_Click 命令，显示文本“确定 (Ok)”（中文并保留英文原名）。 -->
+
+<!-- <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">取消 (Cancel)</Button> -->
+<!-- 右侧按钮：绑定 BtnCancel_Click 命令，显示文本“取消 (Cancel)”（中文并保留英文原名）。 -->
+
+<!-- </Grid> -->
+<!-- 结束底部按钮行 Grid。 -->
+
+<!-- </Grid> -->
+<!-- 结束第三列内部 Grid。 -->
+
+<!-- </Grid> -->
+<!-- 结束根 Grid 布局容器。 -->
+
+<!-- </UserControl> -->
+<!-- 结束 UserControl 根节点。 -->

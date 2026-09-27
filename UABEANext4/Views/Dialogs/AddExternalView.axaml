@@ -1,0 +1,174 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dlg="using:UABEANext4.ViewModels.Dialogs"
+             xmlns:uac="using:UABEANext4.Converters"
+             mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="170"
+             x:Class="UABEANext4.Views.Dialogs.AddExternalView"
+             x:DataType="dlg:AddExternalViewModel">
+  <Grid Margin="10,10,10,10">
+    <Grid VerticalAlignment="Top"
+          ColumnDefinitions="120, *"
+          RowDefinitions="Auto, Auto, Auto, Auto">
+      <Label Grid.Column="0" Grid.Row="0">文件名 (File name)</Label>
+      <TextBox Grid.Column="1" Grid.Row="0"
+               Text="{Binding FileName}" />
+      
+      <Label Grid.Column="0" Grid.Row="1">原始文件名 (Original file name)</Label>
+      <TextBox Grid.Column="1" Grid.Row="1"
+               IsEnabled="{Binding HasOriginalName}"
+               Text="{Binding OriginalFileName}" />
+      
+      <Label Grid.Column="0" Grid.Row="2">依赖类型 (Dependency type)</Label>
+      <ComboBox Grid.Column="1" Grid.Row="2"
+                SelectedIndex="{Binding ExternalType}">
+        <ComboBoxItem Content="普通 (Normal)" />
+        <ComboBoxItem Content="缓存 (Cached)" />
+        <ComboBoxItem Content="序列化 (Serialized)" />
+        <ComboBoxItem Content="元数据 (Meta)" />
+      </ComboBox>
+      
+      <Label Grid.Column="0" Grid.Row="3">GUID (GUID)</Label>
+      <TextBox Grid.Column="1" Grid.Row="3"
+               IsEnabled="{Binding HasGuid}"
+               Text="{Binding GuidString}" />
+    </Grid>
+    <Grid VerticalAlignment="Bottom">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Button Grid.Column="0" Command="{Binding BtnOk_Click}">确定 (Ok)</Button>
+      <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">取消 (Cancel)</Button>
+    </Grid>
+  </Grid>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 UserControl 根节点并指定 Avalonia 的默认 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- xmlns:dlg="using:UABEANext4.ViewModels.Dialogs" -->
+<!-- 在 XAML 中引用 ViewModels.Dialogs 命名空间，以便使用 AddExternalViewModel 等类型。 -->
+
+<!-- xmlns:uac="using:UABEANext4.Converters" -->
+<!-- 在 XAML 中引用 Converters 命名空间，以便使用可能的转换器（本文件未直接使用转换器，但命名空间保留以便一致性）。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="170" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（350x170）。 -->
+
+<!-- x:Class="UABEANext4.Views.Dialogs.AddExternalView" -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- x:DataType="dlg:AddExternalViewModel"> -->
+<!-- 指定此视图的数据上下文类型为 AddExternalViewModel，以便编译时绑定检查和 IntelliSense。 -->
+
+<!-- <Grid Margin="10,10,10,10"> -->
+<!-- 根布局：一个 Grid，外边距为 10 像素（四边）。 -->
+
+<!-- <Grid VerticalAlignment="Top" -->
+<!-- 内部 Grid：垂直对齐到顶部，下面定义列与行。 -->
+
+<!-- ColumnDefinitions="120, *" -->
+<!-- 列定义：第一列宽度 120，第二列占剩余空间。 -->
+
+<!-- RowDefinitions="Auto, Auto, Auto, Auto"> -->
+<!-- 行定义：四行均为 Auto（根据内容高度自适应）。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="0">文件名 (File name)</Label> -->
+<!-- 第一行第一列的标签，显示“文件名 (File name)”（中文 + 英文原名）。 -->
+
+<!-- <TextBox Grid.Column="1" Grid.Row="0" -->
+<!-- 第一行第二列的文本框： -->
+
+<!-- Text="{Binding FileName}" /> -->
+<!-- Text 绑定到 ViewModel 的 FileName 属性，用于输入或显示文件名。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="1">原始文件名 (Original file name)</Label> -->
+<!-- 第二行第一列的标签，显示“原始文件名 (Original file name)”。 -->
+
+<!-- <TextBox Grid.Column="1" Grid.Row="1" -->
+<!-- 第二行第二列的文本框： -->
+
+<!-- IsEnabled="{Binding HasOriginalName}" -->
+<!-- IsEnabled 绑定到 ViewModel 的 HasOriginalName（当没有原始名时禁用该输入框）。 -->
+
+<!-- Text="{Binding OriginalFileName}" /> -->
+<!-- Text 绑定到 ViewModel 的 OriginalFileName，用于显示/编辑原始文件名（如果允许）。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="2">依赖类型 (Dependency type)</Label> -->
+<!-- 第三行第一列的标签，显示“依赖类型 (Dependency type)”。 -->
+
+<!-- <ComboBox Grid.Column="1" Grid.Row="2" -->
+<!-- 第三行第二列的下拉框： -->
+
+<!-- SelectedIndex="{Binding ExternalType}"> -->
+<!-- SelectedIndex 绑定到 ViewModel 的 ExternalType（整数索引，表示所选依赖类型）。 -->
+
+<!-- <ComboBoxItem Content="普通 (Normal)" /> -->
+<!-- 下拉项：普通（Normal）。 -->
+
+<!-- <ComboBoxItem Content="缓存 (Cached)" /> -->
+<!-- 下拉项：缓存（Cached）。 -->
+
+<!-- <ComboBoxItem Content="序列化 (Serialized)" /> -->
+<!-- 下拉项：序列化（Serialized）。 -->
+
+<!-- <ComboBoxItem Content="元数据 (Meta)" /> -->
+<!-- 下拉项：元数据（Meta）。 -->
+
+<!-- </ComboBox> -->
+<!-- 结束依赖类型下拉框定义。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="3">GUID (GUID)</Label> -->
+<!-- 第四行第一列的标签，显示“GUID (GUID)”。 -->
+
+<!-- <TextBox Grid.Column="1" Grid.Row="3" -->
+<!-- 第四行第二列的文本框： -->
+
+<!-- IsEnabled="{Binding HasGuid}" -->
+<!-- IsEnabled 绑定到 ViewModel 的 HasGuid（当没有 GUID 时禁用该输入框）。 -->
+
+<!-- Text="{Binding GuidString}" /> -->
+<!-- Text 绑定到 ViewModel 的 GuidString，用于显示/编辑 GUID 的字符串表示。 -->
+
+<!-- </Grid> -->
+<!-- 结束顶部 Grid（包含标签与输入控件）。 -->
+
+<!-- <Grid VerticalAlignment="Bottom"> -->
+<!-- 底部 Grid：垂直对齐到底部，用于放置操作按钮。 -->
+
+<!-- <Grid.ColumnDefinitions> -->
+<!-- 开始定义底部 Grid 的列。 -->
+
+<!-- <ColumnDefinition Width="*"></ColumnDefinition> -->
+<!-- 第一列占剩余空间（用于左侧按钮）。 -->
+
+<!-- <ColumnDefinition Width="*"></ColumnDefinition> -->
+<!-- 第二列占剩余空间（用于右侧按钮）。 -->
+
+<!-- </Grid.ColumnDefinitions> -->
+<!-- 结束列定义。 -->
+
+<!-- <Button Grid.Column="0" Command="{Binding BtnOk_Click}">确定 (Ok)</Button> -->
+<!-- 左侧按钮：绑定 BtnOk_Click 命令，显示“确定 (Ok)”。 -->
+
+<!-- <Button Grid.Column="1" Command="{Binding BtnCancel_Click}">取消 (Cancel)</Button> -->
+<!-- 右侧按钮：绑定 BtnCancel_Click 命令，显示“取消 (Cancel)”。 -->
+
+<!-- </Grid> -->
+<!-- 结束底部 Grid。 -->
+
+<!-- </Grid> -->
+<!-- 结束根 Grid 布局容器。 -->
+
+<!-- </UserControl> -->
+<!-- 结束 UserControl 根节点。 -->

@@ -1,0 +1,300 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="360"
+             x:Class="TexturePlugin.Views.EditTextureView">
+  <Grid Margin="10,10,10,10" RowDefinitions="*,Auto">
+    <Grid ColumnDefinitions="*,*,Auto"
+          RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+          Grid.Row="0">
+      <Grid.Styles>
+        <Style Selector="Label">
+          <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+      </Grid.Styles>
+
+      <Label Grid.Column="0" Grid.Row="0">名称 (Name)</Label>
+      <Label Grid.Column="0" Grid.Row="1">纹理格式 (Texture format)</Label>
+      <Label Grid.Column="0" Grid.Row="2">使用 Mipmaps (Using mipmaps)</Label>
+      <Label Grid.Column="0" Grid.Row="3">可读 (Is readable)</Label>
+      <Label Grid.Column="0" Grid.Row="4">过滤模式 (Filter mode)</Label>
+      <Label Grid.Column="0" Grid.Row="5">各向异性过滤 (Anisotropic filtering)</Label>
+      <Label Grid.Column="0" Grid.Row="6">Mipmap 偏移 (Mipmap bias)</Label>
+      <Label Grid.Column="0" Grid.Row="7">包装模式 (U) (Wrap mode (U))</Label>
+      <Label Grid.Column="0" Grid.Row="8">包装模式 (V) (Wrap mode (V))</Label>
+      <Label Grid.Column="0" Grid.Row="9">光照贴图格式 (Lightmap format)</Label>
+      <Label Grid.Column="0" Grid.Row="10">颜色空间 (Color space)</Label>
+      <Label Grid.Column="0" Grid.Row="11">纹理 (Texture)</Label>
+
+      <TextBox Grid.Column="1" Grid.Row="0"
+               Text="{Binding Name}"
+               Watermark="{Binding NameWatermark}" />
+
+      <ComboBox Grid.Column="1" Grid.Row="1"
+                SelectedItem="{Binding TextureFormat}"
+                ItemsSource="{Binding TextureFormats}"
+                PlaceholderText="多个值 (Multiple values)" />
+
+      <CheckBox Grid.Column="1" Grid.Row="2"
+                IsChecked="{Binding UsingMips}"
+                IsThreeState="{Binding UsingMipsThreeOn}" />
+
+      <CheckBox Grid.Column="1" Grid.Row="3"
+                IsChecked="{Binding IsReadable}"
+                IsThreeState="{Binding IsReadableThreeOn}" />
+
+      <ComboBox Grid.Column="1" Grid.Row="4"
+                SelectedItem="{Binding FilterMode}"
+                ItemsSource="{Binding FilterModes}"
+                PlaceholderText="多个值 (Multiple values)" />
+
+      <TextBox Grid.Column="1" Grid.Row="5"
+               Text="{Binding FilteringString}"
+               Watermark="{Binding FilteringWatermark}" />
+
+      <TextBox Grid.Column="1" Grid.Row="6"
+               Text="{Binding MipBiasString}"
+               Watermark="{Binding MipBiasWatermark}" />
+
+      <ComboBox Grid.Column="1" Grid.Row="7"
+                SelectedItem="{Binding WrapModeU}"
+                ItemsSource="{Binding WrapModes}"
+                PlaceholderText="多个值 (Multiple values)" />
+
+      <ComboBox Grid.Column="1" Grid.Row="8"
+                SelectedItem="{Binding WrapModeV}"
+                ItemsSource="{Binding WrapModes}"
+                PlaceholderText="多个值 (Multiple values)" />
+
+      <!-- get enum for this -->
+      <TextBox Grid.Column="1" Grid.Row="9"
+               Text="{Binding LightMapFormatString}"
+               Watermark="{Binding LightMapFormatWatermark}" />
+
+      <ComboBox Grid.Column="1" Grid.Row="10"
+                SelectedItem="{Binding ColorSpace}"
+                ItemsSource="{Binding ColorSpaces}"
+                PlaceholderText="多个值 (Multiple values)" />
+
+      <Button Grid.Column="1" Grid.Row="11" IsEnabled="{Binding IsSingleTexture}">加载 (Load)</Button>
+
+      <Button Grid.Column="2" Grid.Row="0" Command="{Binding ResetToDefault}" CommandParameter="0">
+        <PathIcon Width="14" Height="14" Data="{DynamicResource DockToolIconCloseGeometry}"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="1" Command="{Binding ResetToDefault}" CommandParameter="1">
+        <PathIcon Width="14" Height="14" Data="{DynamicResource DockToolIconCloseGeometry}"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="2" Command="{Binding ResetToDefault}" CommandParameter="2">
+        <PathIcon Width="14" Height="14" Data="{DynamicResource DockToolIconCloseGeometry}"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="3" Command="{Binding ResetToDefault}" CommandParameter="3">
+        <PathIcon Width="14" Height="14" Data="{DynamicResource DockToolIconCloseGeometry}"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="4" Command="{Binding ResetToDefault}" CommandParameter="4">
+        <PathIcon Width="14" Height="14" Data="{DynamicResource DockToolIconCloseGeometry}"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="5" Command="{Binding ResetToDefault}" CommandParameter="5">
+        <PathIcon Width="14" Height="14" Data="{DynamicResource DockToolIconCloseGeometry}"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="6" Command="{Binding ResetToDefault}" CommandParameter="6">
+        <PathIcon Width="14" Height="14" Data="{DynamicResource DockToolIconCloseGeometry}"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="7" Command="{Binding ResetToDefault}" CommandParameter="7">
+        <PathIcon Width="14" Height="14" Data="{DynamicResource DockToolIconCloseGeometry}"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="8" Command="{Binding ResetToDefault}" CommandParameter="8">
+        <PathIcon Width="14" Height="14" Data="{DynamicResource DockToolIconCloseGeometry}"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="9" Command="{Binding ResetToDefault}" CommandParameter="9">
+        <PathIcon Width="14" Height="14" Data="{DynamicResource DockToolIconCloseGeometry}"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="10" Command="{Binding ResetToDefault}" CommandParameter="10">
+        <PathIcon Width="14" Height="14" Data="{DynamicResource DockToolIconCloseGeometry}"/>
+      </Button>
+      <Button Grid.Column="2" Grid.Row="11" Command="{Binding ResetToDefault}" CommandParameter="11"
+              IsEnabled="{Binding IsSingleTexture}">
+        <PathIcon Width="14" Height="14" Data="{DynamicResource DockToolIconCloseGeometry}"/>
+      </Button>
+    </Grid>
+    <Grid ColumnDefinitions="*,*" Grid.Row="1">
+      <Button Grid.Column="0" Command="{Binding SaveChanges}">保存 (Save)</Button>
+      <Button Grid.Column="1" Command="{Binding Cancel}">关闭 (Close)</Button>
+    </Grid>
+  </Grid>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 UserControl 根节点并指定 Avalonia 的默认 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Class、x:Name、x:DataType 等 XAML 语言功能。 -->
+
+<!-- xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+<!-- 引入设计时命名空间，仅在设计器（如 Visual Studio / Blend）中使用。 -->
+
+<!-- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+<!-- 引入兼容性命名空间，用于处理设计时或不同 XAML 版本的兼容性。 -->
+
+<!-- mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="360" -->
+<!-- 指示解析器忽略以 d: 前缀开头的属性（设计时属性），并设置设计器中默认宽高（300x360）。 -->
+
+<!-- x:Class="TexturePlugin.Views.EditTextureView"> -->
+<!-- 指定此 XAML 对应的后台 C# 部分类（partial class），用于代码隐藏文件关联。 -->
+
+<!-- <Grid Margin="10,10,10,10" RowDefinitions="*,Auto"> -->
+<!-- 根布局：一个 Grid，外边距为 10 像素（四边）；行定义为一行填充和一行自动高度。 -->
+
+<!-- <Grid ColumnDefinitions="*,*,Auto" -->
+<!-- 内部 Grid：定义三列（两列自适应，一列自动宽度）。 -->
+
+<!-- RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" -->
+<!-- 内部 Grid 定义 12 行，每行高度为 Auto（自适应内容）。 -->
+
+<!-- Grid.Row="0"> -->
+<!-- 将此内部 Grid 放在外部 Grid 的第一行。 -->
+
+<!-- <Grid.Styles> -->
+<!-- 开始为内部 Grid 定义局部样式。 -->
+
+<!-- <Style Selector="Label"> -->
+<!-- 定义一个样式，选择器为 Label（应用于内部 Grid 中的所有 Label）。 -->
+
+<!-- <Setter Property="VerticalContentAlignment" Value="Center" /> -->
+<!-- 设置 Label 的垂直内容对齐为居中。 -->
+
+<!-- </Style> -->
+<!-- 结束 Label 样式定义。 -->
+
+<!-- </Grid.Styles> -->
+<!-- 结束内部 Grid 的样式定义。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="0">名称 (Name)</Label> -->
+<!-- 第一行第一列的标签，显示“名称 (Name)”。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="1">纹理格式 (Texture format)</Label> -->
+<!-- 第二行第一列的标签，显示“纹理格式 (Texture format)”。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="2">使用 Mipmaps (Using mipmaps)</Label> -->
+<!-- 第三行第一列的标签，显示“使用 Mipmaps (Using mipmaps)”。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="3">可读 (Is readable)</Label> -->
+<!-- 第四行第一列的标签，显示“可读 (Is readable)”。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="4">过滤模式 (Filter mode)</Label> -->
+<!-- 第五行第一列的标签，显示“过滤模式 (Filter mode)”。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="5">各向异性过滤 (Anisotropic filtering)</Label> -->
+<!-- 第六行第一列的标签，显示“各向异性过滤 (Anisotropic filtering)”。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="6">Mipmap 偏移 (Mipmap bias)</Label> -->
+<!-- 第七行第一列的标签，显示“Mipmap 偏移 (Mipmap bias)”。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="7">包装模式 (U) (Wrap mode (U))</Label> -->
+<!-- 第八行第一列的标签，显示“包装模式 (U) (Wrap mode (U))”。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="8">包装模式 (V) (Wrap mode (V))</Label> -->
+<!-- 第九行第一列的标签，显示“包装模式 (V) (Wrap mode (V))”。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="9">光照贴图格式 (Lightmap format)</Label> -->
+<!-- 第十行第一列的标签，显示“光照贴图格式 (Lightmap format)”。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="10">颜色空间 (Color space)</Label> -->
+<!-- 第十一行第一列的标签，显示“颜色空间 (Color space)”。 -->
+
+<!-- <Label Grid.Column="0" Grid.Row="11">纹理 (Texture)</Label> -->
+<!-- 第十二行第一列的标签，显示“纹理 (Texture)”。 -->
+
+<!-- <TextBox Grid.Column="1" Grid.Row="0" -->
+<!-- 名称输入框：放在第一行第二列。 -->
+
+<!-- Text="{Binding Name}" -->
+<!-- Text 绑定到 ViewModel 的 Name 属性。 -->
+
+<!-- Watermark="{Binding NameWatermark}" /> -->
+<!-- Watermark 绑定到 ViewModel 的 NameWatermark（占位提示）。 -->
+
+<!-- <ComboBox Grid.Column="1" Grid.Row="1" -->
+<!-- 纹理格式下拉：放在第二行第二列。 -->
+
+<!-- SelectedItem="{Binding TextureFormat}" -->
+<!-- SelectedItem 绑定到 ViewModel 的 TextureFormat。 -->
+
+<!-- ItemsSource="{Binding TextureFormats}" -->
+<!-- ItemsSource 绑定到 ViewModel 的 TextureFormats（可选格式集合）。 -->
+
+<!-- PlaceholderText="多个值 (Multiple values)" /> -->
+<!-- 占位文本显示“多个值 (Multiple values)”。 -->
+
+<!-- <CheckBox Grid.Column="1" Grid.Row="2" -->
+<!-- 使用 Mipmaps 复选框：放在第三行第二列。 -->
+
+<!-- IsChecked="{Binding UsingMips}" -->
+<!-- IsChecked 绑定到 ViewModel 的 UsingMips。 -->
+
+<!-- IsThreeState="{Binding UsingMipsThreeOn}" /> -->
+<!-- IsThreeState 绑定到 ViewModel 的 UsingMipsThreeOn（三态支持）。 -->
+
+<!-- <CheckBox Grid.Column="1" Grid.Row="3" -->
+<!-- 可读复选框：放在第四行第二列。 -->
+
+<!-- IsChecked="{Binding IsReadable}" -->
+<!-- IsChecked 绑定到 ViewModel 的 IsReadable。 -->
+
+<!-- IsThreeState="{Binding IsReadableThreeOn}" /> -->
+<!-- IsThreeState 绑定到 ViewModel 的 IsReadableThreeOn（三态支持）。 -->
+
+<!-- <ComboBox Grid.Column="1" Grid.Row="4" -->
+<!-- 过滤模式下拉：放在第五行第二列。 -->
+
+<!-- SelectedItem="{Binding FilterMode}" -->
+<!-- SelectedItem 绑定到 ViewModel 的 FilterMode。 -->
+
+<!-- ItemsSource="{Binding FilterModes}" -->
+<!-- ItemsSource 绑定到 ViewModel 的 FilterModes（可选过滤模式集合）。 -->
+
+<!-- PlaceholderText="多个值 (Multiple values)" /> -->
+<!-- 占位文本显示“多个值 (Multiple values)”。 -->
+
+<!-- <TextBox Grid.Column="1" Grid.Row="5" -->
+<!-- 各向异性过滤输入框：放在第六行第二列。 -->
+
+<!-- Text="{Binding FilteringString}" -->
+<!-- Text 绑定到 ViewModel 的 FilteringString。 -->
+
+<!-- Watermark="{Binding FilteringWatermark}" /> -->
+<!-- Watermark 绑定到 ViewModel 的 FilteringWatermark。 -->
+
+<!-- <TextBox Grid.Column="1" Grid.Row="6" -->
+<!-- Mipmap 偏移输入框：放在第七行第二列。 -->
+
+<!-- Text="{Binding MipBiasString}" -->
+<!-- Text 绑定到 ViewModel 的 MipBiasString。 -->
+
+<!-- Watermark="{Binding MipBiasWatermark}" /> -->
+<!-- Watermark 绑定到 ViewModel 的 MipBiasWatermark。 -->
+
+<!-- <ComboBox Grid.Column="1" Grid.Row="7" -->
+<!-- Wrap mode U 下拉：放在第八行第二列。 -->
+
+<!-- SelectedItem="{Binding WrapModeU}" -->
+<!-- SelectedItem 绑定到 ViewModel 的 WrapModeU。 -->
+
+<!-- ItemsSource="{Binding WrapModes}" -->
+<!-- ItemsSource 绑定到 ViewModel 的 WrapModes（可选包装模式集合）。 -->
+
+<!-- PlaceholderText="多个值 (Multiple values)" /> -->
+<!-- 占位文本显示“多个值 (Multiple values)”。 -->
+
+<!-- <ComboBox Grid.Column="1" Grid.Row="8" -->
+<!-- Wrap mode V 下拉：放在第九行第二列。 -->
+
+<!-- SelectedItem="{Binding WrapModeV}" -->
+<!-- SelectedItem 绑定到 ViewModel 的 WrapModeV。 -->
+
+<!-- ItemsSource="{Binding WrapModes}" -->
+<!-- ItemsSource 绑定到 ViewModel 的 WrapModes（可选包装模式集合）。 -->
+
+<!-- PlaceholderText="多个值 (Multiple values)" /> -->
+<!-- 占位文本显示“多个值 (Multiple values)”。 -->
+
+<!-- get enum for this -->

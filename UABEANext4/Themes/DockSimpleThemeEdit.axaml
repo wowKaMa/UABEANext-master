@@ -1,0 +1,187 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="UABEANext4.Themes.DockSimpleThemeEdit">
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://Dock.Controls.ProportionalStackPanel/ProportionalStackPanelSplitter.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ControlStrings.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DocumentTabStripItem.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DocumentTabStrip.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolTabStripItem.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolTabStrip.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DockTarget.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/GlobalDockTarget.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DocumentControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolChromeControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolPinItemControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolPinnedControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DockDockControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DocumentContentControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DocumentDockControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/PinnedDockControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ProportionalDockControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/StackDockControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/GridDockControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/WrapDockControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/UniformGridDockControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/RootDockControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolContentControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolDockControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DockControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/HostWindowTitleBar.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/HostWindow.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DragPreviewControl.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DragPreviewWindow.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/PinnedDockWindow.axaml" />
+        <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DockAdornerWindow.axaml" />
+        <ResourceInclude Source="avares://UABEANext4/Themes/Accents/SimpleShared.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceInclude Source="avares://UABEANext4/Themes/Accents/SimpleLight.axaml" x:Key="Light" />
+        <ResourceInclude Source="avares://UABEANext4/Themes/Accents/SimpleDark.axaml" x:Key="Dark" />
+      </ResourceDictionary.ThemeDictionaries>
+    </ResourceDictionary>
+  </Styles.Resources>
+</Styles>
+<!-- <Styles xmlns="https://github.com/avaloniaui" -->
+<!-- 声明 Styles 根节点并指定 Avalonia 的 XAML 命名空间。 -->
+
+<!-- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!-- 引入 x: 命名空间，提供 x:Type、x:Class 等 XAML 语言功能。 -->
+
+<!-- x:Class="UABEANext4.Themes.DockSimpleThemeEdit"> -->
+<!-- 指定此 Styles 的 x:Class，使其在代码中可被引用为 UABEANext4.Themes.DockSimpleThemeEdit。 -->
+
+<!-- <Styles.Resources> -->
+<!-- 开始定义 Styles 的资源部分。 -->
+
+<!-- <ResourceDictionary> -->
+<!-- 使用 ResourceDictionary 容纳资源与合并字典。 -->
+
+<!-- <ResourceDictionary.MergedDictionaries> -->
+<!-- 开始合并外部资源字典列表（将多个 axaml 资源包含进来）。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Controls.ProportionalStackPanel/ProportionalStackPanelSplitter.axaml" /> -->
+<!-- 引入 ProportionalStackPanelSplitter 的资源文件。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ControlStrings.axaml" /> -->
+<!-- 引入 ControlStrings 资源（主题字符串）。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DocumentTabStripItem.axaml" /> -->
+<!-- 引入 DocumentTabStripItem 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DocumentTabStrip.axaml" /> -->
+<!-- 引入 DocumentTabStrip 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolTabStripItem.axaml" /> -->
+<!-- 引入 ToolTabStripItem 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolTabStrip.axaml" /> -->
+<!-- 引入 ToolTabStrip 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DockTarget.axaml" /> -->
+<!-- 引入 DockTarget 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/GlobalDockTarget.axaml" /> -->
+<!-- 引入 GlobalDockTarget 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DocumentControl.axaml" /> -->
+<!-- 引入 DocumentControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolChromeControl.axaml" /> -->
+<!-- 引入 ToolChromeControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolControl.axaml" /> -->
+<!-- 引入 ToolControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolPinItemControl.axaml" /> -->
+<!-- 引入 ToolPinItemControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolPinnedControl.axaml" /> -->
+<!-- 引入 ToolPinnedControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DockDockControl.axaml" /> -->
+<!-- 引入 DockDockControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DocumentContentControl.axaml" /> -->
+<!-- 引入 DocumentContentControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DocumentDockControl.axaml" /> -->
+<!-- 引入 DocumentDockControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/PinnedDockControl.axaml" /> -->
+<!-- 引入 PinnedDockControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ProportionalDockControl.axaml" /> -->
+<!-- 引入 ProportionalDockControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/StackDockControl.axaml" /> -->
+<!-- 引入 StackDockControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/GridDockControl.axaml" /> -->
+<!-- 引入 GridDockControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/WrapDockControl.axaml" /> -->
+<!-- 引入 WrapDockControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/UniformGridDockControl.axaml" /> -->
+<!-- 引入 UniformGridDockControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/RootDockControl.axaml" /> -->
+<!-- 引入 RootDockControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolContentControl.axaml" /> -->
+<!-- 引入 ToolContentControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/ToolDockControl.axaml" /> -->
+<!-- 引入 ToolDockControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DockControl.axaml" /> -->
+<!-- 引入 DockControl 控件的资源定义。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/HostWindowTitleBar.axaml" /> -->
+<!-- 引入 HostWindowTitleBar 的资源定义（窗口标题栏样式）。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/HostWindow.axaml" /> -->
+<!-- 引入 HostWindow 的资源定义（宿主窗口样式）。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DragPreviewControl.axaml" /> -->
+<!-- 引入 DragPreviewControl 的资源定义（拖拽预览控件）。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DragPreviewWindow.axaml" /> -->
+<!-- 引入 DragPreviewWindow 的资源定义（拖拽预览窗口）。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/PinnedDockWindow.axaml" /> -->
+<!-- 引入 PinnedDockWindow 的资源定义（固定面板窗口）。 -->
+
+<!-- <ResourceInclude Source="avares://Dock.Avalonia.Themes.Simple/Controls/DockAdornerWindow.axaml" /> -->
+<!-- 引入 DockAdornerWindow 的资源定义（装饰器窗口）。 -->
+
+<!-- <ResourceInclude Source="avares://UABEANext4/Themes/Accents/SimpleShared.axaml" /> -->
+<!-- 引入项目自有的 SimpleShared 主题资源（共享样式/颜色）。 -->
+
+<!-- </ResourceDictionary.MergedDictionaries> -->
+<!-- 结束合并字典列表。 -->
+
+<!-- <ResourceDictionary.ThemeDictionaries> -->
+<!-- 开始主题字典集合（按主题加载不同资源）。 -->
+
+<!-- <ResourceInclude Source="avares://UABEANext4/Themes/Accents/SimpleLight.axaml" x:Key="Light" /> -->
+<!-- 引入并注册 Light 主题的资源字典，键名为 "Light"。 -->
+
+<!-- <ResourceInclude Source="avares://UABEANext4/Themes/Accents/SimpleDark.axaml" x:Key="Dark" /> -->
+<!-- 引入并注册 Dark 主题的资源字典，键名为 "Dark"。 -->
+
+<!-- </ResourceDictionary.ThemeDictionaries> -->
+<!-- 结束主题字典集合。 -->
+
+<!-- </ResourceDictionary> -->
+<!-- 结束 ResourceDictionary。 -->
+
+<!-- </Styles.Resources> -->
+<!-- 结束 Styles 的资源部分。 -->
+
+<!-- </Styles> -->
+<!-- 结束 Styles 根节点。 -->

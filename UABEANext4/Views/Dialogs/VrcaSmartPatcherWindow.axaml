@@ -1,0 +1,90 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:UABEANext4.ViewModels.Dialogs"
+        xmlns:conv="using:UABEANext4.Converters"
+        x:Class="UABEANext4.Views.Dialogs.VrcaSmartPatcherWindow"
+        x:DataType="vm:VrcaSmartPatcherViewModel"
+        Title="智能菜单热修补模组 (VRCA Smart Patcher)"
+        Width="900" Height="650"
+        Background="{DynamicResource DockThemeBackgroundBrush}"
+        WindowStartupLocation="CenterOwner">
+
+    <Window.Resources>
+        <conv:TypeToIconConverter x:Key="TypeToIconConverter"/>
+        <conv:AssetsFileInstanceNameConverter x:Key="AssetsFileInstanceNameConverter"/>
+    </Window.Resources>
+
+    <Grid RowDefinitions="Auto, *, Auto" Margin="15">
+        <!-- Header -->
+        <Grid Grid.Row="0" ColumnDefinitions="*, Auto, *" Margin="0,0,0,20">
+            <!-- Source Side -->
+            <Border Grid.Column="0" Background="{DynamicResource DockThemeListBackgroundBrush}" CornerRadius="4" Padding="10">
+                <StackPanel Spacing="5">
+                    <TextBlock Text="源文件 (修改后/新增) (Source - Modified/New)" Foreground="{DynamicResource TypeTextPrimitive}" FontSize="10" FontWeight="Bold"/>
+                    <ComboBox HorizontalAlignment="Stretch" ItemsSource="{Binding AvailableFiles}" SelectedItem="{Binding SourceFile}">
+                         <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Converter={StaticResource AssetsFileInstanceNameConverter}}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+            </Border>
+
+            <!-- Middle Button -->
+            <Button Grid.Column="1" Margin="20,0" 
+                    Command="{Binding AnalyzeDifferencesCommand}"
+                    IsEnabled="{Binding !IsAnalyzing}"
+                    Padding="20,10" Background="#007ACC">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <Path Data="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" Fill="{DynamicResource DockApplicationAccentForegroundBrush}" Width="16" Height="16"/>
+                    <TextBlock Text="分析差异 (Analyze Differences)" Foreground="{DynamicResource DockApplicationAccentForegroundBrush}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <!-- Target Side -->
+            <Border Grid.Column="2" Background="{DynamicResource DockThemeListBackgroundBrush}" CornerRadius="4" Padding="10">
+                <StackPanel Spacing="5">
+                    <TextBlock Text="目标文件 (原版) (Target - Original)" Foreground="{DynamicResource TypeTextType}" FontSize="10" FontWeight="Bold"/>
+                    <ComboBox HorizontalAlignment="Stretch" ItemsSource="{Binding AvailableFiles}" SelectedItem="{Binding TargetFile}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Converter={StaticResource AssetsFileInstanceNameConverter}}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!-- Main List -->
+        <ListBox Grid.Row="1" ItemsSource="{Binding Differences}" Background="{DynamicResource DockThemeBackgroundBrush}" BorderThickness="1" BorderBrush="{DynamicResource DockThemeBorderLowBrush}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="30, 2*, 100, 2*, 50" Margin="5">
+                        <TextBlock Grid.Column="0" Text="{Binding AssetType, Converter={StaticResource TypeToIconConverter}}" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Column="1" Text="{Binding SourceName}" VerticalAlignment="Center" Margin="10,0"/>
+                        
+                        <Border Grid.Column="2" Background="{Binding StatusColor}" CornerRadius="10" Padding="8,2" HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding Status}" Foreground="Black" FontSize="11" FontWeight="Bold"/>
+                        </Border>
+
+                        <TextBlock Grid.Column="3" Text="{Binding TargetName}" VerticalAlignment="Center" Margin="10,0"
+                                   IsVisible="{Binding !IsNewAsset}"/>
+                        <TextBlock Grid.Column="3" Text="(将创建新资产) (Will Create New Asset)" FontStyle="Italic" Foreground="{DynamicResource WorkspaceItemOtherBrush}" 
+                                   VerticalAlignment="Center" Margin="10,0" IsVisible="{Binding IsNewAsset}"/>
+
+                        <Button Grid.Column="4" Content="🔍" Background="Transparent" BorderThickness="0"
+                                Command="{Binding ViewDifferencesCommand}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Footer -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0" Spacing="10">
+            <Button Content="关闭 (Close)" Width="100"/>
+            <Button Content="应用补丁 (Apply Patch)" Command="{Binding ApplyPatchCommand}" Width="150" Background="{DynamicResource ThemeAccentBrush}" Foreground="{DynamicResource DockApplicationAccentForegroundBrush}" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

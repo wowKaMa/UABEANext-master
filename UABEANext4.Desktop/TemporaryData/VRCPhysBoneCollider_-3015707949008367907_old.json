@@ -1,0 +1,32 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 7489213045219046076
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8143420519928566493
+  },
+  "m_Name": "",
+  "rootTransform": {
+    "m_FileID": 0,
+    "m_PathID": -3498510045287914522
+  },
+  "shapeType": 1,
+  "insideBounds": 0,
+  "radius": 0.037,
+  "height": 0.3,
+  "position": {
+    "x": -0.01,
+    "y": 0.2,
+    "z": 0.01
+  },
+  "rotation": {
+    "x": 0.043619767,
+    "y": 0.0,
+    "z": 0.0,
+    "w": -0.99904823
+  },
+  "bonesAsSpheres": 0
+}

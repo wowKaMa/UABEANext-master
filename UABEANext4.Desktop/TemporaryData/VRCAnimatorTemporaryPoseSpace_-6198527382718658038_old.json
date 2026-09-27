@@ -1,0 +1,16 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2692439200649151768
+  },
+  "m_Name": "Copied from GoLocoSittingWD/(Clone)",
+  "enterPoseSpace": 1,
+  "fixedDelay": 1,
+  "delayTime": 0.0,
+  "debugString": ""
+}

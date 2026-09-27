@@ -1,0 +1,56 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8268836203660554979
+  },
+  "m_Name": "功能 » GoGo Loco » NSFW Loco By Lastation » Edit of » Maintained By ...",
+  "Parameters": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "controls": {
+    "Array": [
+      {
+        "name": "KuryKat",
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": -2647868359299081319
+        },
+        "type": 101,
+        "parameter": {
+          "name": ""
+        },
+        "value": 1.0,
+        "style": 0,
+        "subMenu": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "subParameters": {
+          "Array": [
+            {
+              "name": ""
+            },
+            {
+              "name": ""
+            },
+            {
+              "name": ""
+            },
+            {
+              "name": ""
+            }
+          ]
+        },
+        "labels": {
+          "Array": []
+        }
+      }
+    ]
+  }
+}
